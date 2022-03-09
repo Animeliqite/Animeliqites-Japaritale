@@ -1,0 +1,1 @@
+New assets made both by the contributors and the owners go here.
