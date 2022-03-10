@@ -1,7 +1,7 @@
 {
   "spriteId": {
-    "name": "spr_char_cellien",
-    "path": "sprites/spr_char_cellien/spr_char_cellien.yy",
+    "name": "spr_default",
+    "path": "sprites/spr_default/spr_default.yy",
   },
   "solid": false,
   "visible": true,
@@ -25,7 +25,6 @@
   "physicsShapePoints": [],
   "eventList": [
     {"isDnD":false,"eventNum":0,"eventType":0,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
-    {"isDnD":false,"eventNum":2,"eventType":3,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
   ],
   "properties": [],
   "overriddenProperties": [],
@@ -34,7 +33,7 @@
     "path": "folders/Objects/Character.yy",
   },
   "resourceVersion": "1.0",
-  "name": "char_cellien_small",
+  "name": "char_serval",
   "tags": [],
   "resourceType": "GMObject",
 }

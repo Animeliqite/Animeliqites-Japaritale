@@ -1,5 +1,16 @@
 switch(room){
 	case room_caverns:
+		if (cutscene._current_order == 3) {
+			for (var i = 0; i < instance_number(char_mover); i++) {
+				with (instance_find(char_mover, i)) {
+					if (_moving_object == char_serval) {
+						char_serval.sprite_index = spr_char_serval_right;
+						spd += 0.05;
+						spd = min(spd, 5);
+					}
+				}
+			}
+		}
 		if (cutscene._current_order < 5)
 			camera.x = median(0, char_player.x - (camera.width / camera.scale_x / 2));
 		else if (cutscene._current_order == 15) {
@@ -18,14 +29,15 @@ switch(room){
 		}
 		C_FadeFader(0, 1, 0, 30, 0, c_white);
 		C_Execute(0, variable_instance_set, [camera, "target", noone]);
-		C_CreateAnim(0, camera, "y", ANIM_TWEEN.SINE, ANIM_EASE.OUT, 0, median(0, char_player.y - (camera.width / camera.scale_y / 2), room_height - (camera.width / camera.scale_y / 2)), 120, false);
+		C_CreateAnim(0, camera, "y", ANIM_TWEEN.SINE, ANIM_EASE.OUT, 0, room_height - (camera.height / camera.scale_y), 120, false);
 		C_MoveChar(0, char_player, 400, 380, false, 140);
+		C_MoveChar(0, char_serval, room_width + 50, 380, false, 240);
 		C_Wait(0, 1);
 		C_Wait(1, 29);
 		C_Execute(2, variable_instance_set, [fader, "alpha", 0]);
 		C_Execute(2, variable_instance_set, [fader, "color", c_black]);
-		C_Wait(2, 90);
-		C_Wait(3, 30);
+		C_Wait(2, 60);
+		C_Wait(3, 60);
 		C_Execute(4, BGM_Stop, [0]);
 		C_Execute(4, instance_create_depth, [char_player.x, char_player.y - char_player.sprite_height - 5, 0, exclamation]);
 		C_PlaySfx(4, snd_exclamation);

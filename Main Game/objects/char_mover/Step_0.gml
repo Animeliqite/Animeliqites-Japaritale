@@ -10,7 +10,7 @@ with (_moving_object) {
 		y += ldiry;
 		moveable = false;
 		direction = direc;
-		image_index += 0.2;
+		image_index += _inst.spd / 15;
 		dir = Char_ConvertDirection(id);
 	}
 	else {
