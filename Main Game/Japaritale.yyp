@@ -578,6 +578,7 @@
     {"id":{"name":"battle_damage","path":"objects/battle_damage/battle_damage.yy",},"order":9,},
     {"id":{"name":"battle_death_particle","path":"objects/battle_death_particle/battle_death_particle.yy",},"order":10,},
     {"id":{"name":"battle_death_particle_collision","path":"objects/battle_death_particle_collision/battle_death_particle_collision.yy",},"order":11,},
+    {"id":{"name":"spr_char_kaban_right_lookup","path":"sprites/spr_char_kaban_right_lookup/spr_char_kaban_right_lookup.yy",},"order":6,},
     {"id":{"name":"spr_battle_soul_red_small","path":"sprites/spr_battle_soul_red_small/spr_battle_soul_red_small.yy",},"order":2,},
     {"id":{"name":"battle_dialog_enemy","path":"objects/battle_dialog_enemy/battle_dialog_enemy.yy",},"order":12,},
     {"id":{"name":"battle_result_flee","path":"objects/battle_result_flee/battle_result_flee.yy",},"order":13,},
