@@ -6,3 +6,4 @@ image_speed = 0.16;
 
 _hurt_amount = 3;
 _destroy_on_hit = true;
+_aggressive = false;

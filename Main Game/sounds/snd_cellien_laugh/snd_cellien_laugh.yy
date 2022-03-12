@@ -11,14 +11,14 @@
     "name": "audiogroup_default",
     "path": "audiogroups/audiogroup_default",
   },
-  "soundFile": "snd_text_voice_typer",
-  "duration": 0.26,
+  "soundFile": "snd_cellien_laugh.mp3",
+  "duration": 4.022857,
   "parent": {
     "name": "SFX",
     "path": "folders/Sounds/SFX.yy",
   },
   "resourceVersion": "1.0",
-  "name": "snd_text_voice_typer",
+  "name": "snd_cellien_laugh",
   "tags": [],
   "resourceType": "GMSound",
 }

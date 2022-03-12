@@ -29,6 +29,9 @@ for (var i = 0; i < 6; i++)
 for (var i = 0; i < 6; i++)
 	DIALOG[5] += Lang_GetString("monster.cellien_small.battle_dialog_collide.1." + string(i)) + "{pause}" + (i == 5 ? "{end}" : "{clear}");
 
+for (var i = 0; i < 1; i++)
+	DIALOG[6] += Lang_GetString("monster.cellien_small.battle_dialog_threaten." + string(i)) + "{pause}" + (i == 0 ? "{end}" : "{clear}");
+
 if (global.event == 1) {
 	image_index = 0;
 	image_speed = 0;
@@ -138,7 +141,18 @@ switch (_phase) {
 			C_Execute(1, variable_instance_set, [object_index, "image_speed", 0]);
 			C_Execute(1, Battle_CreateBubble, [DIALOG[(!_dodged ? 4 : 5)], "{voice 2}{effect -1}", 100, -(self.sprite_height / 2) - 25]);
 			C_WaitUntilDestroy(1, battle_dialog_enemy);
+			C_Execute(2, instance_create_depth, [0, 0, 0, battle_turn_sparkle_circle]);
 			Cutscene_End(2);
+		}
+		break;
+	case 5:
+		if (global._gmu_cutscene) {
+			global.event = -9999;
+			C_Execute(0, variable_instance_set, [object_index, "sprite_index", spr_cellien_monster_laugh_pre]);
+			C_Execute(0, Battle_CreateBubble, [DIALOG[6], "{voice 2}{effect -1}", 100, -(self.sprite_height / 2) - 25]);
+			C_WaitUntilDestroy(0, battle_dialog_enemy);
+			C_PlaySfx(1, snd_cellien_laugh);
+			Cutscene_End(1);
 		}
 		break;
 }

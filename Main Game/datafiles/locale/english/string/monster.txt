@@ -37,3 +37,5 @@
 "monster.cellien_small.battle_dialog_collide.1.3"	"{event 5}You were a great&insister, but now it's&about time it all&came to an end."
 "monster.cellien_small.battle_dialog_collide.1.4"	"{event 1}Sorry for this, but&you actually deserved&it."
 "monster.cellien_small.battle_dialog_collide.1.5"	"{event 6}You really are an&idiot."
+
+"monster.cellien_small.battle_dialog_threaten.0"	"You{w} idiot!"
