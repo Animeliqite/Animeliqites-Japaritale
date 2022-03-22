@@ -11,6 +11,7 @@ battle_soul_red.moveable = false;
 global.event = -9999;
 _show_controls=false;
 _dodged=false;
+_laugh=false;
 _phase=0;
 _hp_max=100;
 _hp=100;

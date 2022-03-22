@@ -27,3 +27,17 @@ idle_speed[3]=0;
 talk_sprite[3]=spr_face_cellien_sad;
 talk_image[3]=1;
 talk_speed[3]=1/2;
+
+idle_sprite[4]=spr_face_cellien_question;
+idle_image[4]=0;
+idle_speed[4]=0;
+talk_sprite[4]=spr_face_cellien_question;
+talk_image[4]=1;
+talk_speed[4]=1/2;
+
+idle_sprite[5]=spr_face_cellien_blink;
+idle_image[5]=0;
+idle_speed[5]=0;
+talk_sprite[5]=spr_face_cellien_blink;
+talk_image[5]=1;
+talk_speed[5]=1/2;
