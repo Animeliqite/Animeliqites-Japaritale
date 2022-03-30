@@ -1,9 +1,12 @@
-"monster.cellien_small.overworld_dialog.0"			"* Avert this rushing&  for the sake of&  yours, fellow FRIEND!"
-"monster.cellien_small.overworld_dialog.1"			"* Hasn't someone informed&  you how dangerous&  it is to be here?"
-"monster.cellien_small.overworld_dialog.2"			"* On such a dreadful,&  yet threatening island&  like this?"
-"monster.cellien_small.overworld_dialog.3"			"* And yet you're all&  by yourself, refusing&  one's offer for advice."
-"monster.cellien_small.overworld_dialog.4"			"* Maneuvers, information,&  braveness... that's what&  you've got to learn!"
-"monster.cellien_small.overworld_dialog.5"			"* Allow me to give you&  the quick ol' rundown&  at this very moment."
+"cutscene.beginning.question.0"					"* In such a place full of&  questions, I see someone&  from a little far."
+"cutscene.beginning.question.1"					"* Now that I've taken a closer&  inspection, I think I've got to&  come closer to it."
+"cutscene.beginning.question.2"					"* Maybe this is a sign of where&  I'll find an answer to my&  questions?"
+
+"monster.cellien_small.overworld_dialog.0"			"* Good day to you, fellow FRIEND!"
+"monster.cellien_small.overworld_dialog.1"			"* You seemed to be craving for&  help, so I came here to loosen&  your problems."
+"monster.cellien_small.overworld_dialog.2"			"* You may not have realized it by&  now, but it's DEAD important."
+"monster.cellien_small.overworld_dialog.3"			"* Maneuvers, information,&  braveness... that's what you've&  got to learn."
+"monster.cellien_small.overworld_dialog.4"			"* Allow me to give you the quick&  ol' rundown at this very&  moment."
 
 "monster.cellien_small.battle_dialog.0"			"{event 2}That SPARKLE of yours&is your essence!&The rarest, yet the&luckiest of one's&features."
 "monster.cellien_small.battle_dialog.1"			"{event 2}More than just any&simple soul, it's&happiness and joy!"
@@ -39,6 +42,6 @@
 
 "monster.cellien_small.battle_dialog_threaten.0"	"You{w} idiot!"
 
-"monster.cellien_small.battle_dialog_aftermath.0"	"YOU THINK THIS IS&FUNNY?!"
-"monster.cellien_small.battle_dialog_aftermath.1"	"{event 1}Yeah keep laughing."
-"monster.cellien_small.battle_dialog_aftermath.2"	"{event 5}You're going to be&the one dying at&the end."
+"monster.cellien_small.battle_dialog_aftermath.0"	"{speed -1}WHY CAN'T I STRAIGHT&UP KILL SOMEONE!?"
+"monster.cellien_small.battle_dialog_aftermath.1"	"{event 8}{speed -1}The whole race of&ours will make you&pay for this."
+"monster.cellien_small.battle_dialog_aftermath.2"	"{speed 4}YOU'LL SEE... ONE DAY!"

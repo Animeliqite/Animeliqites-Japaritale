@@ -18,3 +18,5 @@ _moveable_save=true;
 _moveable_warp=true;
 _moveable_encounter=true;
 _moveable_box=true;
+
+_draw_hat = true;

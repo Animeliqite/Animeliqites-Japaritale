@@ -15,3 +15,7 @@ _laugh=false;
 _phase=0;
 _hp_max=100;
 _hp=100;
+
+_shake = false;
+_shake_x = 1;
+_shake_y = 1;

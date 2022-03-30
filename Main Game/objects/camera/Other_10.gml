@@ -8,6 +8,9 @@ scale_y=1;
 angle=0;
 target=noone;
 
+offset_amount_x=1;
+offset_amount_y=1;
+
 shake_x=0;
 shake_y=0;
 shake_speed_x=0;

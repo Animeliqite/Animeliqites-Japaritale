@@ -32,8 +32,8 @@ for (var i = 0; i < 5; i++)
 for (var i = 0; i < 1; i++)
 	DIALOG[6] += Lang_GetString("monster.cellien_small.battle_dialog_threaten." + string(i)) + "{pause}" + (i == 0 ? "{end}" : "{clear}");
 
-for (var i = 1; i < 3; i++)
-	DIALOG[7] += Lang_GetString("monster.cellien_small.battle_dialog_aftermath." + string(i)) + "{pause}" + (i == 2 ? "{end}" : "{clear}");
+for (var i = 0; i < 2; i++)
+	DIALOG[7] += Lang_GetString("monster.cellien_small.battle_dialog_aftermath." + string(i)) + "{pause}" + (i == 1 ? "{end}" : "{clear}");
 
 if (global.event == 1) {
 	image_index = 0;
@@ -69,6 +69,12 @@ if (global.event == 7) {
 	image_index = 0;
 	image_speed = 0;
 	sprite_index = spr_cellien_monster_shocked;
+}
+if (global.event == 8) {
+	image_index = 0;
+	image_speed = 0;
+	sprite_index = spr_cellien_monster_squished_happy;
+	global.event = -9999;
 }
 if (global.event == 10) {
 	battle_soul_red.moveable = true;
@@ -162,39 +168,37 @@ switch (_phase) {
 		break;
 	case 6:
 		if (global._gmu_cutscene) {
-			if (cutscene._current_order == 3) {
+			/*if (cutscene._current_order == 3) {
 				if (instance_exists(shaker)) {
 					with (shaker) {
 						shake_decrease = 0.25;
 					}
 				}
-			}
+			}*/
 			_laugh = false;
 			C_Execute(0, variable_instance_set, [object_index, "sprite_index", spr_cellien_monster_squished]);
-			C_Execute(0, Object_Shake, [4, "x", object_index, 1, true]);
-			C_Execute(0, Object_Shake, [4, "y", object_index, 1, true]);
+			C_Execute(0, Object_Shake, [4, "x", object_index, 0, true]);
+			C_Execute(0, Object_Shake, [4, "y", object_index, 0, true]);
 			C_Execute(0, Camera_Shake, [4, 4, 1, 1, true, true]);
 			C_PlaySfx(0, snd_damage, 1, 0.5);
 			C_Wait(0, 60);
-			C_Execute(1, variable_instance_set, [object_index, "sprite_index", spr_cellien_monster_angry]);
-			C_PlaySfx(1, snd_bluh, 1, 0.5);
-			C_CreateAnim(1, object_index, "image_xscale", ANIM_TWEEN.ELASTIC, ANIM_EASE.OUT, 0.92, 1, room_speed, false);
-			C_CreateAnim(1, object_index, "image_yscale", ANIM_TWEEN.ELASTIC, ANIM_EASE.OUT, 1.07, 1, room_speed, false);
-			C_Wait(1, 60);
-			C_Execute(2, Object_Shake, [1, "x", object_index, 0, true, 0]);
-			C_Execute(2, Object_Shake, [1, "y", object_index, 0, true, 0]);
-			C_Execute(2, Battle_CreateBubble, [Lang_GetString("monster.cellien_small.battle_dialog_aftermath.0"), "{voice 3}{effect -1}", 100, -(self.sprite_height / 2) - 25]);
-			C_WaitUntilDestroy(2, battle_dialog_enemy);
-			C_Execute(3, variable_instance_set, [object_index, "sprite_index", spr_cellien_monster_blink]);
-			C_Wait(3, 30);
-			C_Execute(4, Battle_CreateBubble, [DIALOG[7], "{voice 2}{effect -1}", 100, -(self.sprite_height / 2) - 25]);
-			C_WaitUntilDestroy(4, battle_dialog_enemy);
-			C_Execute(5, BGM_Play, [0, bgm_cymbal, false]);
-			C_FadeFader(5, -1, 1, 160, 0, c_white);
-			C_Wait(5, 160);
-			C_Execute(6, room_goto, [room_savannah_0]);
-			C_FadeFader(6, -1, 0, 30, 0, c_white);
-			Cutscene_End(6);
+			C_Execute(1, variable_instance_set, [object_index, "_shake", true]);
+			C_Execute(1, variable_instance_set, [object_index, "_shake_x", 1]);
+			C_Execute(1, variable_instance_set, [object_index, "_shake_y", 1]);
+			C_Execute(1, Battle_CreateBubble, [DIALOG[7], "{voice 3}{effect 0}", 100, -(self.sprite_height / 2) - 25]);
+			C_WaitUntilDestroy(1, battle_dialog_enemy);
+			//C_Execute(2, BGM_Play, [0, bgm_cymbal, false]);
+			C_Execute(2, variable_global_set, ["event", -9999]);
+			C_Execute(2, variable_instance_set, [object_index, "_shake_x", 2]);
+			C_Execute(2, variable_instance_set, [object_index, "_shake_y", 2]);
+			C_CreateAnim(2, object_index, "y", ANIM_TWEEN.SINE, ANIM_EASE.OUT, y, -25, room_speed / 6, true, 0, ANIM_MODE.PINGPONG);
+			C_Execute(2, Battle_CreateBubble, [Lang_GetString("monster.cellien_small.battle_dialog_aftermath.2") + "{sleep 9999}", "{voice 3}{effect 0}{skippable false}", 100, -(self.sprite_height / 2) - 25]);
+			C_FadeFader(2, -1, 1, 160, 0, c_white);
+			C_Wait(2, 160);
+			C_Execute(3, room_goto, [room_savannah_0]);
+			C_FadeFader(3, -1, 0, 30, 0, c_white);
+			Cutscene_End(3);
+			
 		}
 		break;
 }
