@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"spr_intro_panel_last","path":"sprites/spr_intro_panel_last/spr_intro_panel_last.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "spr_intro_panel_last",
     "tags": [],
     "resourceType": "GMSequence",

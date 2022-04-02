@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"spr_cellien_monster_happy","path":"sprites/spr_cellien_monster_happy/spr_cellien_monster_happy.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "spr_cellien_monster_happy",
     "tags": [],
     "resourceType": "GMSequence",

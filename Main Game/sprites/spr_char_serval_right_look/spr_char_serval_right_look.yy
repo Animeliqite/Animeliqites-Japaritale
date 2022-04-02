@@ -71,7 +71,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"spr_char_serval_right_look","path":"sprites/spr_char_serval_right_look/spr_char_serval_right_look.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "spr_char_serval_right_look",
     "tags": [],
     "resourceType": "GMSequence",

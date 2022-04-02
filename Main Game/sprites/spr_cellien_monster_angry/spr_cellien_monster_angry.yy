@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"spr_cellien_monster_angry","path":"sprites/spr_cellien_monster_angry/spr_cellien_monster_angry.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "spr_cellien_monster_angry",
     "tags": [],
     "resourceType": "GMSequence",

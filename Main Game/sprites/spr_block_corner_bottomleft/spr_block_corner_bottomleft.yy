@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"spr_block_corner_bottomleft","path":"sprites/spr_block_corner_bottomleft/spr_block_corner_bottomleft.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "spr_block_corner_bottomleft",
     "tags": [],
     "resourceType": "GMSequence",

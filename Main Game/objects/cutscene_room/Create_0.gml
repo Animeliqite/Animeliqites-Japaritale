@@ -1,6 +1,5 @@
 Cutscene_Begin();
-partoffset_x=0;
-partoffset_y=0;
+_merge_amount_0 = 1;
 phase = 0;
 
 switch(room){

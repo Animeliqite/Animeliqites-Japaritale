@@ -12,7 +12,7 @@
     "path": "audiogroups/audiogroup_default",
   },
   "soundFile": "bgm_cellien_small.ogg",
-  "duration": 34.31696,
+  "duration": 40.04168,
   "parent": {
     "name": "BGM",
     "path": "folders/Sounds/BGM.yy",

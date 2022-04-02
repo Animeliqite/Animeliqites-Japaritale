@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"spr_cellien_monster_squished","path":"sprites/spr_cellien_monster_squished/spr_cellien_monster_squished.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "spr_cellien_monster_squished",
     "tags": [],
     "resourceType": "GMSequence",

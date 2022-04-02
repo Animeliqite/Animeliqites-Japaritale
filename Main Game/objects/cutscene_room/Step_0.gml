@@ -103,6 +103,26 @@ switch(room){
 		break;
 	case room_beginning_void:
 		if (phase == 0) {
+			char_cellien_small.image_blend = merge_color(c_white, c_black, _merge_amount_0);
+			if (global.event == 1) {
+				char_cellien_small.sprite_index = spr_char_cellien;
+			}
+			if (global.event == 2) {
+				char_cellien_small.sprite_index = spr_char_cellien_shocked;
+			}
+			if (global.event == 3) {
+				char_cellien_small.sprite_index = spr_char_cellien_happy;
+			}
+			if (global.event == 4) {
+				char_cellien_small.sprite_index = spr_char_cellien_sad;
+			}
+			if (global.event == 5) {
+				char_cellien_small.sprite_index = spr_char_cellien_question;
+			}
+			if (global.event == 6) {
+				char_cellien_small.sprite_index = spr_char_cellien_blink;
+			}
+			
 			if (cutscene._current_order < 4) char_player.sprite_index = spr_char_kaban_lie;
 			/*if (cutscene._current_order >= 14 && cutscene._current_order < 50) {
 				char_player.move_speed[DIR.UP] = 0;
@@ -119,15 +139,15 @@ switch(room){
 			C_PlaySfx(2, snd_bump);
 			C_Execute(2, Object_Shake, [5, "x", char_player, 0, true]);
 			C_Execute(2, Object_Shake, [5, "y", char_player, 0, true]);
-			C_Wait(2, 10);
+			C_Wait(2, 5);
 			C_PlaySfx(3, snd_bump);
 			C_Execute(3, Object_Shake, [5, "x", char_player, 0, true]);
 			C_Execute(3, Object_Shake, [5, "y", char_player, 0, true]);
-			C_Wait(3, 10);
+			C_Wait(3, 5);
 			C_PlaySfx(4, snd_bump);
 			C_Execute(4, Object_Shake, [5, "x", char_player, 0, true]);
 			C_Execute(4, Object_Shake, [5, "y", char_player, 0, true]);
-			C_Wait(4, 30);
+			C_Wait(4, 10);
 			C_PlaySfx(5, snd_wing);
 			C_Execute(5, variable_instance_set, [char_player, "sprite_index", spr_char_kaban_down]);
 			C_Execute(5, Object_Shake, [5, "x", char_player, 0, true]);
@@ -147,12 +167,12 @@ switch(room){
 			C_Wait(10, 30);
 			C_Execute(11, variable_instance_set, [char_player, "dir", DIR.UP]);
 			C_Wait(11, 30);
-			C_Execute(12, instance_create_depth, [char_player.x, char_player.y - char_player.sprite_height - 5, -9999, exclamation]);
+			C_Execute(12, instance_create_depth, [char_player.x - 3, char_player.y - char_player.sprite_height - 3, -9999, exclamation]);
 			C_Wait(12, 30);
 			C_MoveChar(13, char_player, char_player.x, 280, false, room_speed * 2);
 			C_Wait(13, 75);
 			C_Execute(14, variable_instance_set, [camera, "target", noone]);
-			C_MoveChar(14, camera, char_cellien_small.x - (camera.width / camera.scale_x / 2), char_cellien_small.y - (camera.height / camera.scale_y / 2), false, room_speed * 2);
+			C_MoveChar(14, camera, char_player.x - (camera.width / camera.scale_x / 2), char_cellien_small.y - (camera.height / camera.scale_y / 2), false, room_speed * 2);
 			C_Wait(14, 75);
 			C_Execute(15, Dialog_Add_Ext, [Lang_GetString("cutscene.beginning.question.0")]);
 			C_Execute(15, Dialog_Add_Ext, [Lang_GetString("cutscene.beginning.question.1")]);
@@ -163,14 +183,28 @@ switch(room){
 			C_Execute(17, Dialog_Add_Ext, [Lang_GetString("cutscene.beginning.question.2")]);
 			C_Execute(17, Dialog_Start);
 			C_WaitUntilDestroy(17, ui_dialog);
-			C_MoveChar(18, camera, char_cellien_small.x - (camera.width / camera.scale_x / 2), char_cellien_small.y - (camera.height / camera.scale_y / 2), false, room_speed * 2);
-			C_MoveChar(18, char_player, char_cellien_small.x, char_cellien_small.y + 60, false, room_speed * 2);
+			C_MoveChar(18, camera, char_player.x - (camera.width / camera.scale_x / 2), char_cellien_small.y - (camera.height / camera.scale_y / 2), false, room_speed * 2);
+			C_MoveChar(18, char_player, char_player.x, char_cellien_small.y + 60, false, room_speed * 2);
 			C_Wait(18, 75);
 			C_Execute(19, BGM_SetVolume, [0, 0, room_speed]);
 			C_Wait(19, 30);
+			C_PlaySfx(20, snd_appear);
+			C_CreateAnim(20, id, "_merge_amount_0", 0, 0, _merge_amount_0, 0, room_speed / 2, false);
 			C_Execute(20, BGM_Stop, [0]);
-			C_Wait(20, 15);
-			
+			C_Wait(20, 60);
+			C_Execute(21, BGM_Play, [0, bgm_cellien_small]);
+			C_Execute(21, BGM_SetVolume, [0, 1, 0]);
+			C_Execute(21, Dialog_Add_Ext, [Lang_GetString("monster.cellien_small.overworld_dialog.0"), "{event 1}{voice 2}{face 1}{face_emotion 0}"]);
+			C_Execute(21, Dialog_Add_Ext, [Lang_GetString("monster.cellien_small.overworld_dialog.1"), "{event 5}{voice 2}{face 1}{face_emotion 4}"]);
+			C_Execute(21, Dialog_Add_Ext, [Lang_GetString("monster.cellien_small.overworld_dialog.2"), "{event 6}{voice 2}{face 1}{face_emotion 5}"]);
+			C_Execute(21, Dialog_Add_Ext, [Lang_GetString("monster.cellien_small.overworld_dialog.3"), "{event 3}{voice 2}{face 1}{face_emotion 2}"]);
+			C_Execute(21, Dialog_Add_Ext, [Lang_GetString("monster.cellien_small.overworld_dialog.4"), "{event 5}{voice 2}{face 1}{face_emotion 4}"]);
+			C_Execute(21, Dialog_Start);
+			C_WaitUntilDestroy(21, ui_dialog);
+			C_Execute(22, Encounter_Start, [3, true, false]);
+			C_Execute(22, part_system_destroy, [particle.partsystem]);
+			C_Wait(22, 15);
+			Cutscene_End(23);
 			//C_CreateAnim(1, marker, "scale_x", 0, 0, 4, 2, room_speed * 1.5, false);
 			//C_Execute(7, variable_instance_set, [object_index, "phase", 1]);
 			//Cutscene_End(7);

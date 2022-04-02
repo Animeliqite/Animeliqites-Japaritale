@@ -63,7 +63,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"spr_cellien_monster_laugh_eye","path":"sprites/spr_cellien_monster_laugh_eye/spr_cellien_monster_laugh_eye.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "spr_cellien_monster_laugh_eye",
     "tags": [],
     "resourceType": "GMSequence",

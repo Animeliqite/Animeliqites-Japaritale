@@ -71,7 +71,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"spr_char_kaban_down","path":"sprites/spr_char_kaban_down/spr_char_kaban_down.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "spr_char_kaban_down",
     "tags": [],
     "resourceType": "GMSequence",

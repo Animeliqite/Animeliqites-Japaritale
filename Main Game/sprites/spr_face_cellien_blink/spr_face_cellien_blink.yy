@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"spr_face_cellien_blink","path":"sprites/spr_face_cellien_blink/spr_face_cellien_blink.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "spr_face_cellien_blink",
     "tags": [],
     "resourceType": "GMSequence",

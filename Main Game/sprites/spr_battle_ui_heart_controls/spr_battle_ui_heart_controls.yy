@@ -63,7 +63,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"spr_battle_ui_heart_controls","path":"sprites/spr_battle_ui_heart_controls/spr_battle_ui_heart_controls.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "spr_battle_ui_heart_controls",
     "tags": [],
     "resourceType": "GMSequence",

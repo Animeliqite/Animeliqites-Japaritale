@@ -71,7 +71,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"spr_char_kaban_hat","path":"sprites/spr_char_kaban_hat/spr_char_kaban_hat.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "spr_char_kaban_hat",
     "tags": [],
     "resourceType": "GMSequence",

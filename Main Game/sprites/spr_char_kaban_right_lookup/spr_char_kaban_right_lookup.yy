@@ -71,7 +71,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"spr_char_kaban_right_lookup","path":"sprites/spr_char_kaban_right_lookup/spr_char_kaban_right_lookup.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "spr_char_kaban_right_lookup",
     "tags": [],
     "resourceType": "GMSequence",

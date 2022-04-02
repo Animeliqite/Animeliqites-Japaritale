@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"spr_cellien_monster_laugh_eye_pupil","path":"sprites/spr_cellien_monster_laugh_eye_pupil/spr_cellien_monster_laugh_eye_pupil.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "spr_cellien_monster_laugh_eye_pupil",
     "tags": [],
     "resourceType": "GMSequence",

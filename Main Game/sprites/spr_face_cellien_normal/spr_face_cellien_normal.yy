@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"spr_face_cellien_normal","path":"sprites/spr_face_cellien_normal/spr_face_cellien_normal.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "spr_face_cellien_normal",
     "tags": [],
     "resourceType": "GMSequence",

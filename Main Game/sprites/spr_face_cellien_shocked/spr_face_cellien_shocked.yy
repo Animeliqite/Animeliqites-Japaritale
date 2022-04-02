@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"spr_face_cellien_shocked","path":"sprites/spr_face_cellien_shocked/spr_face_cellien_shocked.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "spr_face_cellien_shocked",
     "tags": [],
     "resourceType": "GMSequence",

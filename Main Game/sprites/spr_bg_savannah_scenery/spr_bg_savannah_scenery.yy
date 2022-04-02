@@ -71,7 +71,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"spr_bg_savannah_scenery","path":"sprites/spr_bg_savannah_scenery/spr_bg_savannah_scenery.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "spr_bg_savannah_scenery",
     "tags": [],
     "resourceType": "GMSequence",

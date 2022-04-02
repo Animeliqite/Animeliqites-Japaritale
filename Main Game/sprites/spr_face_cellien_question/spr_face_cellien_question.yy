@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"spr_face_cellien_question","path":"sprites/spr_face_cellien_question/spr_face_cellien_question.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "spr_face_cellien_question",
     "tags": [],
     "resourceType": "GMSequence",

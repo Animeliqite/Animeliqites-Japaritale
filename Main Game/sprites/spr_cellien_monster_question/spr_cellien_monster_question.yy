@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"spr_cellien_monster_question","path":"sprites/spr_cellien_monster_question/spr_cellien_monster_question.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "spr_cellien_monster_question",
     "tags": [],
     "resourceType": "GMSequence",

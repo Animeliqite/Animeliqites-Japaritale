@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"spr_bg_savannah","path":"sprites/spr_bg_savannah/spr_bg_savannah.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "spr_bg_savannah",
     "tags": [],
     "resourceType": "GMSequence",

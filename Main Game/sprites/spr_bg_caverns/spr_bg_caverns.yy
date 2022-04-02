@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"spr_bg_caverns","path":"sprites/spr_bg_caverns/spr_bg_caverns.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "spr_bg_caverns",
     "tags": [],
     "resourceType": "GMSequence",

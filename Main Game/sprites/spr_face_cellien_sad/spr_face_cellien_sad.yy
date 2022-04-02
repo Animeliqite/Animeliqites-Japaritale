@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"spr_face_cellien_sad","path":"sprites/spr_face_cellien_sad/spr_face_cellien_sad.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "spr_face_cellien_sad",
     "tags": [],
     "resourceType": "GMSequence",

@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"spr_cellien_monster_shocked","path":"sprites/spr_cellien_monster_shocked/spr_cellien_monster_shocked.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "spr_cellien_monster_shocked",
     "tags": [],
     "resourceType": "GMSequence",

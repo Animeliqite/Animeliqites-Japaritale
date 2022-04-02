@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"spr_face_cellien_happy","path":"sprites/spr_face_cellien_happy/spr_face_cellien_happy.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "spr_face_cellien_happy",
     "tags": [],
     "resourceType": "GMSequence",

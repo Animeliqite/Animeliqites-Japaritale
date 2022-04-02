@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"spr_cellien_monster_blink","path":"sprites/spr_cellien_monster_blink/spr_cellien_monster_blink.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "spr_cellien_monster_blink",
     "tags": [],
     "resourceType": "GMSequence",

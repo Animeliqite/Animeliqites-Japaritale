@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"spr_battle_soul_red_small","path":"sprites/spr_battle_soul_red_small/spr_battle_soul_red_small.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "spr_battle_soul_red_small",
     "tags": [],
     "resourceType": "GMSequence",

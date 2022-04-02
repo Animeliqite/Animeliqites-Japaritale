@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"spr_cellien_monster_normal","path":"sprites/spr_cellien_monster_normal/spr_cellien_monster_normal.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "spr_cellien_monster_normal",
     "tags": [],
     "resourceType": "GMSequence",
