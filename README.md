@@ -4,8 +4,8 @@ Welcome to the repository of Animeliqite's Japaritale, a place for people to con
 ### DEMO Roadmap
 The entire game including the demo shares the same story from the [animation series](https://youtube.com/playlist?list=PL8GyvxyHYfMWEzX0qVMOTKl24Ij9TCLJO). 
 * [ ] Battles
-  * [ ] Cellien Tutorial Battle
-    * [ ] Programming
+  * [x] Cellien Tutorial Battle
+    * [x] Programming
     * [x] Sprites
     * [x] Music
   * [ ] Zebra-Chan Battle
@@ -17,10 +17,10 @@ The entire game including the demo shares the same story from the [animation ser
     * [ ] Sprites
     * [ ] Music
 * [ ] Areas
-  * [ ] The Beginning
+  * [x] The Beginning
     * [x] Programming
     * [x] Sprites
-    * [ ] Music
+    * [x] Music
   * [ ] Savannah Area
     * [ ] Programming
     * [ ] Sprites
