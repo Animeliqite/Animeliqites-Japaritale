@@ -1,7 +1,7 @@
 {
   "spriteId": {
-    "name": "spr_default",
-    "path": "sprites/spr_default/spr_default.yy",
+    "name": "spr_char_serval_down",
+    "path": "sprites/spr_char_serval_down/spr_char_serval_down.yy",
   },
   "solid": false,
   "visible": true,

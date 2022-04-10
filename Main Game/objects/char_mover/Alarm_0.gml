@@ -1,1 +1,1 @@
-spd = round(point_distance(_moving_object.x, _moving_object.y, _x_dest, _y_dest) / _seconds);
+spd = point_distance(_moving_object.x, _moving_object.y, _x_dest, _y_dest) / _seconds;

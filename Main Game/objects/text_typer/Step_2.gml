@@ -115,13 +115,13 @@ if(_char_proc<string_length(text)+1){
 if(instance_exists(_face)){
 	_face.gui=_gui;
 	_face.depth=depth;
-	_face.talking=(!_paused&&_char_proc<=string_length(text));
+	_face.talking=(!_paused&&_char_proc<string_length(text));
 }
 
 if(_face_linked!=-1){
 	if(instance_exists(face)){
 		var fid=_face_linked;
-		var ftalking=(!_paused&&_char_proc<=string_length(text));
+		var ftalking=(!_paused&&_char_proc<string_length(text));
 		with(face){
 			if(face_id==fid){
 				talking=ftalking;
@@ -133,7 +133,7 @@ if(_face_linked!=-1){
 if(_char_linked!=-1){
 	if(instance_exists(char)){
 		var cid=_char_linked;
-		var ctalking=(!_paused&&_char_proc<=string_length(text));
+		var ctalking=(!_paused&&_char_proc<string_length(text));
 		with(char){
 			if(char_id==cid){
 				talking=ctalking;

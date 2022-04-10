@@ -16,4 +16,10 @@ switch(room){
 		C_Execute(0, variable_instance_set, [char_player, "_draw_hat", false]);
 		char_player.sprite_index = spr_char_kaban_lie;
 		break;
+	case room_savannah_0:
+		C_Execute(0, variable_instance_set, [camera, "target", noone]);
+		C_Execute(0, variable_instance_set, [char_player, "sprite_index", spr_char_kaban_sleep]);
+		C_Execute(0, variable_instance_set, [char_player, "_draw_hat", false]);
+		char_player.sprite_index = spr_char_kaban_sleep;
+		break;
 }

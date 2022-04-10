@@ -12,7 +12,7 @@
     "path": "audiogroups/audiogroup_default",
   },
   "soundFile": "snd_gb_charge",
-  "duration": 0.0,
+  "duration": 1.057959,
   "parent": {
     "name": "Sounds",
     "path": "folders/Sounds.yy",

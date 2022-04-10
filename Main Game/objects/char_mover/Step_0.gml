@@ -14,6 +14,7 @@ with (_moving_object) {
 		dir = Char_ConvertDirection(id);
 	}
 	else {
+		_inst._on_end();
 		image_speed = 0;
 		image_index = 0;
 		moveable = true;

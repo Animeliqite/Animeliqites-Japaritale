@@ -49,6 +49,8 @@ _group_voice[0,0]=snd_text_voice_default;
 _group_voice[1,0]=snd_text_voice_typer;
 _group_voice[2,0]=snd_text_voice_cellien_small;
 _group_voice[3,0]=snd_text_voice_cellien_small_angry;
+_group_voice[4,0]=snd_text_voice_serval;
 
 _group_face[0]=face;
 _group_face[1]=face_cellien;
+_group_face[2]=face_serval;
