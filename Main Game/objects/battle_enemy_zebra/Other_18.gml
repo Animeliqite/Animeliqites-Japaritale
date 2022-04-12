@@ -1,9 +1,16 @@
 ///@desc Turn Preparation Start
 
 //Prepare the attack
-instance_create_depth(0,0,0,battle_turn_simple);
+var rand = choose(battle_turn_stripe, battle_turn_leaf);
+instance_create_depth(0,0,0,rand);
 
 //Say something
-var inst=instance_create_depth(x+100,y-150,0,battle_dialog_enemy);
-inst.text="Test Dialogue";
-inst.template=0;
+if(_steps_done==1){
+	Battle_CreateBubble("So, uh...&What's your opinion&on my stripes?","{speed 2}", (sprite_width / 1.75) * image_xscale, -((sprite_height / 2) * image_yscale));
+}
+else if(_steps_done==2){
+	Battle_CreateBubble("Haha...&I can't even take&a single patting!","{speed 2}", (sprite_width / 1.75) * image_xscale, -((sprite_height / 2) * image_yscale));
+}
+else if(_steps_done==3){
+	Battle_CreateBubble("So you like my stripes...","{speed 2}", (sprite_width / 1.75) * image_xscale, -((sprite_height / 2) * image_yscale));
+}

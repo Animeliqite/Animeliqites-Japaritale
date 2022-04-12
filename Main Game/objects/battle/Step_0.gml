@@ -29,7 +29,9 @@ if(_state==BATTLE_STATE.MENU){
 			audio_play_sound(snd_menu_confirm,0,false);
 			switch(_menu_choice_button){
 				case 0:
-					Battle_SetMenu(BATTLE_MENU.FIGHT_TARGET);
+					if(_menu_fight_enabled)
+						Battle_SetMenu(BATTLE_MENU.FIGHT_TARGET);
+					else audio_stop_sound(snd_menu_confirm);
 					break;
 				case 1:
 					Battle_SetMenu(BATTLE_MENU.ACT_TARGET);

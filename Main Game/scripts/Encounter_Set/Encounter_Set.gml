@@ -9,6 +9,7 @@
 ///@arg quick*
 ///@arg soul_x*
 ///@arg soul_y*
+///@arg fight_enabled*
 function Encounter_Set() {
 	var ID=argument[0];
 	var ENEMY_0=argument[1];
@@ -21,6 +22,7 @@ function Encounter_Set() {
 	var QUICK=false;
 	var SOUL_X=48;
 	var SOUL_Y=454;
+	var FIGHT_ENABLED=true;
 	if(argument_count>=6){
 		BGM=argument[5];
 	}
@@ -38,6 +40,9 @@ function Encounter_Set() {
 	}
 	if(argument_count>=11){
 		SOUL_Y=argument[10];
+	}
+	if(argument_count>=12){
+		FIGHT_ENABLED=argument[11];
 	}
 
 
@@ -61,6 +66,7 @@ function Encounter_Set() {
 		ds_map_add(map_e,"quick",QUICK);
 		ds_map_add(map_e,"soul_x",SOUL_X);
 		ds_map_add(map_e,"soul_y",SOUL_Y);
+		ds_map_add(map_e,"fight",FIGHT_ENABLED);
 		return true;
 	}else{
 		return false;

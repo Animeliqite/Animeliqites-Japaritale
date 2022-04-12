@@ -11,5 +11,5 @@ function Encounter_Custom() {
 	Encounter_Set(3,-1,battle_enemy_cellien_small,-1,"* Programming Torture Text",-1, true, false, false, 320, 320);
 	
 	//Zebra-chan
-	Encounter_Set(4,-1,battle_enemy_zebra,-1,"* Here comes Zebra-chan!", bgm_zebra);
+	Encounter_Set(4,-1,battle_enemy_zebra,-1,"* Here comes Zebra-chan!", bgm_zebra, false, true, false, 48, 454, false);
 }
