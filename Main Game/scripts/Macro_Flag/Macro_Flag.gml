@@ -38,7 +38,7 @@ function Macro_Flag() {
 		TIME,
 		BOX,
 		BOX_END=FLAG_STATIC.BOX+20-1,
-		SCENE_001=false
+		SCENE_001
 	};
 #endregion
 

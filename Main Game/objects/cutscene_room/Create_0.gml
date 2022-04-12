@@ -17,9 +17,22 @@ switch(room){
 		char_player.sprite_index = spr_char_kaban_lie;
 		break;
 	case room_savannah_0:
-		C_Execute(0, variable_instance_set, [camera, "target", noone]);
-		C_Execute(0, variable_instance_set, [char_player, "sprite_index", spr_char_kaban_sleep]);
-		C_Execute(0, variable_instance_set, [char_player, "_draw_hat", false]);
-		char_player.sprite_index = spr_char_kaban_sleep;
+		if (Flag_Get(FLAG_TYPE.STATIC, FLAG_STATIC.SCENE_001, false) == false) {
+			C_Execute(0, variable_instance_set, [camera, "target", noone]);
+			C_Execute(0, variable_instance_set, [char_player, "sprite_index", spr_char_kaban_sleep]);
+			C_Execute(0, variable_instance_set, [char_player, "_draw_hat", false]);
+			char_player.sprite_index = spr_char_kaban_sleep;
+		}
+		else {
+			BGM_Stop(0);
+			BGM_Play(0, bgm_birdnoise);
+		}
+		break;
+	case room_savannah_1:
+		char_player.x = -40;
+		char_player.y = 230;
+		instance_deactivate_object(hint_landmark);
+		instance_deactivate_object(char_forcefield);
+		instance_deactivate_object(trigger_warp);
 		break;
 }

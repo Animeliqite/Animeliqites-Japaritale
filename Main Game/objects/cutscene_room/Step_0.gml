@@ -232,7 +232,7 @@ switch(room){
 			C_Wait(4, 30);
 			C_Execute(5, instance_create_depth, [char_player.x, char_player.y - char_player.sprite_width - 15, 0, exclamation]);
 			C_Execute(5, variable_instance_set, [char_player, "dir", DIR.RIGHT]);
-			C_Execute(5, Dialog_Add_Ext, ["* Oh dear, I'm glad&  you’re awake!", "{voice 4}{face 2}{face_emotion 2}"]);
+			C_Execute(5, Dialog_Add_Ext, ["* Oh dear, I'm glad&  you’re awake!", "{char_link 2}{voice 4}{face 2}{face_emotion 2}"]);
 			C_Execute(5, Dialog_Start, [true]);
 			C_WaitUntilDestroy(5, ui_dialog);
 			C_Execute(6, variable_instance_set, [char_player, "dir", DIR.DOWN]);
@@ -241,11 +241,11 @@ switch(room){
 			C_Execute(7, BGM_Stop, [0]);
 			C_Execute(7, BGM_Play, [0, bgm_serval]);
 			C_Execute(7, variable_instance_set, [char_serval, "dir", DIR.UP]);
-			C_Execute(7, Dialog_Add_Ext, ["* It was very startling&  for me to see you like&  this!", "{voice 4}{face 2}{face_emotion 3}"]);
-			C_Execute(7, Dialog_Add_Ext, ["* You had me worried even&  more when you wouldn't&  even move an inch!", "{voice 4}{face 2}{face_emotion 1}"]);
-			C_Execute(7, Dialog_Add_Ext, ["* I would like to ask, are&  you feeling better now?", "{voice 4}{face 2}{face_emotion 0}"]);
-			C_Execute(7, Dialog_Add_Ext, ["* Ameowzing!&* I knew I could be a&  heroine for once!", "{voice 4}{face 2}{face_emotion 2}"]);
-			C_Execute(7, Dialog_Add_Ext, ["* Say, do you know what&  type of a FRIEND you&  are?", "{voice 4}{face 2}{face_emotion 4}"]);
+			C_Execute(7, Dialog_Add_Ext, ["* It was very startling&  for me to see you like&  this!", "{char_link 2}{voice 4}{face 2}{face_emotion 3}"]);
+			C_Execute(7, Dialog_Add_Ext, ["* You had me worried even&  more when you wouldn't&  even move an inch!", "{char_link 2}{voice 4}{face 2}{face_emotion 1}"]);
+			C_Execute(7, Dialog_Add_Ext, ["* I would like to ask, are&  you feeling better now?", "{char_link 2}{voice 4}{face 2}{face_emotion 0}"]);
+			C_Execute(7, Dialog_Add_Ext, ["* Ameowzing!&* I knew I could be a&  heroine for once!", "{char_link 2}{voice 4}{face 2}{face_emotion 2}"]);
+			C_Execute(7, Dialog_Add_Ext, ["* Say, do you know what&  type of a FRIEND you&  are?", "{char_link 2}{voice 4}{face 2}{face_emotion 4}"]);
 			C_Execute(7, Dialog_Start, [true]);
 			C_WaitUntilDestroy(7, ui_dialog);
 			C_Execute(8, variable_instance_set, [char_player, "dir", DIR.UP]);
@@ -287,10 +287,10 @@ switch(room){
 			C_CreateAnim(13, char_serval, "x", 0, 0, char_serval.x, 40, 30, true);
 			C_CreateAnim(13, char_serval, "image_index", 0, 0, 0, 8, 30, false);
 			C_Wait(13, 30);
-			C_Execute(14, Dialog_Add_Ext, ["* Japari Library offers&  a lot of information&  to newcomers like you!", "{voice 4}{face 2}{face_emotion 0}"]);
-			C_Execute(14, Dialog_Add_Ext, ["* I mean, there must be&  some information on&  who you are!", "{voice 4}{face 2}{face_emotion 5}"]);
-			C_Execute(14, Dialog_Add_Ext, ["* Although I can only&  guide you throughout&  this very place, but...", "{voice 4}{face 2}{face_emotion 3}"]);
-			C_Execute(14, Dialog_Add_Ext, ["* Come on, if you will,&  together let's march&  forward!", "{voice 4}{face 2}{face_emotion 0}"]);
+			C_Execute(14, Dialog_Add_Ext, ["* Japari Library offers&  a lot of information&  to newcomers like you!", "{char_link 2}{voice 4}{face 2}{face_emotion 0}"]);
+			C_Execute(14, Dialog_Add_Ext, ["* I mean, there must be&  some information on&  who you are!", "{char_link 2}{voice 4}{face 2}{face_emotion 5}"]);
+			C_Execute(14, Dialog_Add_Ext, ["* Although I can only&  guide you throughout&  this very place, but...", "{char_link 2}{voice 4}{face 2}{face_emotion 3}"]);
+			C_Execute(14, Dialog_Add_Ext, ["* Come on, if you will,&  together let's march&  forward!", "{char_link 2}{voice 4}{face 2}{face_emotion 0}"]);
 			C_Execute(14, Dialog_Start, [true]);
 			C_WaitUntilDestroy(14, ui_dialog);
 			C_MoveChar(15, char_serval, 420, 260, false, 60);
@@ -301,6 +301,68 @@ switch(room){
 			C_Execute(17, variable_instance_set, [camera, "target", char_player]);
 			C_Execute(17, Flag_Set, [FLAG_TYPE.STATIC, FLAG_STATIC.SCENE_001, true]);
 			Cutscene_End(17);
+		}
+		break;
+	case room_savannah_1:
+		if (phase == 0) {
+			C_Wait(0, 1);
+			C_MoveChar(1, char_player, 40, 230, false, 30);
+			C_Wait(1, 29);
+			C_Execute(2, variable_instance_set, [char_player, "dir", DIR.UP]);
+			C_Wait(2, 30);
+			C_Execute(3, instance_create_depth, [char_serval.x, char_serval.y - char_serval.sprite_height - 5, 0, exclamation]);
+			C_Execute(3, variable_instance_set, [char_serval, "dir", DIR.DOWN]);
+			C_Execute(3, variable_instance_set, [char_player, "dir", DIR.UP]);
+			C_Execute(3, Dialog_Add_Ext, ["* Hey look!&* Over there!", "{voice 4}{face 2}{face_emotion 0}"]);
+			C_Execute(3, Dialog_Start, [true]);
+			C_WaitUntilDestroy(3, ui_dialog);
+			C_Execute(4, variable_instance_set, [char_player, "dir", DIR.RIGHT]);
+			C_Execute(4, variable_instance_set, [char_serval, "dir", DIR.RIGHT]);
+			C_Execute(4, variable_instance_set, [camera, "target", noone]);
+			C_MoveChar(4, camera, 330 - (camera.width / camera.scale_x / 2), char_player.y - (camera.width / camera.scale_x / 2), false, 60);
+			C_Wait(4, 60);
+			C_Wait(5, 30);
+			C_MoveChar(6, camera, max(0, char_player.x - (camera.width / camera.scale_x / 2)), char_player.y - (camera.width / camera.scale_x / 2), false, 60);
+			C_Wait(6, 90);
+			C_Execute(7, variable_instance_set, [camera, "target", char_player]);
+			C_Execute(7, variable_instance_set, [char_player, "dir", DIR.UP]);
+			C_Execute(7, variable_instance_set, [char_serval, "dir", DIR.DOWN]);
+			C_Execute(7, Dialog_Add_Ext, ["* It appears I forgot&  to introduce you to&  the folk around here.", "{char_link 2}{voice 4}{face 2}{face_emotion 0}"]);
+			C_Execute(7, Dialog_Add_Ext, ["* And Zebra-chan is an&  example you've just&  seen over that spot.", "{char_link 2}{voice 4}{face 2}{face_emotion 0}"]);
+			C_Execute(7, Dialog_Add_Ext, ["* Though don't worry,&  as all the Friends&  here are harmless.", "{char_link 2}{voice 4}{face 2}{face_emotion 0}"]);
+			C_Execute(7, Dialog_Start, [true]);
+			C_WaitUntilDestroy(7, ui_dialog);
+			C_Execute(8, variable_instance_set, [char_serval, "dir", DIR.RIGHT]);
+			C_Wait(8, 30);
+			C_Execute(9, variable_instance_set, [char_serval, "dir", DIR.DOWN]);
+			C_Execute(9, Dialog_Add_Ext, ["* Why don't you have&  a little conversation&  with her?", "{char_link 2}{voice 4}{face 2}{face_emotion 0}"]);
+			C_Execute(9, Dialog_Add_Ext, ["* I'll be waiting here.", "{char_link 2}{voice 4}{face 2}{face_emotion 0}"]);
+			C_Execute(9, Dialog_Start, [true]);
+			C_WaitUntilDestroy(9, ui_dialog);
+			C_Execute(10, variable_instance_set, [cutscene_room, "phase", 1]);
+			C_Execute(10, instance_activate_object, [char_forcefield]);
+			Cutscene_End(10);
+		}
+		else if (phase == 1) {
+			if (char_player.x > 250) {
+				Cutscene_Begin();
+				phase = 2;
+			}
+		}
+		else if (phase == 2) {
+			C_Execute(0, instance_create_depth, [char_zebra.x, char_zebra.y - char_zebra.sprite_height - 5, 0, exclamation]);
+			C_Wait(0, 30);
+			C_Execute(1, variable_instance_set, [char_zebra, "sprite_index", spr_char_zebra_shy_saddened]);
+			C_Execute(1, variable_instance_set, [cutscene_room, "phase", 3]);
+			Cutscene_End(1);
+		}
+		else if (phase == 3) {
+			randomize();
+			var rndm = random(100);
+			if (rndm > 98) {
+				Object_Shake(2, "x", char_zebra, 0, true);
+				Object_Shake(2, "y", char_zebra, 0, true);
+			}
 		}
 		break;
 }
