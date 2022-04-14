@@ -16,6 +16,7 @@ switch(Battle_GetMenuChoiceButton()){
 		switch(Battle_GetMenuChoiceAction()){
 			case 0:
 				if(_steps_done==2){
+					shakeAmount = 0;
 					Dialog_Add_Ext("* I've started counting her&  stripes.");
 					Dialog_Add_Ext("* One, two, three...&* There's a lot.");
 					_steps_done=3;
@@ -26,6 +27,7 @@ switch(Battle_GetMenuChoiceButton()){
 				break;
 			case 1:
 				if(_steps_done==0){
+					shakeAmount = 4;
 					Dialog_Add_Ext("* Although I was afraid,&  I came closer and welcomed&  her.");
 					Dialog_Add_Ext("* Seems like I'm progressing.");
 					_steps_done=1;
@@ -37,6 +39,8 @@ switch(Battle_GetMenuChoiceButton()){
 				break;
 			case 2:
 				if(_steps_done==1){
+					shakeAmount = 2;
+					Object_Shake(5, "x", id, 0, false, 2);
 					Dialog_Add_Ext("* I've pat on her shoulder.");
 					Dialog_Add_Ext("* Seems like I'm progressing&  yet again.");
 					_steps_done=2;

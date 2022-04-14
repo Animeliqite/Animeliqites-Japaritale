@@ -1,4 +1,4 @@
-_particle_type = 0;
+_repeat_amount = 5;
 _delay = 30;
 
 parttype = -1;

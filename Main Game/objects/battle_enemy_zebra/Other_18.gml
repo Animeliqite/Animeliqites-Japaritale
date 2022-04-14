@@ -4,6 +4,9 @@
 var rand = choose(battle_turn_stripe, battle_turn_leaf);
 instance_create_depth(0,0,0,rand);
 
+shakeFast = false;
+Anim_Create(id,"shakeAmountFake", ANIM_TWEEN.SINE, ANIM_EASE.OUT, shakeAmount, 0, 15, 0, -1, -1, ANIM_MODE.ONESHOT, false);
+
 //Say something
 if(_steps_done==1){
 	Battle_CreateBubble("So, uh...&What's your opinion&on my stripes?","{speed 2}", (sprite_width / 1.75) * image_xscale, -((sprite_height / 2) * image_yscale));

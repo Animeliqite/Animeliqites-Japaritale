@@ -1,5 +1,6 @@
 switch (_particle_type) {
 	case 0:
+		_repeat_amount = 25;
 		partsystem = part_system_create();
 		parttype = part_type_create();
 		part_system_depth(partsystem,-8000);

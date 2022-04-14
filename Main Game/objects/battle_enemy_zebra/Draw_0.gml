@@ -1,3 +1,12 @@
 draw_self();
-if(_cutscene_no==1)
-	draw_sprite_ext(spr_zebra_monster_sweat, 0, x - 30, y - 140 + sweatOffsetY, sweatScaleX, sweatScaleY, 0, c_white, sweatAlpha);
+Anim_SetSpeed(id, "x", shakeAmountFake);
+Anim_SetSpeed(id, "image_xscale", shakeAmountFake);
+Anim_SetSpeed(id, "image_yscale", shakeAmountFake);
+if (Battle_GetState() != BATTLE_STATE.TURN_PREPARATION)
+	shakeAmountFake = shakeAmount;	
+if (shakeFast) {
+	if (!partCreatedOnce) {
+		if (alarm[1] < 0) alarm[1] = 1;
+		partCreatedOnce = true;
+	}
+}

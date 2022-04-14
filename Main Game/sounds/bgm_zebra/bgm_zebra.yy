@@ -12,7 +12,7 @@
     "path": "audiogroups/audiogroup_default",
   },
   "soundFile": "bgm_zebra.ogg",
-  "duration": 51.2,
+  "duration": 61.3877563,
   "parent": {
     "name": "BGM",
     "path": "folders/Sounds/BGM.yy",

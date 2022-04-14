@@ -19,6 +19,8 @@ if(_cutscene_no==0){
 	Battle_SetTurnInfo(BATTLE_TURN.TIME,-1);
 	Battle_SetTurnInfo(BATTLE_TURN.BOARD_LEFT,80);
 	Battle_SetTurnInfo(BATTLE_TURN.BOARD_RIGHT,80);
+	C_Wait(-1, 1);
+	C_Execute(0, BGM_SetVolume, [5, 0, 60]);
 	C_Execute(0, Battle_CreateBubble, [string(finalDialog), "", (sprite_width / 1.75) * image_xscale, -((sprite_height / 2) * image_yscale)]);
 	C_Wait(0, 1);
 	C_WaitUntilDestroy(1, battle_dialog_enemy);
@@ -30,8 +32,16 @@ if(_cutscene_no==0){
 	Cutscene_End(3);
 }
 else if(_cutscene_no==1){
+	Battle_SetState(BATTLE_STATE.IN_TURN);
+	Battle_SetNextState(BATTLE_STATE.IN_TURN);
+	Battle_SetTurnInfo(BATTLE_TURN.TIME,-1);
+	Battle_SetTurnInfo(BATTLE_TURN.BOARD_LEFT,80);
+	Battle_SetTurnInfo(BATTLE_TURN.BOARD_RIGHT,80);
+	C_Wait(-1, 1);
+	C_Execute(0, BGM_SetVolume, [5, 0, 60]);
+	C_Execute(0, Object_Shake, [10, "x", id]);
+	C_Execute(0, variable_instance_set, [id, "shakeAmount", 10]);
 	C_Execute(0, Battle_CreateBubble, [string(failDialog), "", (sprite_width / 1.75) * image_xscale, -((sprite_height / 2) * image_yscale)]);
-	C_Execute(0, Anim_Create, [id, "x", ANIM_TWEEN.SINE, ANIM_EASE.IN_OUT, xstart - 5, 10, room_speed / 2, 0, -1, -1, ANIM_MODE.PINGPONG, true]);
 	C_Wait(0, 1);
 	C_WaitUntilDestroy(1, battle_dialog_enemy);
 	C_FadeFader(2, -1, 1, 10);
@@ -41,4 +51,3 @@ else if(_cutscene_no==1){
 	C_Execute(3, Battle_End);
 	Cutscene_End(3);
 }
-else Cutscene_End(-1);

@@ -20,10 +20,20 @@ _steps_done=0;
 _hp_max=100;
 _hp=100;
 
+partCreatedOnce = false;
+shakeFast = true;
+
 sweatAlpha = 1;
 sweatOffsetY = 0;
 sweatScaleX = 1.25;
 sweatScaleY = 1.25;
+
+shakeAmount = 7;
+shakeAmountFake = shakeAmount;
+
+Anim_Create(id, "x", ANIM_TWEEN.SINE, ANIM_EASE.IN_OUT, xstart - 5, 10, room_speed, 0, -1, -1, ANIM_MODE.PINGPONG, true);
+Anim_Create(id, "image_xscale", ANIM_TWEEN.SINE, ANIM_EASE.IN_OUT, 1.05, 1, room_speed * 2, 0, -1, -1, ANIM_MODE.PINGPONG, false);
+Anim_Create(id, "image_yscale", ANIM_TWEEN.SINE, ANIM_EASE.IN_OUT, 1, 1.05, room_speed * 2, 0, -1, -1, ANIM_MODE.PINGPONG, false);
 
 //Anim_Create(id, "sweatAlpha", 0, 0, 0.5, 1, room_speed / 4, 0, -1, -1, ANIM_MODE.PINGPONG, false);
 Anim_Create(id, "sweatOffsetY", ANIM_TWEEN.SINE, ANIM_EASE.IN_OUT, 0, 10, room_speed / 2, 0, -1, -1, ANIM_MODE.PINGPONG, true);
