@@ -253,7 +253,7 @@ if(_state==BATTLE_STATE.DIALOG){
 //回合准备
 if(_state==BATTLE_STATE.TURN_PREPARATION){
 	if(Battle_IsTurnPreparationAutoEnd()){
-		if(!instance_exists(battle_dialog_enemy) && !Battle_IsBoardTransforming()){
+		if(!instance_exists(battle_dialog_enemy) && !Battle_IsBoardTransforming() && !global._gmu_cutscene){
 			Battle_EndTurnPreparation();
 		}
 	}

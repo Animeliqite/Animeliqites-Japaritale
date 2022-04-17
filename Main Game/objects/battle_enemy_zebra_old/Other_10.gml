@@ -9,13 +9,11 @@ Battle_SetEnemyActionName(_enemy_slot,2,"* Pat");
 
 Battle_SetEnemyDEF(_enemy_slot,-15);
 
-// Other settings
 image_index=0;
 image_speed=0;
 
 Cutscene_End(-1);
 
-_phase=0;
 _cutscene_no=-1;
 _damage_taken=0;
 _steps_done=0;
@@ -35,7 +33,6 @@ sweatScaleY = 1.25;
 shakeAmount = 7;
 shakeAmountFake = shakeAmount;
 
-/*
 Anim_Create(id, "x", ANIM_TWEEN.SINE, ANIM_EASE.IN_OUT, xstart - 5, 10, room_speed, 0, -1, -1, ANIM_MODE.PINGPONG, true);
 Anim_Create(id, "image_xscale", ANIM_TWEEN.SINE, ANIM_EASE.IN_OUT, 1.05, 1, room_speed * 2, 0, -1, -1, ANIM_MODE.PINGPONG, false);
 Anim_Create(id, "image_yscale", ANIM_TWEEN.SINE, ANIM_EASE.IN_OUT, 1, 1.05, room_speed * 2, 0, -1, -1, ANIM_MODE.PINGPONG, false);
@@ -63,4 +60,3 @@ var failDialogArray = [
 ];
 for (var i = 0; i < array_length(failDialogArray); i++)
 	failDialog += failDialogArray[i] + (i >= array_length(failDialogArray) - 1 ? "{pause}{end}" : "{end_ar}" );
-*/

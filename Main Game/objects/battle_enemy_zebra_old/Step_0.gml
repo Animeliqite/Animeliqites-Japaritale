@@ -13,14 +13,7 @@ if(instance_exists(battle_dialog_enemy)){
 	}
 }
 
-if(_phase==0){
-	C_Execute(0, BGM_Stop, [5]);
-	C_Wait(0, 15);
-	C_Execute(1, Typer_Type, [battle_board.x - (battle_board.left / 1.5), battle_board.y - 24, "CONVERSATION{w}  START...{w}{w}{end}", "{voice 1}{scale 2}{depth -9999}"]);
-	C_WaitUntilDestroy(1, text_typer);
-}
-
-/*if(_cutscene_no==0){
+if(_cutscene_no==0){
 	Battle_SetState(BATTLE_STATE.IN_TURN);
 	Battle_SetNextState(BATTLE_STATE.IN_TURN);
 	Battle_SetTurnInfo(BATTLE_TURN.TIME,-1);

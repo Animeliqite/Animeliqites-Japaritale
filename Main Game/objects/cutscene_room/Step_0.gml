@@ -357,12 +357,12 @@ switch(room){
 			Cutscene_End(1);
 		}
 		else if (phase == 3) {
-			randomize();
+			/*randomize();
 			var rndm = random(100);
 			if (rndm > 98) {
 				Object_Shake(2, "x", char_zebra, 0, true);
 				Object_Shake(2, "y", char_zebra, 0, true);
-			}
+			}*/
 		}
 		break;
 }

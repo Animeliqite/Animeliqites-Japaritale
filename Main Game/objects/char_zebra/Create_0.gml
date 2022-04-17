@@ -1,5 +1,9 @@
 event_inherited();
 
+doneSweatingBefore=false;
+offsetX=0;
+offsetY=0;
+
 char_id=2;
 /*res_idle_sprite[DIR.UP]=spr_char_serval_up;
 res_idle_sprite[DIR.DOWN]=spr_char_serval_down;
