@@ -23,10 +23,10 @@ switch(template){
 		dir=DIR.LEFT;
 		show_spike=true;
 		wide_spike=false;
-		up=42;
+		up=20;
 		down=42;
 		left=0;
-		right=65;
+		right=160;
 		break;
 		
 	case 3:

@@ -16,6 +16,7 @@ image_speed=0;
 Cutscene_End(-1);
 
 _phase=0;
+_subPhase=0;
 _cutscene_no=-1;
 _damage_taken=0;
 _steps_done=0;
@@ -25,7 +26,7 @@ _hp=100;
 startedJustNow = true;
 
 partCreatedOnce = false;
-shakeFast = true;
+shakeFast = false;
 
 sweatAlpha = 1;
 sweatOffsetY = 0;

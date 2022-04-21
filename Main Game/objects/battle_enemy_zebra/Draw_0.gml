@@ -10,3 +10,6 @@ if (shakeFast) {
 		partCreatedOnce = true;
 	}
 }
+
+draw_text(0,0,_phase);
+draw_text(0,10,_subPhase);
