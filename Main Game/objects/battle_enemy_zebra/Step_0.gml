@@ -16,8 +16,6 @@ if(instance_exists(battle_dialog_enemy)){
 if(_phase==0){
 	battle_soul.visible = false;
 	battle_soul_red.moveable = false;
-	shakeAmountFake = 0;
-	shakeFast = false;
 	if(_subPhase==0){
 		C_Execute(0, BGM_Pause, [5]);
 		C_Wait(0, 15);
@@ -52,13 +50,89 @@ if(_phase==0){
 		C_Execute(0, variable_instance_set, [object_index, "sprite_index", spr_zebra_monster_normal]);
 		C_Execute(0, Battle_CreateBubble, ["Ah, so usual topics&it is...", "{effect -1}", 80, -(sprite_height / 1.5), 2]);
 		C_WaitUntilDestroy(0, battle_dialog_enemy);
-		C_Execute(1, Battle_CreateBubble, ["So uh, how are you?", "{effect -1}", 80, -(sprite_height / 1.5), 2]);
-		C_WaitUntilDestroy(1, battle_dialog_enemy);
-		C_Execute(2, variable_instance_set, [object_index, "_subPhase", 1.2]);
-		C_Execute(2, Typer_Type, [battle_board.x - (battle_board.left / 1.25), battle_board.y - 24, "{choice 0}I'm fine    {choice 1}It's been confusing{choice `TMP`}{pause}{end}", "{skippable false}{instant true}{voice 1}{scale 2}{depth -9999}"]);
-		Cutscene_End(2);
+		C_Execute(1, variable_instance_set, [object_index, "showHealthbar", true]);
+		C_Execute(1, variable_instance_set, [object_index, "sprite_index", spr_zebra_monster_normal_idle]);
+		C_Execute(1, variable_instance_set, [object_index, "image_index", 0]);
+		C_Execute(1, variable_instance_set, [object_index, "image_speed", 0]);
+		C_CreateAnim(1, id, "image_index", 0, 0, 0, 10, room_speed * 3, false);
+		C_CreateAnim(1, id, "healthbarYOffset", 0, 0, -480, -sprite_height - 25, 1, false);
+		C_CreateAnim(1, id, "healthbarAmount", 0, 0, 100, 50, room_speed, false, 0);
+		C_CreateAnim(1, id, "healthbarYOffset", 0, 0, -sprite_height - 25, -480, room_speed, false, floor(room_speed * 2.5));
+		C_PlaySfx(1, snd_mercyup);
+		C_Wait(1, 90);
+		C_Execute(2, variable_instance_set, [object_index, "sprite_index", spr_zebra_monster_happy]);
+		C_Execute(2, variable_instance_set, [fader, "color", c_black]);
+		C_CreateAnim(2, id, "y", ANIM_TWEEN.SINE, ANIM_EASE.OUT, y, -10, room_speed / 4, true, 0, ANIM_MODE.PINGPONG)
+		C_Execute(2, Battle_CreateBubble, ["Anyways, uh, how&are you?", "{effect -1}", 80, -(sprite_height / 1.5), 2]);
+		C_WaitUntilDestroy(2, battle_dialog_enemy);
+		C_Execute(3, variable_instance_set, [object_index, "_subPhase", 1.2]);
+		C_Execute(3, Typer_Type, [battle_board.x - (battle_board.left / 1.25), battle_board.y - 24, "{choice 0}I'm fine    {choice 1}It's been confusing{choice `TMP`}{pause}{end}", "{skippable false}{instant true}{voice 1}{scale 2}{depth -9999}"]);
+		Cutscene_End(3);
+	}
+	else if(_subPhase==1.2){
+		switch(Flag_Get(FLAG_TYPE.TEMP,FLAG_TEMP.TEXT_TYPER_CHOICE)){
+			case 0:
+				Anim_Destroy(id, "y", true);
+				_subPhase = 1.3;
+				Flag_Set(FLAG_TYPE.TEMP,FLAG_TEMP.TEXT_TYPER_CHOICE, -9999);
+				instance_destroy(text_typer);
+				Cutscene_Begin();
+				y = ystart + 80;
+				break;
+			case 1:
+				Anim_Destroy(id, "y", true);
+				_subPhase = 1.4;
+				Flag_Set(FLAG_TYPE.TEMP,FLAG_TEMP.TEXT_TYPER_CHOICE, -9999);
+				instance_destroy(text_typer);
+				Cutscene_Begin();
+				y = ystart + 80;
+				break;
+		}
+	}
+	else if(_subPhase==1.3){
+		C_Execute(0, variable_instance_set, [object_index, "sprite_index", spr_zebra_monster_ask]);
+		C_Execute(0, variable_instance_set, [object_index, "shakeAmountFake", 1]);
+		C_Execute(0, Battle_CreateBubble, ["Well... I'm glad&you're fine...", "{effect -1}", 80, -(sprite_height / 1.5), 2]);
+		C_WaitUntilDestroy(0, battle_dialog_enemy);
+		C_Execute(1, variable_instance_set, [object_index, "shakeAmountFake", 0]);
+		C_Execute(1, variable_instance_set, [object_index, "showHealthbar", true]);
+		C_Execute(1, variable_instance_set, [object_index, "sprite_index", spr_zebra_monster_normal_idle]);
+		C_Execute(1, variable_instance_set, [object_index, "image_index", 0]);
+		C_Execute(1, variable_instance_set, [object_index, "image_speed", 0]);
+		C_CreateAnim(1, id, "image_index", 0, 0, 0, 10, room_speed * 3, false);
+		C_CreateAnim(1, id, "healthbarYOffset", 0, 0, -480, -sprite_height - 25, 1, false);
+		C_CreateAnim(1, id, "healthbarAmount", 0, 0, 50, 25, room_speed, false, 0);
+		C_CreateAnim(1, id, "healthbarYOffset", 0, 0, -sprite_height - 25, -480, room_speed, false, floor(room_speed * 2.5));
+		C_PlaySfx(1, snd_mercyup);
+		C_Wait(1, 90);
+		C_Execute(2, variable_instance_set, [object_index, "sprite_index", spr_zebra_monster_normal]);
+		C_Execute(2, Battle_CreateBubble, ["After all, the Park&is a nice place&to live in!", "{effect -1}", 80, -(sprite_height / 1.5), 2]);
+		C_WaitUntilDestroy(2, battle_dialog_enemy);
+		C_Execute(3, variable_instance_set, [object_index, "sprite_index", spr_zebra_monster_ask]);
+		C_Execute(3, Battle_CreateBubble, ["Although it got a&bit messy during&the outbreak of&CELLIENS...", "{effect -1}", 80, -(sprite_height / 1.5), 2]);
+		C_WaitUntilDestroy(3, battle_dialog_enemy);
+		C_Execute(4, variable_instance_set, [object_index, "sprite_index", spr_zebra_monster_normal]);
+		C_Execute(4, Battle_CreateBubble, ["I'm still able to&maintain the comfort&of my well-being.", "{effect -1}", 80, -(sprite_height / 1.5), 2]);
+		C_WaitUntilDestroy(4, battle_dialog_enemy);
+		C_Execute(5, variable_instance_set, [object_index, "sprite_index", spr_zebra_monster_ask]);
+		C_Execute(5, variable_instance_set, [object_index, "shakeAmountFake", 1]);
+		C_Execute(5, variable_instance_set, [object_index, "partCreatedOnce", false]);
+		C_Execute(5, Battle_CreateBubble, ["Not to loosen your&hopes up or anything,&but...", "{effect -1}", 80, -(sprite_height / 1.5), 2]);
+		C_WaitUntilDestroy(5, battle_dialog_enemy);
+		C_Execute(6, variable_instance_set, [object_index, "shakeAmountFake", 0]);
+		C_Execute(6, variable_instance_set, [object_index, "sprite_index", spr_zebra_monster_normal]);
+		C_Execute(6, Battle_CreateBubble, ["Self defense is a&thing we all have&to learn.", "{effect -1}", 80, -(sprite_height / 1.5), 2]);
+		C_WaitUntilDestroy(6, battle_dialog_enemy);
+		C_Execute(7, variable_instance_set, [object_index, "_subPhase", 2]);
+		Cutscene_End(7);
+	}
+	else if(_subPhase==2){
+		C_Execute(0, BGM_SetVolume, [5, 0, room_speed]);
+		C_Wait(0, room_speed);
 	}
 }
+
+
 
 /*if(_cutscene_no==0){
 	Battle_SetState(BATTLE_STATE.IN_TURN);

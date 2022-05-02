@@ -12,6 +12,7 @@ Battle_SetEnemyDEF(_enemy_slot,-15);
 // Other settings
 image_index=0;
 image_speed=0;
+y += 80;
 
 Cutscene_End(-1);
 
@@ -23,6 +24,10 @@ _steps_done=0;
 _hp_max=100;
 _hp=100;
 
+showHealthbar = false;
+healthbarXOffset = -(sprite_width / 2);
+healthbarYOffset = -480;
+healthbarAmount = 100;
 startedJustNow = true;
 
 partCreatedOnce = false;
@@ -34,13 +39,14 @@ sweatScaleX = 1.25;
 sweatScaleY = 1.25;
 
 shakeAmount = 7;
-shakeAmountFake = shakeAmount;
+shakeAmountFake = 0;
+
+
+Anim_Create(id, "x", ANIM_TWEEN.SINE, ANIM_EASE.IN_OUT, xstart - 2, 4, room_speed / 4, 0, -1, -1, ANIM_MODE.PINGPONG, true);
+//Anim_Create(id, "image_xscale", ANIM_TWEEN.SINE, ANIM_EASE.IN_OUT, 1.05, 1, room_speed * 2, 0, -1, -1, ANIM_MODE.PINGPONG, false);
+//Anim_Create(id, "image_yscale", ANIM_TWEEN.SINE, ANIM_EASE.IN_OUT, 1, 1.05, room_speed * 2, 0, -1, -1, ANIM_MODE.PINGPONG, false);
 
 /*
-Anim_Create(id, "x", ANIM_TWEEN.SINE, ANIM_EASE.IN_OUT, xstart - 5, 10, room_speed, 0, -1, -1, ANIM_MODE.PINGPONG, true);
-Anim_Create(id, "image_xscale", ANIM_TWEEN.SINE, ANIM_EASE.IN_OUT, 1.05, 1, room_speed * 2, 0, -1, -1, ANIM_MODE.PINGPONG, false);
-Anim_Create(id, "image_yscale", ANIM_TWEEN.SINE, ANIM_EASE.IN_OUT, 1, 1.05, room_speed * 2, 0, -1, -1, ANIM_MODE.PINGPONG, false);
-
 //Anim_Create(id, "sweatAlpha", 0, 0, 0.5, 1, room_speed / 4, 0, -1, -1, ANIM_MODE.PINGPONG, false);
 Anim_Create(id, "sweatOffsetY", ANIM_TWEEN.SINE, ANIM_EASE.IN_OUT, 0, 10, room_speed / 2, 0, -1, -1, ANIM_MODE.PINGPONG, true);
 //Anim_Create(id, "sweatScaleY", ANIM_TWEEN.SINE, ANIM_EASE.IN_OUT, 1.25, 2, room_speed / 2, 0, -1, -1, ANIM_MODE.PINGPONG, false);

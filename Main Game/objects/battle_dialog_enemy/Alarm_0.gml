@@ -26,7 +26,7 @@ switch(template){
 		up=20;
 		down=42;
 		left=0;
-		right=160;
+		right=180;
 		break;
 		
 	case 3:

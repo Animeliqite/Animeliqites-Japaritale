@@ -313,7 +313,7 @@ switch(room){
 			C_Execute(3, instance_create_depth, [char_serval.x, char_serval.y - char_serval.sprite_height - 5, 0, exclamation]);
 			C_Execute(3, variable_instance_set, [char_serval, "dir", DIR.DOWN]);
 			C_Execute(3, variable_instance_set, [char_player, "dir", DIR.UP]);
-			C_Execute(3, Dialog_Add_Ext, ["* Hey look!&* Over there!", "{voice 4}{face 2}{face_emotion 0}"]);
+			C_Execute(3, Dialog_Add_Ext, ["* Hey look!&* Over there!", "{char_link 2}{voice 4}{face 2}{face_emotion 0}"]);
 			C_Execute(3, Dialog_Start, [true]);
 			C_WaitUntilDestroy(3, ui_dialog);
 			C_Execute(4, variable_instance_set, [char_player, "dir", DIR.RIGHT]);
@@ -344,6 +344,7 @@ switch(room){
 			Cutscene_End(10);
 		}
 		else if (phase == 1) {
+			instance_activate_object(char_forcefield);
 			if (char_player.x > 250) {
 				Cutscene_Begin();
 				phase = 2;
@@ -352,9 +353,23 @@ switch(room){
 		else if (phase == 2) {
 			C_Execute(0, instance_create_depth, [char_zebra.x, char_zebra.y - char_zebra.sprite_height - 5, 0, exclamation]);
 			C_Wait(0, 30);
-			C_Execute(1, variable_instance_set, [char_zebra, "sprite_index", spr_char_zebra_shy_saddened]);
-			C_Execute(1, variable_instance_set, [cutscene_room, "phase", 3]);
-			Cutscene_End(1);
+			C_Execute(1, variable_instance_set, [char_zebra, "sprite_index", spr_char_zebra_shy]);
+			C_Execute(1, array_set, [char_zebra.res_idle_sprite, DIR.DOWN, spr_char_zebra_shy]);
+			C_Execute(1, array_set, [char_zebra.res_talk_sprite, DIR.DOWN, spr_char_zebra_shy]);
+			C_Execute(1, Dialog_Add_Ext, ["* Oh, hello there...", "{char_link 3}"]);
+			C_Execute(1, Dialog_Add_Ext, ["* Ah, so you wished to&  talk with me a little?", "{char_link 3}"]);
+			C_Execute(1, Dialog_Start, [true]);
+			C_WaitUntilDestroy(1, ui_dialog);
+			C_Execute(2, variable_instance_set, [char_zebra, "sprite_index", spr_char_zebra_happy]);
+			C_Execute(2, array_set, [char_zebra.res_idle_sprite, DIR.DOWN, spr_char_zebra_happy]);
+			C_Execute(2, array_set, [char_zebra.res_talk_sprite, DIR.DOWN, spr_char_zebra_happy]);
+			C_Wait(2, 30);
+			C_Execute(3, Dialog_Add_Ext, ["* Well, sure thing!", "{char_link 3}"]);
+			C_Execute(3, Dialog_Start, [true]);
+			C_WaitUntilDestroy(3, ui_dialog);
+			C_Execute(4, variable_instance_set, [cutscene_room, "phase", 3]);
+			C_Execute(4, Encounter_Start, [4, true, false]);
+			Cutscene_End(4);
 		}
 		else if (phase == 3) {
 			/*randomize();
