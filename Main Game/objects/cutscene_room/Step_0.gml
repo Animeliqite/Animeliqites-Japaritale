@@ -344,6 +344,8 @@ switch(room){
 			Cutscene_End(10);
 		}
 		else if (phase == 1) {
+			char_player.collision = true;
+			char_player.block_enabled = true;
 			instance_activate_object(char_forcefield);
 			if (char_player.x > 250) {
 				Cutscene_Begin();

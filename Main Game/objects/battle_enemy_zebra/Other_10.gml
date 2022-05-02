@@ -42,7 +42,7 @@ shakeAmount = 7;
 shakeAmountFake = 0;
 
 
-Anim_Create(id, "x", ANIM_TWEEN.SINE, ANIM_EASE.IN_OUT, xstart - 2, 4, room_speed / 4, 0, -1, -1, ANIM_MODE.PINGPONG, true);
+Anim_Create(id, "x", ANIM_TWEEN.SINE, ANIM_EASE.IN_OUT, xstart - 1, 2, room_speed / 4, 0, -1, -1, ANIM_MODE.PINGPONG, true);
 //Anim_Create(id, "image_xscale", ANIM_TWEEN.SINE, ANIM_EASE.IN_OUT, 1.05, 1, room_speed * 2, 0, -1, -1, ANIM_MODE.PINGPONG, false);
 //Anim_Create(id, "image_yscale", ANIM_TWEEN.SINE, ANIM_EASE.IN_OUT, 1, 1.05, room_speed * 2, 0, -1, -1, ANIM_MODE.PINGPONG, false);
 

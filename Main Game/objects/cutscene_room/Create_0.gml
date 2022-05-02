@@ -31,8 +31,9 @@ switch(room){
 	case room_savannah_1:
 		char_player.x = -40;
 		char_player.y = 230;
+		char_player.collision = false;
+		char_player.block_enabled = false;
 		instance_deactivate_object(hint_landmark);
-		instance_deactivate_object(char_forcefield);
 		instance_deactivate_object(trigger_warp);
 		break;
 }

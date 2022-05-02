@@ -1,7 +1,7 @@
 event_inherited();
 
 //移动
-if(Battle_GetState()==BATTLE_STATE.IN_TURN && moveable){
+if((Battle_GetState()==BATTLE_STATE.IN_TURN || Battle_GetState()==BATTLE_STATE.TURN_PREPARATION) && moveable){
 	var SPD=Player_GetSpdTotal()
 	var SPD=(Input_IsHeld(INPUT.CANCEL) ? SPD/2 : SPD);
 	repeat(SPD*10){
