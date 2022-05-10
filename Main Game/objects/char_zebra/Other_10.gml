@@ -1,4 +1,5 @@
 ///@desc Interact
+interacted=true;
 event_inherited();
 
 /*if (room == room_savannah_1) {

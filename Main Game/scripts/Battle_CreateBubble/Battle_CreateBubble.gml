@@ -1,4 +1,4 @@
-function Battle_CreateBubble(text,prefix="",offset_x=0,offset_y=0,template=0,auto_sleep=true){
+                                         function Battle_CreateBubble(text,prefix="",offset_x=0,offset_y=0,template=0,auto_sleep=true){
 	var punctuations = ["!", "?", ".", ",", ":", ";"];
 	var text_full = text;
 	

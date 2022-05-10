@@ -1,4 +1,4 @@
-Cutscene_Begin();
+  Cutscene_Begin();
 _merge_amount_0 = 1;
 phase = 0;
 

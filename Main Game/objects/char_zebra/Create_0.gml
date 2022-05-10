@@ -1,11 +1,11 @@
 event_inherited();
 
+interacted=false;
 doneSweatingBefore=false;
 offsetX=0;
 offsetY=0;
 
 char_id=3;
-alarm[1]=1;
 /*res_idle_sprite[DIR.UP]=spr_char_serval_up;
 res_idle_sprite[DIR.DOWN]=spr_char_serval_down;
 res_idle_sprite[DIR.LEFT]=spr_char_serval_left;
