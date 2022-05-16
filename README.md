@@ -8,10 +8,10 @@ The entire game including the demo shares the same story from the [animation ser
     * [x] Programming
     * [x] Sprites
     * [x] Music
-  * [ ] Zebra-Chan Battle
-    * [ ] Programming
-    * [ ] Sprites
-    * [ ] Music
+  * [x] Zebra-Chan Battle
+    * [x] Programming
+    * [x] Sprites
+    * [x] Music
   * [ ] Big Cellien Battle
     * [ ] Programming
     * [ ] Sprites
