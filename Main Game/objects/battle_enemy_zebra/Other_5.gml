@@ -1,1 +1,2 @@
 Cutscene_End(-1);
+Flag_Set(FLAG_TYPE.TEMP,FLAG_TEMP.HAD_CONVERSATION,true);

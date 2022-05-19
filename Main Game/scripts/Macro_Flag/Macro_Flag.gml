@@ -38,7 +38,8 @@ function Macro_Flag() {
 		TIME,
 		BOX,
 		BOX_END=FLAG_STATIC.BOX+20-1,
-		SCENE_001
+		SCENE_001,
+		SCENE_002
 	};
 #endregion
 
@@ -59,7 +60,8 @@ function Macro_Flag() {
 		TRIGGER_WARP_DIR,
 		TEXT_TYPER_CHOICE,
 		FRAME_SKIP,
-		MINIMALIZED_BATTLE_UI
+		MINIMALIZED_BATTLE_UI,
+		HAD_CONVERSATION
 	};
 #endregion
 

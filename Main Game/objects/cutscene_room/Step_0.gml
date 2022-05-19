@@ -316,85 +316,119 @@ switch(room){
 			C_Execute(21, Flag_Set, [FLAG_TYPE.STATIC, FLAG_STATIC.SCENE_001, true]);
 			Cutscene_End(21);
 		}
+		else {
+			instance_destroy(char_serval);
+		}
 		break;
 	case room_savannah_1:
-		if (phase == 0) {
-			C_Wait(0, 1);
-			C_MoveChar(1, char_player, 40, 230, false, 30);
-			C_Wait(1, 29);
-			C_Execute(2, variable_instance_set, [char_player, "dir", DIR.UP]);
-			C_Wait(2, 30);
-			C_Execute(3, instance_create_depth, [char_serval.x, char_serval.y - char_serval.sprite_height - 5, 0, exclamation]);
-			C_Execute(3, variable_instance_set, [char_serval, "dir", DIR.DOWN]);
-			C_Execute(3, variable_instance_set, [char_player, "dir", DIR.UP]);
-			C_Execute(3, Dialog_Add_Ext, ["* Hey look!&* Over there!", "{char_link 2}{voice 4}{face 2}{face_emotion 0}"]);
-			C_Execute(3, Dialog_Start, [true]);
-			C_WaitUntilDestroy(3, ui_dialog);
-			C_Execute(4, variable_instance_set, [char_player, "dir", DIR.RIGHT]);
-			C_Execute(4, variable_instance_set, [char_serval, "dir", DIR.RIGHT]);
-			C_Execute(4, variable_instance_set, [camera, "target", noone]);
-			C_MoveChar(4, camera, 330 - (camera.width / camera.scale_x / 2), char_player.y - (camera.width / camera.scale_x / 2), false, 60);
-			C_Wait(4, 60);
-			C_Wait(5, 30);
-			C_MoveChar(6, camera, max(0, char_player.x - (camera.width / camera.scale_x / 2)), char_player.y - (camera.width / camera.scale_x / 2), false, 60);
-			C_Wait(6, 90);
-			C_Execute(7, variable_instance_set, [camera, "target", char_player]);
-			C_Execute(7, variable_instance_set, [char_player, "dir", DIR.UP]);
-			C_Execute(7, variable_instance_set, [char_serval, "dir", DIR.DOWN]);
-			C_Execute(7, Dialog_Add_Ext, ["* It appears I forgot&  to introduce you to&  the folk around here.", "{char_link 2}{voice 4}{face 2}{face_emotion 0}"]);
-			C_Execute(7, Dialog_Add_Ext, ["* And Zebra-chan is an&  example you've just&  seen over that spot.", "{char_link 2}{voice 4}{face 2}{face_emotion 0}"]);
-			C_Execute(7, Dialog_Add_Ext, ["* Though don't worry,&  as all the Friends&  here are harmless.", "{char_link 2}{voice 4}{face 2}{face_emotion 0}"]);
-			C_Execute(7, Dialog_Start, [true]);
-			C_WaitUntilDestroy(7, ui_dialog);
-			C_Execute(8, variable_instance_set, [char_serval, "dir", DIR.RIGHT]);
-			C_Wait(8, 30);
-			C_Execute(9, variable_instance_set, [char_serval, "dir", DIR.DOWN]);
-			C_Execute(9, Dialog_Add_Ext, ["* Why don't you have&  a little conversation&  with her?", "{char_link 2}{voice 4}{face 2}{face_emotion 0}"]);
-			C_Execute(9, Dialog_Add_Ext, ["* I'll be waiting here.", "{char_link 2}{voice 4}{face 2}{face_emotion 0}"]);
-			C_Execute(9, Dialog_Start, [true]);
-			C_WaitUntilDestroy(9, ui_dialog);
-			C_Execute(10, variable_instance_set, [cutscene_room, "phase", 1]);
-			C_Execute(10, instance_activate_object, [char_forcefield]);
-			Cutscene_End(10);
-		}
-		else if (phase == 1) {
-			char_player.collision = true;
-			char_player.block_enabled = true;
-			instance_activate_object(char_forcefield);
-			if (char_player.x > 300) {
-				Cutscene_Begin();
-				phase = 2;
+		if (Flag_Get(FLAG_TYPE.STATIC,FLAG_STATIC.SCENE_002,false)==false){
+			if (Flag_Get(FLAG_TYPE.TEMP,FLAG_TEMP.HAD_CONVERSATION)==false){
+				if (phase == 0) {
+					C_Wait(0, 1);
+					C_MoveChar(1, char_player, 40, 230, false, 30);
+					C_Wait(1, 29);
+					C_Execute(2, variable_instance_set, [char_player, "dir", DIR.UP]);
+					C_Wait(2, 30);
+					C_Execute(3, instance_create_depth, [char_serval.x, char_serval.y - char_serval.sprite_height - 5, 0, exclamation]);
+					C_Execute(3, variable_instance_set, [char_serval, "dir", DIR.DOWN]);
+					C_Execute(3, variable_instance_set, [char_player, "dir", DIR.UP]);
+					C_Execute(3, Dialog_Add_Ext, ["* Hey look!&* Over there!", "{char_link 2}{voice 4}{face 2}{face_emotion 0}"]);
+					C_Execute(3, Dialog_Start, [true]);
+					C_WaitUntilDestroy(3, ui_dialog);
+					C_Execute(4, variable_instance_set, [char_player, "dir", DIR.RIGHT]);
+					C_Execute(4, variable_instance_set, [char_serval, "dir", DIR.RIGHT]);
+					C_Execute(4, variable_instance_set, [camera, "target", noone]);
+					C_MoveChar(4, camera, 330 - (camera.width / camera.scale_x / 2), char_player.y - (camera.width / camera.scale_x / 2), false, 60);
+					C_Wait(4, 60);
+					C_Wait(5, 30);
+					C_MoveChar(6, camera, max(0, char_player.x - (camera.width / camera.scale_x / 2)), char_player.y - (camera.width / camera.scale_x / 2), false, 60);
+					C_Wait(6, 90);
+					C_Execute(7, variable_instance_set, [camera, "target", char_player]);
+					C_Execute(7, variable_instance_set, [char_player, "dir", DIR.UP]);
+					C_Execute(7, variable_instance_set, [char_serval, "dir", DIR.DOWN]);
+					C_Execute(7, Dialog_Add_Ext, ["* It appears I forgot&  to introduce you to&  the folk around here.", "{char_link 2}{voice 4}{face 2}{face_emotion 0}"]);
+					C_Execute(7, Dialog_Add_Ext, ["* And Zebra-chan is an&  example you've just&  seen over that spot.", "{char_link 2}{voice 4}{face 2}{face_emotion 0}"]);
+					C_Execute(7, Dialog_Add_Ext, ["* Though don't worry,&  as all the Friends&  here are harmless.", "{char_link 2}{voice 4}{face 2}{face_emotion 0}"]);
+					C_Execute(7, Dialog_Start, [true]);
+					C_WaitUntilDestroy(7, ui_dialog);
+					C_Execute(8, variable_instance_set, [char_serval, "dir", DIR.RIGHT]);
+					C_Wait(8, 30);
+					C_Execute(9, variable_instance_set, [char_serval, "dir", DIR.DOWN]);
+					C_Execute(9, Dialog_Add_Ext, ["* Why don't you have&  a little conversation&  with her?", "{char_link 2}{voice 4}{face 2}{face_emotion 0}"]);
+					C_Execute(9, Dialog_Add_Ext, ["* I'll be waiting here.", "{char_link 2}{voice 4}{face 2}{face_emotion 0}"]);
+					C_Execute(9, Dialog_Start, [true]);
+					C_WaitUntilDestroy(9, ui_dialog);
+					C_Execute(10, variable_instance_set, [cutscene_room, "phase", 1]);
+					C_Execute(10, instance_activate_object, [char_forcefield]);
+					Cutscene_End(10);
+				}
+				else if (phase == 1) {
+					char_player.collision = true;
+					char_player.block_enabled = true;
+					instance_activate_object(char_forcefield);
+					if (char_player.x > 300) {
+						Cutscene_Begin();
+						phase = 2;
+					}
+				}
+				else if (phase == 2) {
+					C_Execute(0, instance_create_depth, [char_zebra.x, char_zebra.y - char_zebra.sprite_height - 5, 0, exclamation]);
+					C_Wait(0, 30);
+					C_Execute(1, variable_instance_set, [char_zebra, "sprite_index", spr_char_zebra_shy]);
+					C_Execute(1, variable_instance_set, [char_zebra, "interacted", true]);
+					C_Execute(1, array_set, [char_zebra.res_idle_sprite, DIR.DOWN, spr_char_zebra_shy]);
+					C_Execute(1, array_set, [char_zebra.res_talk_sprite, DIR.DOWN, spr_char_zebra_shy]);
+					C_Execute(1, Dialog_Add_Ext, ["* Oh, hello there...", "{char_link 3}"]);
+					C_Execute(1, Dialog_Add_Ext, ["* Ah, so you wished to&  talk with me a little?", "{char_link 3}"]);
+					C_Execute(1, Dialog_Start, [true]);
+					C_WaitUntilDestroy(1, ui_dialog);
+					C_Execute(2, variable_instance_set, [char_zebra, "sprite_index", spr_char_zebra_happy]);
+					C_Execute(2, array_set, [char_zebra.res_idle_sprite, DIR.DOWN, spr_char_zebra_happy]);
+					C_Execute(2, array_set, [char_zebra.res_talk_sprite, DIR.DOWN, spr_char_zebra_happy]);
+					C_Wait(2, 30);
+					C_Execute(3, Dialog_Add_Ext, ["* Well, sure thing!", "{char_link 3}"]);
+					C_Execute(3, Dialog_Start, [true]);
+					C_WaitUntilDestroy(3, ui_dialog);
+					C_Execute(4, variable_instance_set, [cutscene_room, "phase", 0]);
+					C_Execute(4, Encounter_Start, [4, true, false]);
+					Cutscene_End(4);
+				}
+				else if (phase == 3) {
+					/*randomize();
+					var rndm = random(100);
+					if (rndm > 98) {
+						Object_Shake(2, "x", char_zebra, 0, true);
+						Object_Shake(2, "y", char_zebra, 0, true);
+					}*/
+				}
 			}
-		}
-		else if (phase == 2) {
-			C_Execute(0, instance_create_depth, [char_zebra.x, char_zebra.y - char_zebra.sprite_height - 5, 0, exclamation]);
-			C_Wait(0, 30);
-			C_Execute(1, variable_instance_set, [char_zebra, "sprite_index", spr_char_zebra_shy]);
-			C_Execute(1, variable_instance_set, [char_zebra, "interacted", true]);
-			C_Execute(1, array_set, [char_zebra.res_idle_sprite, DIR.DOWN, spr_char_zebra_shy]);
-			C_Execute(1, array_set, [char_zebra.res_talk_sprite, DIR.DOWN, spr_char_zebra_shy]);
-			C_Execute(1, Dialog_Add_Ext, ["* Oh, hello there...", "{char_link 3}"]);
-			C_Execute(1, Dialog_Add_Ext, ["* Ah, so you wished to&  talk with me a little?", "{char_link 3}"]);
-			C_Execute(1, Dialog_Start, [true]);
-			C_WaitUntilDestroy(1, ui_dialog);
-			C_Execute(2, variable_instance_set, [char_zebra, "sprite_index", spr_char_zebra_happy]);
-			C_Execute(2, array_set, [char_zebra.res_idle_sprite, DIR.DOWN, spr_char_zebra_happy]);
-			C_Execute(2, array_set, [char_zebra.res_talk_sprite, DIR.DOWN, spr_char_zebra_happy]);
-			C_Wait(2, 30);
-			C_Execute(3, Dialog_Add_Ext, ["* Well, sure thing!", "{char_link 3}"]);
-			C_Execute(3, Dialog_Start, [true]);
-			C_WaitUntilDestroy(3, ui_dialog);
-			C_Execute(4, variable_instance_set, [cutscene_room, "phase", 3]);
-			C_Execute(4, Encounter_Start, [4, true, false]);
-			Cutscene_End(4);
-		}
-		else if (phase == 3) {
-			/*randomize();
-			var rndm = random(100);
-			if (rndm > 98) {
-				Object_Shake(2, "x", char_zebra, 0, true);
-				Object_Shake(2, "y", char_zebra, 0, true);
-			}*/
+			else {
+				if (phase == 0) {
+					if(char_player.x<=210) {
+						Cutscene_Begin();
+						phase = 1;
+					}
+				}
+				if (phase == 1) {
+					C_MoveChar(0, char_serval, char_player.x - 50, char_player.y, false, 30);
+					C_Wait(0, 60);
+					C_Execute(1, Dialog_Add_Ext, ["* You had quite a decent&  conversation there!", "{char_link 2}{voice 4}{face 2}{face_emotion 2}"]);
+					C_Execute(1, Dialog_Add_Ext, ["* Thinking about how I had&  to get you to the&  library...", "{char_link 2}{voice 4}{face 2}{face_emotion 3}"]);
+					C_Execute(1, Dialog_Add_Ext, ["* I think it'd better to&  move on to our mission.", "{char_link 2}{voice 4}{face 2}{face_emotion 0}"]);
+					C_Execute(1, Dialog_Add_Ext, ["* So, yeah!&* Let's go!", "{char_link 2}{voice 4}{face 2}{face_emotion 2}"]);
+					C_Execute(1, Dialog_Start, [true]);
+					C_WaitUntilDestroy(1, ui_dialog);
+					C_MoveChar(2, char_serval, 170, 230, false, 15);
+					C_Wait(2, 30);
+					C_MoveChar(3, char_serval, 170, 360, false, 30);
+					C_Wait(3, 60);
+					C_Execute(4, Flag_Set, [FLAG_TYPE.STATIC, FLAG_STATIC.SCENE_002, true]);
+					C_Execute(4, instance_destroy, [char_serval]);
+					C_Execute(4, instance_destroy, [char_forcefield]);
+					C_Execute(4, instance_activate_object, [trigger_warp]);
+					Cutscene_End(4);
+				}
+			}
 		}
 		break;
 }

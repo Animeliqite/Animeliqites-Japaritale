@@ -243,11 +243,11 @@ if(_phase==0){
 		C_WaitUntilDestroy(2, battle_dialog_enemy);
 		C_Execute(3, variable_instance_set, [object_index, "shakeAmountFake", 0]);
 		C_Execute(3, variable_instance_set, [object_index, "sprite_index", spr_zebra_monster_normal]);
-		C_Execute(3, Battle_CreateBubble, ["At least I'm glad&they don't use it&for questionable&purposes...", "{effect -1}", 80, -(sprite_height / 1.5), 2]);
+		C_Execute(3, Battle_CreateBubble, ["Although most of them&are prone to death...", "{effect -1}", 80, -(sprite_height / 1.5), 2]);
 		C_WaitUntilDestroy(3, battle_dialog_enemy);
 		C_Execute(4, variable_instance_set, [object_index, "shakeAmountFake", 4]);
 		C_Execute(4, variable_instance_set, [object_index, "sprite_index", spr_zebra_monster_ask]);
-		C_Execute(4, Battle_CreateBubble, ["But they really&love eating those&SPARKLES of ours...", "{effect -1}", 80, -(sprite_height / 1.5), 2]);
+		C_Execute(4, Battle_CreateBubble, ["They cause severe&damage once you're hit.", "{effect -1}", 80, -(sprite_height / 1.5), 2]);
 		C_WaitUntilDestroy(4, battle_dialog_enemy);
 		C_Execute(5, variable_instance_set, [object_index, "shakeAmountFake", 0]);
 		C_Execute(5, variable_instance_set, [object_index, "sprite_index", spr_zebra_monster_sad]);
@@ -272,6 +272,7 @@ if(_phase==0){
 		C_WaitUntilDestroy(3, battle_dialog_enemy);
 		C_FadeFader(4, -1, 1, 15, 0, false);
 		C_Wait(4, 15);
+		C_Execute(5, Flag_Set, [FLAG_TYPE.TEMP,FLAG_TEMP.HAD_CONVERSATION,true]);
 		C_Execute(5, Battle_End);
 		Cutscene_End(5);
 	}
