@@ -33,6 +33,9 @@
     {"compositeImage":{"FrameId":{"name":"26871536-4467-4ba1-b9a7-c50332deee1e","path":"sprites/spr_bg_savannah_scenery/spr_bg_savannah_scenery.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
         {"FrameId":{"name":"26871536-4467-4ba1-b9a7-c50332deee1e","path":"sprites/spr_bg_savannah_scenery/spr_bg_savannah_scenery.yy",},"LayerId":{"name":"9cf57eb3-a550-45bd-be8b-d423c03641aa","path":"sprites/spr_bg_savannah_scenery/spr_bg_savannah_scenery.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
       ],"parent":{"name":"spr_bg_savannah_scenery","path":"sprites/spr_bg_savannah_scenery/spr_bg_savannah_scenery.yy",},"resourceVersion":"1.0","name":"26871536-4467-4ba1-b9a7-c50332deee1e","tags":[],"resourceType":"GMSpriteFrame",},
+    {"compositeImage":{"FrameId":{"name":"16140184-3d4d-48fb-baf3-9eda513639b5","path":"sprites/spr_bg_savannah_scenery/spr_bg_savannah_scenery.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
+        {"FrameId":{"name":"16140184-3d4d-48fb-baf3-9eda513639b5","path":"sprites/spr_bg_savannah_scenery/spr_bg_savannah_scenery.yy",},"LayerId":{"name":"9cf57eb3-a550-45bd-be8b-d423c03641aa","path":"sprites/spr_bg_savannah_scenery/spr_bg_savannah_scenery.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
+      ],"parent":{"name":"spr_bg_savannah_scenery","path":"sprites/spr_bg_savannah_scenery/spr_bg_savannah_scenery.yy",},"resourceVersion":"1.0","name":"16140184-3d4d-48fb-baf3-9eda513639b5","tags":[],"resourceType":"GMSpriteFrame",},
     {"compositeImage":{"FrameId":{"name":"eb6cb319-1dc8-4307-a5bf-71c2873f8f67","path":"sprites/spr_bg_savannah_scenery/spr_bg_savannah_scenery.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
         {"FrameId":{"name":"eb6cb319-1dc8-4307-a5bf-71c2873f8f67","path":"sprites/spr_bg_savannah_scenery/spr_bg_savannah_scenery.yy",},"LayerId":{"name":"9cf57eb3-a550-45bd-be8b-d423c03641aa","path":"sprites/spr_bg_savannah_scenery/spr_bg_savannah_scenery.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
       ],"parent":{"name":"spr_bg_savannah_scenery","path":"sprites/spr_bg_savannah_scenery/spr_bg_savannah_scenery.yy",},"resourceVersion":"1.0","name":"eb6cb319-1dc8-4307-a5bf-71c2873f8f67","tags":[],"resourceType":"GMSpriteFrame",},
@@ -45,7 +48,7 @@
     "playbackSpeedType": 0,
     "autoRecord": true,
     "volume": 1.0,
-    "length": 4.0,
+    "length": 5.0,
     "events": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MessageEventKeyframe>",},
     "moments": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MomentsEventKeyframe>",},
     "tracks": [
@@ -53,7 +56,8 @@
             {"id":"37c9970a-d5c6-4365-9dbf-72e0bd521697","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"e07ef9d6-b00d-41bd-82ae-bd1dd4a0737b","path":"sprites/spr_bg_savannah_scenery/spr_bg_savannah_scenery.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
             {"id":"6cec89e8-8328-49e7-bbd7-844e84c6d1c7","Key":1.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"73878b88-a06e-4f52-a15e-d288e86a94cb","path":"sprites/spr_bg_savannah_scenery/spr_bg_savannah_scenery.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
             {"id":"4d9fbb83-b3f6-4e79-b5da-42a7a89838fd","Key":2.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"26871536-4467-4ba1-b9a7-c50332deee1e","path":"sprites/spr_bg_savannah_scenery/spr_bg_savannah_scenery.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
-            {"id":"be82103a-2220-4d35-b1a7-263e2313b1be","Key":3.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"eb6cb319-1dc8-4307-a5bf-71c2873f8f67","path":"sprites/spr_bg_savannah_scenery/spr_bg_savannah_scenery.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
+            {"id":"1bf4e619-045c-44e8-9667-7d0d6b7be0e9","Key":3.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"16140184-3d4d-48fb-baf3-9eda513639b5","path":"sprites/spr_bg_savannah_scenery/spr_bg_savannah_scenery.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
+            {"id":"be82103a-2220-4d35-b1a7-263e2313b1be","Key":4.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"eb6cb319-1dc8-4307-a5bf-71c2873f8f67","path":"sprites/spr_bg_savannah_scenery/spr_bg_savannah_scenery.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
           ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"isCreationTrack":false,"resourceVersion":"1.0","tags":[],"resourceType":"GMSpriteFramesTrack","modifiers":[],},
     ],
     "visibleRange": null,

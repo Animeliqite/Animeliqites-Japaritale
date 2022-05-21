@@ -251,8 +251,8 @@ switch(room){
 			C_Execute(9, Dialog_Start, [true]);
 			C_WaitUntilDestroy(9, ui_dialog);
 			C_Execute(10, variable_instance_set, [char_serval, "dir", DIR.DOWN]);
-			C_Execute(10, array_set, [char_serval.res_idle_sprite, DIR.DOWN, spr_char_serval_down_happy]);
-			C_Execute(10, array_set, [char_serval.res_talk_sprite, DIR.DOWN, spr_char_serval_down_happy]);
+			C_Execute(10, array_set, [char_serval.res_idle_sprite, DIR.DOWN, spr_char_serval_down]);
+			C_Execute(10, array_set, [char_serval.res_talk_sprite, DIR.DOWN, spr_char_serval_down]);
 			C_Execute(10, Dialog_Add_Ext, ["* Ahhh... I can feel my&  capabilities already&  paying off!", "{char_link 2}{voice 4}{face 2}{face_emotion 2}"]);
 			C_Execute(10, Dialog_Start, [true]);
 			C_WaitUntilDestroy(10, ui_dialog);
@@ -428,6 +428,42 @@ switch(room){
 					C_Execute(4, instance_activate_object, [trigger_warp]);
 					Cutscene_End(4);
 				}
+			}
+		}
+		break;
+	case room_savannah_2:
+		if (Flag_Get(FLAG_TYPE.STATIC,FLAG_STATIC.SCENE_003,false)==false){
+			if (phase == 0) {
+				if (char_player.x > 500) {
+					Cutscene_Begin();
+					phase = 1;
+				}
+				else Cutscene_End(-1);
+			}
+			else if (phase == 1) {
+				C_MoveChar(0, char_player, char_serval.x - 25, char_serval.y, false, 30);
+				C_Wait(0, 60);
+				C_Execute(1, variable_instance_set, [char_serval, "dir", DIR.LEFT]);
+				C_Wait(1, 30);
+				C_Execute(2, variable_instance_set, [char_serval, "dir", DIR.UP]);
+				C_Wait(2, 30);
+				C_Execute(3, Dialog_Add_Ext, ["* Look!", "{char_link 2}{voice 4}{face 2}{face_emotion 0}"]);
+				C_Execute(3, Dialog_Start, [false]);
+				C_WaitUntilDestroy(3, ui_dialog);
+				C_Execute(4, variable_instance_set, [char_player, "dir", DIR.UP]);
+				C_Wait(4, 30);
+				C_Execute(5, Dialog_Add_Ext, ["* That's one big mountain&  we can clearly gaze&  upon!", "{char_link 2}{voice 4}{face 2}{face_emotion 2}"]);
+				C_Execute(5, Dialog_Add_Ext, ["* Recently, a \"{color_text `yellow`}SANDSTAR{color_text `white`}\"&  came out from that&  mountain.", "{char_link 2}{voice 4}{face 2}{face_emotion 0}"]);
+				C_Execute(5, Dialog_Add_Ext, ["* Maybe... that's where&  you were born?", "{char_link 2}{voice 4}{face 2}{face_emotion 4}"]);
+				C_Execute(5, Dialog_Start, [false]);
+				C_WaitUntilDestroy(5, ui_dialog);
+				C_Execute(6, variable_instance_set, [char_player, "dir", DIR.RIGHT]);
+				C_Wait(6, 30);
+				C_Execute(7, Dialog_Add_Ext, ["* I'm starting to wonder&  about the CELLIENS&  actually.", "{char_link 2}{voice 4}{face 2}{face_emotion 3}"]);
+				C_Execute(7, Dialog_Start, [false]);
+				C_WaitUntilDestroy(7, ui_dialog);
+				C_Execute(8, Flag_Set, [FLAG_TYPE.STATIC, FLAG_STATIC.SCENE_003, true]);
+				Cutscene_End(8);
 			}
 		}
 		break;
