@@ -462,9 +462,89 @@ switch(room){
 				C_Execute(7, Dialog_Add_Ext, ["* I'm starting to wonder&  about the CELLIENS&  actually.", "{char_link 2}{voice 4}{face 2}{face_emotion 3}"]);
 				C_Execute(7, Dialog_Start, [false]);
 				C_WaitUntilDestroy(7, ui_dialog);
+				C_Execute(8, variable_instance_set, [char_serval, "dir_locked", true]);
 				C_Execute(8, Flag_Set, [FLAG_TYPE.STATIC, FLAG_STATIC.SCENE_003, true]);
 				Cutscene_End(8);
 			}
+		}
+		break;
+	case room_savannah_3:
+		if (Flag_Get(FLAG_TYPE.STATIC,FLAG_STATIC.SCENE_004,false)==false){
+			if (phase == 0) {
+				if (char_player.x > 160) {
+					Cutscene_Begin();
+					phase = 1;
+				}
+				else Cutscene_End(-1);
+			}
+			else if (phase == 1) {
+				C_Execute(0, BGM_SetVolume, [0, 0, 30]);
+				C_MoveChar(0, char_player, 280, 310, false, 30);
+				C_Wait(0, 30);
+				C_Execute(1, variable_instance_set, [char_player, "dir", DIR.UP]);
+				C_Wait(1, 30);
+				C_Execute(2, Dialog_Add_Ext, ["* The water looks so delightful I&  cannot tolerate taking a sip.", ""]);
+				C_Execute(2, Dialog_Start, [false]);
+				C_WaitUntilDestroy(2, ui_dialog);
+				C_Wait(3, 60);
+				C_FadeFader(4, 1, 0, 7, 0, c_white);
+				C_PlaySfx(4, bgm_hippo_appear, 0.95);
+				C_Execute(4, variable_instance_set, [camera, "target", char_hippo]);
+				C_Execute(4, variable_instance_set, [camera, "scale_x", 3]);
+				C_Execute(4, variable_instance_set, [camera, "scale_y", 3]);
+				C_Execute(4, variable_instance_set, [camera, "angle", 6]);
+				C_Execute(4, Object_Shake, [5, "x", camera]);
+				C_Execute(4, Object_Shake, [5, "y", camera]);
+				C_Execute(4, variable_instance_set, [char_hippo, "visible", true]);
+				C_Execute(4, variable_instance_set, [char_hippo, "sprite_index", spr_char_hippo_water]);
+				C_Execute(4, variable_instance_set, [char_hippo, "image_speed", 1]);
+				C_Wait(4, 33);
+				C_CreateAnim(5, camera, "target", 0, 0, camera.target, noone, 1, false, 15);
+				C_CreateAnim(5, camera, "target", 0, 0, noone, char_player, 1, false, 30);
+				C_CreateAnim(5, camera, "scale_x", ANIM_TWEEN.CIRC, ANIM_EASE.OUT, camera.scale_x, 2, 15, false);
+				C_CreateAnim(5, camera, "scale_y", ANIM_TWEEN.CIRC, ANIM_EASE.OUT, camera.scale_y, 2, 15, false);
+				C_CreateAnim(5, camera, "angle", ANIM_TWEEN.CIRC, ANIM_EASE.OUT, camera.angle, 0, 15, false);
+				C_CreateAnim(5, camera, "x", 0, 0, char_hippo.x - (camera.width / 4), char_player.x - (camera.width / 4), 15, false, 15);
+				C_CreateAnim(5, camera, "y", 0, 0, char_hippo.y - (camera.width / 4), char_player.y - (camera.width / 4), 15, false, 15);
+				C_Execute(5, variable_instance_set, [char_hippo, "sprite_index", spr_char_hippo_water_appear]);
+				C_Execute(5, variable_instance_set, [char_hippo, "direction", point_direction(char_hippo.x, char_hippo.y, char_player.x, char_player.y)]);
+				C_Execute(5, array_set, [char_hippo.res_idle_sprite, DIR.DOWN, spr_char_hippo_water_talk_angry]);
+				C_Execute(5, array_set, [char_hippo.res_talk_sprite, DIR.DOWN, spr_char_hippo_water_talk_angry]);
+				C_Wait(5, 45);
+				C_Execute(6, variable_instance_set, [camera, "target", noone]);
+				C_Execute(6, BGM_Stop, [0]);
+				C_Execute(6, BGM_Play, [0, bgm_hippo]);
+				C_Execute(6, BGM_SetPitch, [0, 0.95]);
+				C_Execute(6, variable_instance_set, [char_hippo, "image_speed", 1]);
+				C_Execute(6, Dialog_Add_Ext, ["* Threathening the safety of&  my property, I see?", "{char_link 4}"]);
+				C_Execute(6, Dialog_Start, [false]);
+				C_WaitUntilDestroy(6, ui_dialog);
+				C_Execute(7, variable_instance_set, [char_hippo, "speed", 0.25]);
+				C_Execute(7, variable_instance_set, [char_player, "vspeed", 0.1]);
+				C_Wait(7, 30);
+				C_Execute(8, variable_instance_set, [char_hippo, "speed", 0]);
+				C_Execute(8, variable_instance_set, [char_player, "vspeed", 0]);
+				C_Execute(8, Dialog_Add_Ext, ["* You know what happens to&  beings like you?", "{char_link 4}"]);
+				C_Execute(8, Dialog_Start, [false]);
+				C_WaitUntilDestroy(8, ui_dialog);
+				C_Execute(9, variable_instance_set, [char_hippo, "speed", 0.25]);
+				C_Execute(9, variable_instance_set, [char_player, "vspeed", 0.1]);
+				C_Wait(9, 30);
+				C_Wait(10, 30);
+				C_Execute(11, BGM_Stop, [0]);
+				C_Execute(11, variable_instance_set, [char_hippo, "speed", 0]);
+				C_Execute(11, variable_instance_set, [char_player, "vspeed", 0]);
+				C_Execute(11, array_set, [char_hippo.res_idle_sprite, DIR.DOWN, spr_char_hippo_water_talk_blink]);
+				C_Execute(11, array_set, [char_hippo.res_talk_sprite, DIR.DOWN, spr_char_hippo_water_talk_blink]);
+				C_Execute(11, Dialog_Add_Ext, ["* They experience death.", "{char_link 4}{effect 0}"]);
+				C_Execute(11, Dialog_Start, [false]);
+				C_WaitUntilDestroy(11, ui_dialog);
+				//C_Execute(8, Flag_Set, [FLAG_TYPE.STATIC, FLAG_STATIC.SCENE_003, true]);
+				Cutscene_End(9999);
+			}
+		}
+		else {
+			instance_destroy(char_hippo);
 		}
 		break;
 }

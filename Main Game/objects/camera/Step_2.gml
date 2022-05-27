@@ -56,9 +56,9 @@ if(!instance_exists(target)){
 	camera_set_view_pos(_camera,x+_shake_pos_x,y+_shake_pos_y);
 }else{
 	camera_set_view_border(_camera,(width/scale_x/2)*offset_amount_x,(height/scale_y/2)*offset_amount_y);
-	x=median(0, (target.x-(width/scale_x/2))*offset_amount_x, room_width-(width/scale_x))+_shake_pos_x;
-	y=median(0, (target.y-(width/scale_x/2))*offset_amount_y, room_height-(height/scale_y))+_shake_pos_y;
-	camera_set_view_pos(_camera,x,y);
+	x=median(0, (target.x-(width/scale_x/2))*offset_amount_x, room_width-(width/scale_x))+shake_x;
+	y=median(0, (target.y-(width/scale_x/2))*offset_amount_y, room_height-(height/scale_y))+shake_y;
+	camera_set_view_pos(_camera,x+shake_x,y+shake_y);
 }
 camera_set_view_size(_camera,width/scale_x,height/scale_y);
 camera_set_view_angle(_camera,angle);
