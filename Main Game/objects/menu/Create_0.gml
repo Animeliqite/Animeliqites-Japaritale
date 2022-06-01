@@ -1,4 +1,4 @@
-_menu=0;
+_menu=-1;
 _mode=0;
 
 _prefix="{gui true}{instant true}{shadow false}{font 1}{scale 2}";

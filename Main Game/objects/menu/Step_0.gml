@@ -1,4 +1,9 @@
-if(_menu==0){
+if(_menu==-1){
+	if(Input_IsPressed(INPUT.CONFIRM)){
+		_menu=0;
+		event_user(0);
+	}
+}else if(_menu==0){
 	if(_mode==0){
 		if(Input_IsPressed(INPUT.DOWN)){
 			if(_choice<1){
