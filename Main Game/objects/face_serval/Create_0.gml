@@ -41,3 +41,17 @@ idle_speed[5]=0;
 talk_sprite[5]=spr_face_serval_happy_sweat;
 talk_image[5]=1;
 talk_speed[5]=1/4;
+
+idle_sprite[6]=spr_face_serval_angry;
+idle_image[6]=0;
+idle_speed[6]=0;
+talk_sprite[6]=spr_face_serval_angry;
+talk_image[6]=1;
+talk_speed[6]=1/4;
+
+idle_sprite[7]=spr_face_serval_derp;
+idle_image[7]=0;
+idle_speed[7]=0;
+talk_sprite[7]=spr_face_serval_derp;
+talk_image[7]=1;
+talk_speed[7]=1/4;

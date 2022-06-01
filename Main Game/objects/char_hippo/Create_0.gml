@@ -1,6 +1,8 @@
 event_inherited();
 
+dir=DIR.DOWN;
 char_id=4;
+dir_locked=true;
 
 /*res_idle_sprite[DIR.UP]=spr_char_serval_up;
 res_idle_sprite[DIR.DOWN]=spr_char_serval_down;

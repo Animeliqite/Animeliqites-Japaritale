@@ -1,0 +1,1 @@
+show_message(cutscene._current_order);
