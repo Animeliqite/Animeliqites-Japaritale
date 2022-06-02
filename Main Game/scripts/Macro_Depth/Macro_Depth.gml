@@ -1,7 +1,7 @@
 function Macro_Depth() {
 	enum DEPTH_UI{
-		PANEL=-100,
-		TEXT=-200,
+		PANEL=-500,
+		TEXT=-600,
 		ENCOUNTER_ANIM=-300,
 		FADER=-400
 	};

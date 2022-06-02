@@ -13,7 +13,7 @@ if(_menu==-1){
 	draw_text_transformed(320, 340,"[PRESS Z OR ENTER]",2,2,0);
 	draw_set_font(Lang_GetFont("determination_sans"));
 	draw_set_color(c_white);
-	draw_text_transformed(320, 180, "Kaban ends up being in a mysterious\nisland full of sugoi's and tanoshii's", 2, 2, 0);
+	draw_text_transformed(320, 180, "Kaban ends up being in a mysterious\nisland full of tanoshii's and sugoi's", 2, 2, 0);
 	draw_set_halign(fa_left);
 	draw_set_valign(fa_top);
 }
