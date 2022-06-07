@@ -310,7 +310,7 @@ switch(room){
 			C_MoveChar(19, char_serval, 420, 260, false, 60);
 			C_Execute(19, BGM_SetVolume, [0, 0, room_speed]);
 			C_Wait(19, 60);
-			C_MoveChar(20, camera, char_player.x - (camera.width / camera.scale_x / 2), char_player.y - (camera.width / camera.scale_x / 2) - 10, false, 30);
+			C_MoveChar(20, camera, char_player.x - (camera.width / camera.scale_x / 2), char_player.y - (camera.height / camera.scale_y / 2) - 10, false, 30);
 			C_Wait(20, 30);
 			C_Execute(21, variable_instance_set, [camera, "target", char_player]);
 			C_Execute(21, Flag_Set, [FLAG_TYPE.STATIC, FLAG_STATIC.SCENE_001, true]);
@@ -610,17 +610,17 @@ switch(room){
 				C_WaitUntilDestroy(25, ui_dialog);
 				C_Wait(26, 30);
 				C_MoveChar(27, char_player, 0, 10, true, 15);
-				C_Wait(27, 30);
-				if (instance_exists(char_serval)) C_CreateAnim(28, char_hippo, "x", 0, 0, char_hippo.x, char_serval.x, 15, false);
+				C_Wait(27, 60);
+				if (instance_exists(char_serval)) C_CreateAnim(28, char_hippo, "x", 0, 0, char_hippo.x, char_serval.x + 10, 15, false);
 				C_Execute(28, variable_instance_set, [char_serval, "dir", DIR.UP]);
 				C_Execute(28, variable_instance_set, [char_player, "dir", DIR.UP]);
 				C_Execute(28, Dialog_Add_Ext, ["* Well, you shouldn't let&  your hopes too high, Serval.", "{char_link 4}"]);
 				C_Execute(28, Dialog_Add_Ext, ["* You wouldn't want to leave&  a child like this alone&  in a conflict, would you?", "{char_link 4}"]);
 				C_Execute(28, Dialog_Add_Ext, ["* And with that, I suppose&  we should rest a little bit&  for some quick lesson.", "{char_link 4}"]);
 				C_Execute(28, Dialog_Add_Ext, ["* Lesson!? &* I don't think--", "{char_link 2}{voice 4}{face 2}{face_emotion 4}"]);
-				C_Execute(28, Dialog_Add_Ext, ["* Laziness won't work, Serval. &* It is important.", "{char_link 4}"]);
+				C_Execute(28, Dialog_Add_Ext, ["* Laziness won't work in a&  situation like this, Serval. &* It is important.", "{char_link 4}"]);
 				C_Execute(28, Dialog_Add_Ext, ["* Sigh...", "{char_link 2}{voice 4}{face 2}{face_emotion 6}"]);
-				C_Execute(28, Dialog_Add_Ext, ["* Well then!&* Get ready for a&  minute-long lesson!", "{char_link 4}"]);
+				C_Execute(28, Dialog_Add_Ext, ["* Well then!&* Get ready for a minute-long&  lesson!", "{char_link 4}"]);
 				C_Execute(28, Dialog_Start, [true]);
 				C_WaitUntilDestroy(28, ui_dialog);
 				C_Execute(29, BGM_SetVolume, [0, 0, 60]);
@@ -628,17 +628,30 @@ switch(room){
 				C_Wait(29, 120);
 				C_Execute(30, Dialog_Add_Ext, ["* I eagerly listened to Hippo's&  words and learned something&  new as a result.", ""]);
 				C_Execute(30, Dialog_Add_Ext, ["* This technique will surely&  boost my skills in a fight.", ""]);
+				C_Execute(30, Dialog_Add_Ext, ["* I've mastered the \"{color_text `yellow`}RUNNING{color_text `white`}\" &  technique!", ""]);
 				C_Execute(30, Dialog_Start, [false]);
 				C_WaitUntilDestroy(30, ui_dialog);
 				C_FadeFader(31, 1, 0, 60);
 				C_Execute(31, BGM_SetVolume, [0, 1, 60]);
 				C_Wait(31, 120);
-				//C_Execute(8, Flag_Set, [FLAG_TYPE.STATIC, FLAG_STATIC.SCENE_003, true]);
-				Cutscene_End(9999);
+				C_Execute(32, Dialog_Add_Ext, ["* This...{w} did NOT go well.", "{char_link 2}{voice 4}{face 2}{face_emotion 3}"]);
+				C_Execute(32, Dialog_Add_Ext, ["* I mean, at least Kaban&  knows something valuable&  now.", "{char_link 4}"]);
+				C_Execute(32, Dialog_Add_Ext, ["* You don't have to be biased&  for that little advice, &  you know.", "{char_link 4}"]);
+				C_Execute(32, Dialog_Add_Ext, ["* Uh,{w} let's just go.", "{char_link 2}{voice 4}{face 2}{face_emotion 0}"]);
+				C_Execute(32, Dialog_Start, [true]);
+				C_WaitUntilDestroy(32, ui_dialog);
+				C_MoveChar(33, char_serval, 500, 310, false, 120);
+				C_MoveChar(33, camera, char_player.x - (camera.width / camera.scale_x / 2), 180 - 10, false, 60);
+				C_Wait(33, 120);
+				C_Execute(34, variable_instance_set, [camera, "target", char_player]);
+				C_Execute(34, instance_destroy, [char_serval]);
+				C_Execute(34, Flag_Set, [FLAG_TYPE.STATIC, FLAG_STATIC.SCENE_004, true]);
+				Cutscene_End(34);
 			}
 		}
 		else {
-			instance_destroy(char_hippo);
+			if (teleportedChar == true) instance_destroy(char_hippo);
+			instance_destroy(char_forcefield);
 		}
 		break;
 }

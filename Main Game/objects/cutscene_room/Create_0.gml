@@ -1,4 +1,5 @@
 Cutscene_Begin();
+teleportedChar = false;
 _merge_amount_0 = 1;
 phase = 0;
 
@@ -64,6 +65,7 @@ switch(room){
 			//char_serval.dir_locked = false;
 		}
 		else {
+			teleportedChar = true;
 			instance_destroy(char_forcefield);
 			char_hippo.x = -9999;
 			char_hippo.y = -9999;
