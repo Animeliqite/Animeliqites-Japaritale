@@ -2,6 +2,10 @@ var specialKey = (Input_IsHeld(INPUT.UP)&&Input_IsHeld(INPUT.DOWN));
 var readyToDance = specialKey&&place_meeting(x,y-move_speed[DIR.UP],block);
 var can_move=(moveable&&_moveable_dialog&&_moveable_menu&&_moveable_save&&_moveable_warp&&_moveable_encounter&&!global._gmu_cutscene);
 if(can_move){
+	for (var i = 0; i <= DIR.DOWN; i += 90) {
+		move_speed[i] = (canRun && Input_IsHeld(INPUT.CANCEL) ? 3 : 2);
+		res_move_speed[i] = (canRun && Input_IsHeld(INPUT.CANCEL) ? 1/2.25 : 1/3);
+	}
 	if(Input_IsHeld(INPUT.UP)&&!readyToDance){
 		move[DIR.UP]=2;
 	}else if(Input_IsHeld(INPUT.DOWN)){

@@ -642,6 +642,7 @@ switch(room){
 				C_WaitUntilDestroy(32, ui_dialog);
 				C_MoveChar(33, char_serval, 500, 310, false, 120);
 				C_MoveChar(33, camera, char_player.x - (camera.width / camera.scale_x / 2), 180 - 10, false, 60);
+				C_Execute(33, Flag_Set, [FLAG_TYPE.STATIC, FLAG_STATIC.CAN_RUN, true]);
 				C_Wait(33, 120);
 				C_Execute(34, variable_instance_set, [camera, "target", char_player]);
 				C_Execute(34, instance_destroy, [char_serval]);
