@@ -2,9 +2,69 @@ var specialKey = (Input_IsHeld(INPUT.UP)&&Input_IsHeld(INPUT.DOWN));
 var readyToDance = specialKey&&place_meeting(x,y-move_speed[DIR.UP],block);
 var can_move=(moveable&&_moveable_dialog&&_moveable_menu&&_moveable_save&&_moveable_warp&&_moveable_encounter&&!global._gmu_cutscene);
 if(can_move){
-	for (var i = 0; i <= DIR.DOWN; i += 90) {
-		move_speed[i] = (canRun && Input_IsHeld(INPUT.CANCEL) ? 3 : 2);
-		res_move_speed[i] = (canRun && Input_IsHeld(INPUT.CANCEL) ? 1/2.25 : 1/3);
+	if (canRun && Input_IsHeld(INPUT.CANCEL) && canRunAlt) {
+		var player = id;
+		cooldownTimer = 15;
+		runningTimer++;
+		
+		for (var i = 0; i <= DIR.DOWN; i += 90) {
+			move_speed[i] = round(runningSpeed);
+			res_move_speed[i] = 1/1.50;
+			image_speed = 1/1.50;
+		}
+		
+		if (runningTimer == 1) {
+			runningSpeed = 7;
+			Anim_Create(id, "runningSpeed", ANIM_TWEEN.SINE, ANIM_EASE.OUT, 7, 4, 15, 5, -1, -1, ANIM_MODE.ONESHOT, false);
+			Camera_Shake(5, 5, 0, 0, true, true);
+			audio_play_sound(snd_impact, 0, false);
+			audio_play_sound(snd_flee, 0, false);
+		}
+		if (runningTimer < 5) {
+			with (instance_create_depth(x, y, depth + 1, trail)) {
+				image_alpha = 1;
+				image_blend = c_white;
+				sprite_index = player.sprite_index;
+				image_index = player.image_index;
+				duration = 0.1;
+				color = [0.5, 0.5, 0.5, 1.0];
+			}
+		}
+		with (instance_create_depth(x, y, depth + 1, trail)) {
+			image_alpha = 0.8;
+			image_blend = c_white;
+			sprite_index = player.sprite_index;
+			image_index = player.image_index;
+			duration = 0.5;
+			color = [1.0, 1.0, 1.0, 1.0];
+		}
+		
+		if (runningTimer == 6) {
+			fader.color = c_black;
+		}
+		
+		if (runningTimer % 5 == 0) {
+			audio_play_sound(snd_bump, 0, false);
+		}
+	}
+	else {
+		runningTimer = 0;
+		runningSpeed = 4;
+		
+		if (cooldownTimer > 0) {
+			canRunAlt = false;
+			cooldownTimer--;
+		}
+		else canRunAlt = true;
+		
+		if (cooldownTimer > 13) {
+			audio_stop_sound(snd_bump);
+			for (var i = 0; i <= DIR.DOWN; i += 90) {
+				move_speed[i] = 2;
+				res_move_speed[i] = 1/3;
+				image_speed = 1/3;
+			}
+		}
 	}
 	if(Input_IsHeld(INPUT.UP)&&!readyToDance){
 		move[DIR.UP]=2;

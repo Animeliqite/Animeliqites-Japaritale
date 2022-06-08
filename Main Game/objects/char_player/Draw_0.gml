@@ -17,6 +17,9 @@ if (_draw_hat) {
 			break;
 	}
 }
+
+draw_text(0,0,move_speed[DIR.DOWN]);
+
 /*
 {
 	if(keyboard_check(vk_enter)){
