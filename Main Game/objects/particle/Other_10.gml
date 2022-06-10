@@ -12,4 +12,19 @@ switch (_particle_type) {
 		part_type_direction(parttype, -125, -45, 0, 0);
 		part_type_life(parttype, room_speed * 2, room_speed * 4);
 		break;
+	case 1:
+		randomize();
+		_repeat_amount = 10;
+		partsystem = part_system_create();
+		parttype = part_type_create();
+		part_system_depth(partsystem,-8000);
+		part_type_sprite(parttype, spr_particle_sandstar, true, true, false);
+		part_type_scale(parttype, 0.75, 0.75);
+		part_type_speed(parttype, 0.5, 0.5, -0.005, 0);
+		part_type_color1(parttype, randColorWhiter);
+		part_type_alpha3(parttype, 0, 2, 0);
+		part_type_orientation(parttype, -360, 360, 5, false, false);
+		part_type_direction(parttype, 90, 90, 0, 0);
+		part_type_life(parttype, room_speed * 2, room_speed * 2);
+		break;
 }

@@ -40,7 +40,6 @@ switch(room){
 			instance_deactivate_object(trigger_warp);
 		}
 		else {
-			instance_destroy(char_forcefield);
 			char_serval.x = -9999;
 			char_serval.y = -9999;
 			Cutscene_End(-1);
@@ -66,7 +65,6 @@ switch(room){
 		}
 		else {
 			teleportedChar = true;
-			instance_destroy(char_forcefield);
 			char_hippo.x = -9999;
 			char_hippo.y = -9999;
 			Cutscene_End(-1);	

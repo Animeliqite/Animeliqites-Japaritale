@@ -18,8 +18,6 @@ if (_draw_hat) {
 	}
 }
 
-draw_text(0,0,move_speed[DIR.DOWN]);
-
 /*
 {
 	if(keyboard_check(vk_enter)){

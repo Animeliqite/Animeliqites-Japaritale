@@ -430,6 +430,10 @@ switch(room){
 				}
 			}
 		}
+		else {
+			instance_destroy(char_serval);
+			instance_destroy(char_forcefield);
+		}
 		break;
 	case room_savannah_2:
 		if (Flag_Get(FLAG_TYPE.STATIC,FLAG_STATIC.SCENE_003,false)==false){
@@ -489,12 +493,12 @@ switch(room){
 				C_Wait(3, 60);
 				C_FadeFader(4, 1, 0, 7, 0, c_white);
 				C_PlaySfx(4, bgm_hippo_appear, 0.95);
+				C_PlaySfx(4, snd_damage, 0.95);
 				C_Execute(4, variable_instance_set, [camera, "target", char_hippo]);
 				C_Execute(4, variable_instance_set, [camera, "scale_x", 3]);
 				C_Execute(4, variable_instance_set, [camera, "scale_y", 3]);
 				C_Execute(4, variable_instance_set, [camera, "angle", 6]);
-				C_Execute(4, Object_Shake, [5, "x", camera]);
-				C_Execute(4, Object_Shake, [5, "y", camera]);
+				C_Execute(4, Camera_Shake, [10, 10, 0, 0, true, true]);
 				C_Execute(4, variable_instance_set, [char_hippo, "visible", true]);
 				C_Execute(4, variable_instance_set, [char_hippo, "sprite_index", spr_char_hippo_water]);
 				C_Execute(4, variable_instance_set, [char_hippo, "image_speed", 1]);
@@ -651,7 +655,9 @@ switch(room){
 			}
 		}
 		else {
-			if (teleportedChar == true) instance_destroy(char_hippo);
+			if (teleportedChar == true) { 
+				instance_destroy(char_hippo);
+			}
 			instance_destroy(char_forcefield);
 		}
 		break;

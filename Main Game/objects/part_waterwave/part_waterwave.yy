@@ -1,16 +1,13 @@
 {
   "spriteId": {
-    "name": "spr_char_forcefield",
-    "path": "sprites/spr_char_forcefield/spr_char_forcefield.yy",
+    "name": "spr_particle_waterwave",
+    "path": "sprites/spr_particle_waterwave/spr_particle_waterwave.yy",
   },
   "solid": false,
   "visible": true,
   "spriteMaskId": null,
   "persistent": false,
-  "parentObjectId": {
-    "name": "char_sign",
-    "path": "objects/char_sign/char_sign.yy",
-  },
+  "parentObjectId": null,
   "physicsObject": false,
   "physicsSensor": false,
   "physicsShape": 1,
@@ -26,16 +23,15 @@
   "eventList": [
     {"isDnD":false,"eventNum":0,"eventType":0,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
     {"isDnD":false,"eventNum":0,"eventType":3,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
-    {"isDnD":false,"eventNum":0,"eventType":8,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
   ],
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "Character",
-    "path": "folders/Objects/Character.yy",
+    "name": "Objectified Particles",
+    "path": "folders/Objects/Objectified Particles.yy",
   },
   "resourceVersion": "1.0",
-  "name": "char_forcefield",
+  "name": "part_waterwave",
   "tags": [],
   "resourceType": "GMObject",
 }

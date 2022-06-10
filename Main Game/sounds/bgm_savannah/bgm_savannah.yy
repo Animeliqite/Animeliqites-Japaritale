@@ -12,7 +12,7 @@
     "path": "audiogroups/audiogroup_default",
   },
   "soundFile": "bgm_savannah.ogg",
-  "duration": 193.1755,
+  "duration": 83.0,
   "parent": {
     "name": "BGM",
     "path": "folders/Sounds/BGM.yy",

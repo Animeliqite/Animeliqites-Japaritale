@@ -16,10 +16,15 @@ res_move_sprite[DIR.DOWN]=spr_char_kaban_down;
 res_move_sprite[DIR.LEFT]=spr_char_kaban_left;
 res_move_sprite[DIR.RIGHT]=spr_char_kaban_right;
 
-move_speed[DIR.UP]=2;
-move_speed[DIR.DOWN]=2;
-move_speed[DIR.LEFT]=2;
-move_speed[DIR.RIGHT]=2;
+res_move_speed[DIR.UP]=1/4.25;
+res_move_speed[DIR.DOWN]=1/4.25;
+res_move_speed[DIR.LEFT]=1/4.25;
+res_move_speed[DIR.RIGHT]=1/4.25;
+
+move_speed[DIR.UP]=1.5;
+move_speed[DIR.DOWN]=1.5;
+move_speed[DIR.LEFT]=1.5;
+move_speed[DIR.RIGHT]=1.5;
 
 moveable=true;
 _moveable_dialog=true;

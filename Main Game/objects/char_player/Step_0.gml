@@ -1,3 +1,4 @@
+canRun = Flag_Get(FLAG_TYPE.STATIC,FLAG_STATIC.CAN_RUN);
 var specialKey = (Input_IsHeld(INPUT.UP)&&Input_IsHeld(INPUT.DOWN));
 var readyToDance = specialKey&&place_meeting(x,y-move_speed[DIR.UP],block);
 var can_move=(moveable&&_moveable_dialog&&_moveable_menu&&_moveable_save&&_moveable_warp&&_moveable_encounter&&!global._gmu_cutscene);
@@ -10,11 +11,11 @@ if(can_move){
 		for (var i = 0; i <= DIR.DOWN; i += 90) {
 			move_speed[i] = round(runningSpeed);
 			res_move_speed[i] = 1/1.50;
-			image_speed = 1/1.50;
 		}
 		
 		if (runningTimer == 1) {
 			runningSpeed = 7;
+			image_speed = 1/1.50;
 			Anim_Create(id, "runningSpeed", ANIM_TWEEN.SINE, ANIM_EASE.OUT, 7, 4, 15, 5, -1, -1, ANIM_MODE.ONESHOT, false);
 			Camera_Shake(5, 5, 0, 0, true, true);
 			audio_play_sound(snd_impact, 0, false);
@@ -43,8 +44,8 @@ if(can_move){
 			fader.color = c_black;
 		}
 		
-		if (runningTimer % 5 == 0) {
-			audio_play_sound(snd_bump, 0, false);
+		if (runningTimer % 5 == 0) && (move[DIR.UP]>0 || move[DIR.DOWN]>0 || move[DIR.LEFT]>0 || move[DIR.RIGHT]>0) {
+			audio_play_sound(snd_pellet, 0, false);
 		}
 	}
 	else {
@@ -60,8 +61,8 @@ if(can_move){
 		if (cooldownTimer > 13) {
 			audio_stop_sound(snd_bump);
 			for (var i = 0; i <= DIR.DOWN; i += 90) {
-				move_speed[i] = 2;
-				res_move_speed[i] = 1/3;
+				move_speed[i] = 1.5;
+				res_move_speed[i] = 1/4.25;
 				image_speed = 1/3;
 			}
 		}
