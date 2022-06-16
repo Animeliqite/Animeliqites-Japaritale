@@ -16,15 +16,15 @@ The entire game including the demo shares the same story from the [animation ser
     * [ ] Programming
     * [ ] Sprites
     * [ ] Music
-* [ ] Areas
+* [x] Areas
   * [x] The Beginning
     * [x] Programming
     * [x] Sprites
     * [x] Music
-  * [ ] Savannah Area
-    * [ ] Programming
-    * [ ] Sprites
-    * [ ] Music
+  * [x] Savannah Area
+    * [x] Programming
+    * [x] Sprites
+    * [x] Music
 * [ ] Features
   * [ ] Battle Dialog Box with Faces
   * [x] Cutscene System
@@ -32,7 +32,7 @@ The entire game including the demo shares the same story from the [animation ser
     * [x] Red Soul
     * [ ] Blue Soul
     * [ ] Green Soul
-  * [ ] Running
+  * [x] Running
 ### FAQ
 
 **Q: How do I contribute?**
