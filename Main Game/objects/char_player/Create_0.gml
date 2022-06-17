@@ -1,11 +1,16 @@
 event_inherited();
 
+running=false;
 canRun=Flag_Get(FLAG_TYPE.STATIC,FLAG_STATIC.CAN_RUN);
 canRunAlt=true;
 cooldownTimer=0;
 runningTimer=0;
 runningSpeed=3;
+
 char_id=0;
+
+hatOffsetX=0;
+hatOffsetY=0;
 
 res_idle_sprite[DIR.UP]=spr_char_kaban_up;
 res_idle_sprite[DIR.DOWN]=spr_char_kaban_down;

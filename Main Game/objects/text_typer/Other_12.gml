@@ -25,10 +25,10 @@ switch(cmd[|0]){
 					_color_text[1]=c_white;
 					_color_text[2]=c_white;
 					_color_text[3]=c_white;
-					_color_shadow[0]=make_color_rgb(49,49,79);
-					_color_shadow[1]=make_color_rgb(49,49,79);
-					_color_shadow[2]=make_color_rgb(15,15,115);
-					_color_shadow[3]=make_color_rgb(15,15,115);
+					_color_shadow[0]=make_color_rgb(128,128,128);
+					_color_shadow[1]=make_color_rgb(128,128,128);
+					_color_shadow[2]=make_color_rgb(64,64,64);
+					_color_shadow[3]=make_color_rgb(64,64,64);
 					break;
 					
 				case c_yellow:

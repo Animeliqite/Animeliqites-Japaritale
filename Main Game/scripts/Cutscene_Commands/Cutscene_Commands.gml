@@ -113,7 +113,7 @@ function C_Wait(order_to_check, frames) {
 	}
 }
 
-function C_MoveChar(order_to_check, object, targetX, targetY, relative, seconds) {
+function C_MoveChar(order_to_check, object, targetX, targetY, relative, seconds, running = false) {
 	if (cutscene._current_order == order_to_check && cutscene._wait == false) {
 		var inst = instance_create_depth(0, 0, 0, char_mover);
 		with (inst) {
@@ -121,6 +121,7 @@ function C_MoveChar(order_to_check, object, targetX, targetY, relative, seconds)
 				_x_dest = (!relative ? targetX : object.x + targetX);
 				_y_dest = (!relative ? targetY : object.y + targetY);
 			}
+			_running = running;
 			_moving_object = object;
 			_seconds = seconds;
 		}

@@ -5,14 +5,14 @@
   "preload": false,
   "bitRate": 128,
   "sampleRate": 44100,
-  "type": 0,
+  "type": 1,
   "bitDepth": 1,
   "audioGroupId": {
     "name": "audiogroup_default",
     "path": "audiogroups/audiogroup_default",
   },
   "soundFile": "bgm_dream.ogg",
-  "duration": 47.8802032,
+  "duration": 25.28102,
   "parent": {
     "name": "BGM",
     "path": "folders/Sounds/BGM.yy",

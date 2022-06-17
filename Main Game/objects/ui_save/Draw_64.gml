@@ -1,6 +1,5 @@
 if(_state==0||_state==1){
-	draw_sprite_ext(spr_pixel,0,108,118,424,174,0,c_white,1);
-	draw_sprite_ext(spr_pixel,0,108+6,118+6,424-6*2,174-6*2,0,c_black,1);
+	draw_sprite_stretched_ext(spr_dialogbox_slice,0,108,118,424,174,c_white,1);
 }
 
 if(_state==0){

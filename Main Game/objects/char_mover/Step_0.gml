@@ -12,8 +12,13 @@ with (_moving_object) {
 		direction = direc;
 		image_index += _inst.spd / 15;
 		dir = Char_ConvertDirection(id);
+		
+		if (_inst._moving_object == char_player) && (_inst._running)
+			running = true;
 	}
 	else {
+		if (_inst._moving_object == char_player) && (_inst._running)
+			running = false;
 		_inst._on_end();
 		image_speed = 0;
 		image_index = 0;

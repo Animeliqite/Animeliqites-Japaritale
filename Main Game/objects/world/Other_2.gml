@@ -52,6 +52,8 @@ Console_OutputLine("Game Name: "+GAME_NAME);
 Console_OutputLine("Game Author: "+GAME_AUTHOR);
 Console_OutputLine("Game Version: "+GAME_VERSION);
 
+gpu_set_fog(false, c_white, 0, 0);
+
 //show_debug_overlay(true);
 
 room_goto_next();

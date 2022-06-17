@@ -1,1 +1,1 @@
-spd = round(point_distance(camera.x, camera.y, targetX, targetY) / duration);
+spd = round(point_distance(camera.x, camera.y, targetX, targetY) / duration) * 2;

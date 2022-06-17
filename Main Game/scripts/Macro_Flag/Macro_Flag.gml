@@ -42,7 +42,8 @@ function Macro_Flag() {
 		SCENE_002,
 		SCENE_003,
 		SCENE_004,
-		CAN_RUN
+		CAN_RUN,
+		SCENE_005
 	};
 #endregion
 

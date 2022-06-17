@@ -30,6 +30,7 @@ function Flag_Custom() {
 	Flag_Set(FLAG_TYPE.STATIC,FLAG_STATIC.SCENE_002,false);
 	Flag_Set(FLAG_TYPE.STATIC,FLAG_STATIC.SCENE_003,false);
 	Flag_Set(FLAG_TYPE.STATIC,FLAG_STATIC.SCENE_004,false);
+	Flag_Set(FLAG_TYPE.STATIC,FLAG_STATIC.SCENE_005,false);
 
 	Item_SetWeapon(item_stick);
 	Item_SetArmor(item_bandage);

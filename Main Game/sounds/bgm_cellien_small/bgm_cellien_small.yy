@@ -5,14 +5,14 @@
   "preload": false,
   "bitRate": 128,
   "sampleRate": 44100,
-  "type": 0,
+  "type": 1,
   "bitDepth": 1,
   "audioGroupId": {
     "name": "audiogroup_default",
     "path": "audiogroups/audiogroup_default",
   },
-  "soundFile": "bgm_cellien_small.mp3",
-  "duration": 28.0293751,
+  "soundFile": "bgm_cellien_small.ogg",
+  "duration": 102.0,
   "parent": {
     "name": "BGM",
     "path": "folders/Sounds/BGM.yy",

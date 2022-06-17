@@ -55,3 +55,17 @@ idle_speed[7]=0;
 talk_sprite[7]=spr_face_serval_derp;
 talk_image[7]=1;
 talk_speed[7]=1/4;
+
+idle_sprite[8]=spr_face_serval_side;
+idle_image[8]=0;
+idle_speed[8]=0;
+talk_sprite[8]=spr_face_serval_side;
+talk_image[8]=1;
+talk_speed[8]=1/4;
+
+idle_sprite[9]=spr_face_serval_side_unamused;
+idle_image[9]=0;
+idle_speed[9]=0;
+talk_sprite[9]=spr_face_serval_side_unamused;
+talk_image[9]=1;
+talk_speed[9]=1/4;
