@@ -477,6 +477,25 @@ switch(room){
 				else Cutscene_End(-1);
 			}
 			else if (phase == 1) {
+				if (global.event == 1) {
+					char_hippo.sprite_index = spr_char_hippo_water_talk_laugh;
+					char_hippo.res_idle_sprite[DIR.DOWN] = spr_char_hippo_water_talk_laugh;
+					char_hippo.res_talk_sprite[DIR.DOWN] = spr_char_hippo_water_talk_laugh;
+					char_hippo.dir = DIR.DOWN;
+				}
+				if (global.event == 2) {
+					char_hippo.sprite_index = spr_char_hippo_water_talk;
+					char_hippo.res_idle_sprite[DIR.DOWN] = spr_char_hippo_water_talk;
+					char_hippo.res_talk_sprite[DIR.DOWN] = spr_char_hippo_water_talk;
+					char_hippo.dir = DIR.DOWN;
+				}
+				if (global.event == 3) {
+					char_hippo.sprite_index = spr_char_hippo_water_talk_shocked;
+					char_hippo.res_idle_sprite[DIR.DOWN] = spr_char_hippo_water_talk_shocked;
+					char_hippo.res_talk_sprite[DIR.DOWN] = spr_char_hippo_water_talk_shocked;
+					char_hippo.dir = DIR.DOWN;
+				}
+				
 				C_Execute(0, BGM_SetVolume, [0, 0, 30]);
 				C_MoveChar(0, char_player, 280, 310, false, 30);
 				C_Wait(0, 30);
@@ -507,7 +526,7 @@ switch(room){
 				C_CreateAnim(5, camera, "y", 0, 0, char_hippo.y - (camera.width / 4), char_player.y - (camera.width / 4), 15, false, 15);
 				C_Execute(5, variable_instance_set, [char_hippo, "sprite_index", spr_char_hippo_water_appear]);
 				C_Execute(5, variable_instance_set, [char_hippo, "direction", point_direction(char_hippo.x, char_hippo.y, char_player.x, char_player.y)]);
-				C_Execute(5, array_set, [char_hippo.res_idle_sprite, DIR.DOWN, spr_char_hippo_water_talk_angry]);
+				C_Execute(5, array_set, [char_hippo.res_idle_sprite, DIR.DOWN, spr_char_hippo_water_idle_angry]);
 				C_Execute(5, array_set, [char_hippo.res_talk_sprite, DIR.DOWN, spr_char_hippo_water_talk_angry]);
 				C_Wait(5, 45);
 				C_Execute(6, variable_instance_set, [camera, "target", noone]);
@@ -539,16 +558,16 @@ switch(room){
 				C_Execute(11, variable_instance_set, [char_player, "vspeed", 0]);
 				C_Execute(11, variable_instance_set, [char_player, "image_index", 0]);
 				C_Execute(11, variable_instance_set, [char_player, "image_speed", 0]);
-				C_Execute(11, array_set, [char_hippo.res_idle_sprite, DIR.DOWN, spr_char_hippo_water_talk_blink]);
+				C_Execute(11, array_set, [char_hippo.res_idle_sprite, DIR.DOWN, spr_char_hippo_water_idle_blink]);
 				C_Execute(11, array_set, [char_hippo.res_talk_sprite, DIR.DOWN, spr_char_hippo_water_talk_blink]);
 				C_Execute(11, Dialog_Add_Ext, ["* They experience death.", "{char_link 4}{effect 0}"]);
 				C_Execute(11, Dialog_Start, [false]);
 				C_WaitUntilDestroy(11, ui_dialog);
-				C_Execute(12, array_set, [char_hippo.res_idle_sprite, DIR.DOWN, spr_char_hippo_water_talk_shocked]);
+				C_Execute(12, array_set, [char_hippo.res_idle_sprite, DIR.DOWN, spr_char_hippo_water_idle_shocked]);
 				C_Execute(12, array_set, [char_hippo.res_talk_sprite, DIR.DOWN, spr_char_hippo_water_talk_shocked]);
 				C_Execute(12, instance_create_depth, [char_hippo.x, char_hippo.y - char_hippo.sprite_height - 5, 0, exclamation]);
 				C_Execute(12, instance_create_depth, [char_player.x, char_player.y - char_player.sprite_height - 5, 0, exclamation]);
-				C_Execute(12, variable_instance_set, [char_hippo, "sprite_index", spr_char_hippo_water_talk_shocked]);
+				C_Execute(12, variable_instance_set, [char_hippo, "sprite_index", spr_char_hippo_water_idle_shocked]);
 				C_Execute(12, variable_instance_set, [char_player, "dir", DIR.LEFT]);
 				C_Execute(12, Dialog_Add_Ext, ["* Hippo! &* Stop.", "{voice 4}{face 2}{face_emotion 6}"]);
 				C_Execute(12, Dialog_Start, [true]);
@@ -556,23 +575,30 @@ switch(room){
 				C_Execute(13, instance_create_depth, [110, 240, -2000, char_serval]);
 				C_MoveChar(13, char_serval, 150, 310, false, 30);
 				C_Wait(13, 30);
-				C_Execute(14, variable_instance_set, [char_hippo, "sprite_index", spr_char_hippo_water_talk]);
-				C_Execute(14, array_set, [char_hippo.res_idle_sprite, DIR.DOWN, spr_char_hippo_water_talk]);
+				C_Execute(14, variable_instance_set, [char_hippo, "sprite_index", spr_char_hippo_water_idle]);
+				C_Execute(14, array_set, [char_hippo.res_idle_sprite, DIR.DOWN, spr_char_hippo_water_idle]);
 				C_Execute(14, array_set, [char_hippo.res_talk_sprite, DIR.DOWN, spr_char_hippo_water_talk]);
-				C_Execute(14, array_set, [char_hippo.res_move_sprite, DIR.RIGHT, spr_char_hippo_water_talk]);
+				C_Execute(14, array_set, [char_hippo.res_move_sprite, DIR.RIGHT, spr_char_hippo_water_idle]);
 				C_MoveChar(14, char_serval, char_player.x - 30, char_player.y, false, 30);
 				C_Wait(14, 30);
 				C_Execute(15, variable_instance_set, [char_serval, "dir", DIR.UP]);
 				C_Execute(15, variable_instance_set, [char_player, "dir", DIR.UP]);
 				C_Wait(15, 30);
 				C_Execute(16, BGM_Play, [0, bgm_savannah]);
-				C_Execute(16, Dialog_Add_Ext, ["* I cannot let such&  negativities affect my&  dear Kaban!", "{char_link 2}{voice 4}{face 2}{face_emotion 6}"]);
-				C_Execute(16, Dialog_Add_Ext, ["* Okay, look, I thought she was&  a CELLIEN.", "{char_link 4}"]);
-				C_Execute(16, Dialog_Add_Ext, ["* What has ever gotten&  you so paranoid all&  of a sudden?", "{char_link 2}{voice 4}{face 2}{face_emotion 4}"]);
-				C_Execute(16, Dialog_Add_Ext, ["* CELLIENS, Serval.&* I've already told you about&  this seconds ago.", "{char_link 4}"]);
-				C_Execute(16, Dialog_Add_Ext, ["* Oh, yes! Those pesky&  CELLIENS.", "{char_link 2}{voice 4}{face 2}{face_emotion 5}"]);
-				C_Execute(16, Dialog_Add_Ext, ["* I've seen a huge CELLIEN&  halting the gate.&* I'd advise you to be careful.", "{char_link 4}"]);
-				C_Execute(16, Dialog_Add_Ext, ["* Don't worry!&* It'll all be easy.", "{char_link 2}{voice 4}{face 2}{face_emotion 2}"]);
+				C_Execute(16, Dialog_Add_Ext, ["* I cannot allow such&  things like this&  to KABAN!", "{char_link 2}{voice 4}{face 2}{face_emotion 6}"]);
+				C_Execute(16, Dialog_Add_Ext, ["* Ooh~!{w}&* You've got yourself a&  companion, I see~", "{char_link 4}"]);
+				C_Execute(16, Dialog_Add_Ext, ["* ...", "{char_link 2}{voice 4}{face 2}{face_emotion 6}"]);
+				C_Execute(16, Dialog_Add_Ext, ["* Oh, I'm sorry~!{w}&* Does my \"lascivious\" voice&  bother you two~?", "{char_link 4}"]);
+				C_Execute(16, Dialog_Add_Ext, ["* Well, I'm used to your{w}&  \"weird\" voice, to be&  honest...", "{char_link 2}{voice 4}{face 2}{face_emotion 9}"]);
+				C_Execute(16, Dialog_Add_Ext, ["* Good, good~", "{char_link 4}"]);
+				C_Execute(16, Dialog_Add_Ext, ["* Anyways, I was going&  to ask you why you&  put KABAN in such fear.", "{char_link 2}{voice 4}{face 2}{face_emotion 5}"]);
+				C_Execute(16, Dialog_Add_Ext, ["* Those little creatures&  were bothering me off, thus&  I wasn't morally fine.", "{char_link 4}{event 3}"]);
+				C_Execute(16, Dialog_Add_Ext, ["* Though look out for the&  huge CELLIEN halting&  the gate.", "{char_link 4}{event 1}"]);
+				C_Execute(16, Dialog_Add_Ext, ["* You two wouldn't be&  able to beat it&  anyway~!", "{char_link 4}{event 2}"]);
+				C_Execute(16, Dialog_Add_Ext, ["* Then why not do it&  yourself?", "{char_link 2}{voice 4}{face 2}{face_emotion 4}{event 2}"]);
+				C_Execute(16, Dialog_Add_Ext, ["* I have \"bathing\" stuff to do&  right now~!", "{char_link 4}{event 1}"]);
+				C_Execute(16, Dialog_Add_Ext, ["* ...", "{char_link 2}{voice 4}{face 2}{face_emotion 6}{event 2}"]);
+				C_Execute(16, Dialog_Add_Ext, ["* Anyways, we've got&  things to do!", "{char_link 2}{voice 4}{face 2}{face_emotion 2}"]);
 				C_Execute(16, Dialog_Start, [true]);
 				C_WaitUntilDestroy(16, ui_dialog);
 				C_MoveChar(17, char_player, 20, 0, true, 30);
