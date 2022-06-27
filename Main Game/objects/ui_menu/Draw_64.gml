@@ -12,7 +12,7 @@ if(_menu==0){
 
 //ITEM
 if(_menu==1||_menu==2){
-	draw_sprite_ext(spr_dialogbox_slice,0,188,52,346,362,0,c_white,1);
+	draw_sprite_stretched_ext(spr_dialogbox_slice,0,188,52,346,362,c_white,1);
 }
 
 if(_menu==1){

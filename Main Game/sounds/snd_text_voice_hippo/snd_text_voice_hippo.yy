@@ -11,14 +11,14 @@
     "name": "audiogroup_default",
     "path": "audiogroups/audiogroup_default",
   },
-  "soundFile": "snd_text_voice_toriel",
-  "duration": 0.5,
+  "soundFile": "snd_text_voice_hippo.wav",
+  "duration": 0.058707,
   "parent": {
     "name": "SFX",
     "path": "folders/Sounds/SFX.yy",
   },
   "resourceVersion": "1.0",
-  "name": "snd_text_voice_toriel",
+  "name": "snd_text_voice_hippo",
   "tags": [],
   "resourceType": "GMSound",
 }

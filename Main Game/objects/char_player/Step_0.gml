@@ -2,25 +2,25 @@ canRun = Flag_Get(FLAG_TYPE.STATIC,FLAG_STATIC.CAN_RUN);
 var specialKey = (Input_IsHeld(INPUT.UP)&&Input_IsHeld(INPUT.DOWN));
 var readyToDance = specialKey&&place_meeting(x,y-move_speed[DIR.UP],block)&&instance_nearest(x,y-move_speed[DIR.UP],block).block_enabled==true;
 var can_move=(moveable&&_moveable_dialog&&_moveable_menu&&_moveable_save&&_moveable_warp&&_moveable_encounter&&!global._gmu_cutscene);
-if ((canRun && Input_IsHeld(INPUT.CANCEL) && canRunAlt && can_move) || running) {
+if ((canRun && Input_IsHeld(INPUT.CANCEL) && canRunAlt && can_move && (move[DIR.UP] > 0 || move[DIR.DOWN] > 0 || move[DIR.LEFT] > 0 || move[DIR.RIGHT] > 0)) || running) {
 	var player = id;
-	cooldownTimer = 15;
+	canRunAltExecutedOnce = false;
+	cooldownTimer = 1;
 	runningTimer++;
 		
 	for (var i = 0; i <= DIR.DOWN; i += 90) {
 		move_speed[i] = round(runningSpeed);
-		res_move_speed[i] = 1/1.50;
+		res_move_speed[i] = 1/2.25;
 	}
 		
 	if (runningTimer == 1) {
-		runningSpeed = 7;
-		image_speed = 1/1.50;
-		Anim_Create(id, "runningSpeed", ANIM_TWEEN.SINE, ANIM_EASE.OUT, 7, 4, 15, 5, -1, -1, ANIM_MODE.ONESHOT, false);
-		Camera_Shake(5, 5, 0, 0, true, true);
-		audio_play_sound(snd_impact, 0, false);
-		audio_play_sound(snd_flee, 0, false);
+		image_speed = 1/2.25;
+		Anim_Create(id, "runningSpeed", 0, 0, 1.5, 4, 10, 0, -1, -1, ANIM_MODE.ONESHOT, false);
+		//Camera_Shake(5, 5, 0, 0, true, true);
+		//audio_play_sound(snd_impact, 0, false);
+		//audio_play_sound(snd_flee, 0, false);
 	}
-	if (runningTimer < 5) {
+	/*if (runningTimer < 5) {
 		with (instance_create_depth(x, y, depth + 1, trail)) {
 			image_alpha = 1;
 			image_blend = c_white;
@@ -46,24 +46,23 @@ if ((canRun && Input_IsHeld(INPUT.CANCEL) && canRunAlt && can_move) || running) 
 	if (runningTimer % 5 == 0) && (move[DIR.UP]>0 || move[DIR.DOWN]>0 || move[DIR.LEFT]>0 || move[DIR.RIGHT]>0) {
 		audio_play_sound(snd_pellet, 0, false);
 	}
+	*/
 }
 else {
 	runningTimer = 0;
-	runningSpeed = 4;
-		
-	if (cooldownTimer > 0) {
+	runningSpeed = 1.5;
+	
+	if (canRunAltExecutedOnce == false) {
 		canRunAlt = false;
-		cooldownTimer--;
-	}
-	else canRunAlt = true;
-		
-	if (cooldownTimer > 13) {
+		Anim_Destroy(id, "runningSpeed");
 		audio_stop_sound(snd_bump);
+		image_speed = 1/4.25;
 		for (var i = 0; i <= DIR.DOWN; i += 90) {
 			move_speed[i] = 1.5;
 			res_move_speed[i] = 1/4.25;
-			image_speed = 1/3;
 		}
+		canRunAlt = true;
+		canRunAltExecutedOnce = true;
 	}
 }
 if(can_move){

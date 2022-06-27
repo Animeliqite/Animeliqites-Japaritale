@@ -1,0 +1,1 @@
+draw_sprite_ext(sprite_index, image_index, camera.x + (camera.width / camera.scale_x / 2), camera.y + (camera.height / camera.scale_y / 2), 640 / (camera.width * camera.scale_y), 480 / (camera.height * camera.scale_y), -(camera.angle), c_white, image_alpha);
