@@ -12,7 +12,7 @@
     "path": "audiogroups/audiogroup_default",
   },
   "soundFile": "bgm_serval.ogg",
-  "duration": 96.00002,
+  "duration": 61.1051254,
   "parent": {
     "name": "BGM",
     "path": "folders/Sounds/BGM.yy",
