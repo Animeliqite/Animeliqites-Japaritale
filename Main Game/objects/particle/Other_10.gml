@@ -14,12 +14,12 @@ switch (_particle_type) {
 		break;
 	case 1:
 		randomize();
-		_repeat_amount = 10;
+		_repeat_amount = 25;
 		partsystem = part_system_create();
 		parttype = part_type_create();
 		part_system_depth(partsystem,-8000);
-		part_type_sprite(parttype, spr_particle_sandstar, true, true, false);
-		part_type_scale(parttype, 0.75, 0.75);
+		part_type_shape(parttype, pt_shape_pixel);
+		part_type_scale(parttype, 2, 2);
 		part_type_speed(parttype, 0.5, 0.5, -0.005, 0);
 		part_type_color1(parttype, randColorWhiter);
 		part_type_alpha3(parttype, 0, 2, 0);

@@ -12,7 +12,7 @@
     "path": "audiogroups/audiogroup_default",
   },
   "soundFile": "snd_noise",
-  "duration": 0.0,
+  "duration": 0.5,
   "parent": {
     "name": "SFX",
     "path": "folders/Sounds/SFX.yy",

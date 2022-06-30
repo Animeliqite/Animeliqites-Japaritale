@@ -237,6 +237,7 @@ switch(room){
 			C_WaitUntilDestroy(5, ui_dialog);
 			C_Execute(6, variable_instance_set, [char_player, "dir", DIR.DOWN]);
 			C_MoveChar(6, char_serval, 200, 265, false, 60);
+			C_Execute(6, BGM_SetVolume, [0, 0, 30]);
 			C_Wait(6, 60);
 			C_Execute(7, BGM_Stop, [0]);
 			C_Execute(7, BGM_Play, [0, bgm_serval]);
@@ -426,6 +427,7 @@ switch(room){
 			}
 		}
 		else {
+			instance_destroy(char_zebra);
 			instance_destroy(char_serval);
 			instance_destroy(char_forcefield);
 		}

@@ -1,0 +1,1 @@
+Anim_Destroy(id);

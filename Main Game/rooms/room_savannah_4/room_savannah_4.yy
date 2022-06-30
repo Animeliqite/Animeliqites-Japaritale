@@ -53,6 +53,14 @@
             {"propertyId":{"name":"partXEnd","path":"objects/objctfied_particle/objctfied_particle.yy",},"objectId":{"name":"objctfied_particle","path":"objects/objctfied_particle/objctfied_particle.yy",},"value":"700","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
             {"propertyId":{"name":"partYEnd","path":"objects/objctfied_particle/objctfied_particle.yy",},"objectId":{"name":"objctfied_particle","path":"objects/objctfied_particle/objctfied_particle.yy",},"value":"240","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
           ],"isDnd":false,"objectId":{"name":"objctfied_particle","path":"objects/objctfied_particle/objctfied_particle.yy",},"inheritCode":false,"hasCreationCode":false,"colour":4294967295,"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"imageIndex":0,"imageSpeed":1.0,"inheritedItemId":null,"frozen":false,"ignore":false,"inheritItemSettings":false,"x":420.0,"y":0.0,"resourceVersion":"1.0","name":"inst_195023D7","tags":[],"resourceType":"GMRInstance",},
+        {"properties":[
+            {"propertyId":{"name":"_particle_type","path":"objects/particle/particle.yy",},"objectId":{"name":"particle","path":"objects/particle/particle.yy",},"value":"1","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
+            {"propertyId":{"name":"_part_random_x","path":"objects/particle/particle.yy",},"objectId":{"name":"particle","path":"objects/particle/particle.yy",},"value":"room_width","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
+            {"propertyId":{"name":"_part_random_y","path":"objects/particle/particle.yy",},"objectId":{"name":"particle","path":"objects/particle/particle.yy",},"value":"room_height","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
+            {"propertyId":{"name":"_part_y","path":"objects/particle/particle.yy",},"objectId":{"name":"particle","path":"objects/particle/particle.yy",},"value":"0","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
+            {"propertyId":{"name":"_delay","path":"objects/particle/particle.yy",},"objectId":{"name":"particle","path":"objects/particle/particle.yy",},"value":"0","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
+            {"propertyId":{"name":"_part_x","path":"objects/particle/particle.yy",},"objectId":{"name":"particle","path":"objects/particle/particle.yy",},"value":"0","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
+          ],"isDnd":false,"objectId":{"name":"particle","path":"objects/particle/particle.yy",},"inheritCode":false,"hasCreationCode":false,"colour":4294967295,"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"imageIndex":0,"imageSpeed":1.0,"inheritedItemId":null,"frozen":false,"ignore":false,"inheritItemSettings":false,"x":40.0,"y":0.0,"resourceVersion":"1.0","name":"inst_55E73604","tags":[],"resourceType":"GMRInstance",},
       ],"visible":true,"depth":0,"userdefinedDepth":true,"inheritLayerDepth":false,"inheritLayerSettings":false,"gridX":10,"gridY":10,"layers":[],"hierarchyFrozen":false,"effectEnabled":true,"effectType":"none","properties":[],"resourceVersion":"1.0","name":"Instances","tags":[],"resourceType":"GMRInstanceLayer",},
     {"tilesetId":{"name":"tile_savannah","path":"tilesets/tile_savannah/tile_savannah.yy",},"x":0,"y":0,"tiles":{"SerialiseWidth":38,"SerialiseHeight":12,"TileSerialiseData":[
 14,14,14,14,14,14,14,14,14,14,14,14,15,2147483648,2147483648,2147483648,2147483648,2147483648,91,2147483648,2147483648,2147483648,2147483648,2147483648,2147483648,2147483648,2147483648,2147483648,2147483648,2147483648,2147483648,2147483648,2147483648,2147483648,2147483648,2147483648,2147483648,2147483648,
@@ -131,6 +139,7 @@
     {"name":"inst_68B03D3C_1_5","path":"rooms/room_savannah_4/room_savannah_4.yy",},
     {"name":"inst_2CC5674B","path":"rooms/room_savannah_4/room_savannah_4.yy",},
     {"name":"inst_195023D7","path":"rooms/room_savannah_4/room_savannah_4.yy",},
+    {"name":"inst_55E73604","path":"rooms/room_savannah_4/room_savannah_4.yy",},
   ],
   "inheritCreationOrder": false,
   "sequenceId": null,

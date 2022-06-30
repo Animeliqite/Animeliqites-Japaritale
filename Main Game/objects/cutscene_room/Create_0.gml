@@ -40,6 +40,8 @@ switch(room){
 			instance_deactivate_object(trigger_warp);
 		}
 		else {
+			char_zebra.x = -9999;
+			char_zebra.y = -9999;
 			char_serval.x = -9999;
 			char_serval.y = -9999;
 			Cutscene_End(-1);

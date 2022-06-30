@@ -5,13 +5,20 @@ if (_draw_hat) {
 		default:
 			hatOffsetX=0;
 			hatOffsetY=-5;
+			doPixelCheck=true;
 			break;
 		case spr_char_kaban_right_carried:
 			hatOffsetX=-1;
 			hatOffsetY=-6;
+			doPixelCheck=true;
+			break;
+		case spr_char_kaban_down_sit:
+			hatOffsetX=0;
+			hatOffsetY=2;
+			doPixelCheck=false;
 			break;
 	}
-	var PIXEL_CHECK=(floor(image_index)%2==0 ? 1 : 0);
+	var PIXEL_CHECK=(floor(image_index)%2==0 ? 1 : 0)&&doPixelCheck;
 	switch(dir){
 		case DIR.UP:
 			draw_sprite_ext(spr_char_kaban_hat,2,x+hatOffsetX,y+PIXEL_CHECK+hatOffsetY,image_xscale,image_yscale,image_angle,image_blend,image_alpha);

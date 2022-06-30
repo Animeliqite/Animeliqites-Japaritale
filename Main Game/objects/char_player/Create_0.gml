@@ -8,6 +8,7 @@ cooldownTimer=0;
 runningTimer=0;
 runningSpeed=3;
 
+doPixelCheck=true;
 char_id=0;
 
 hatOffsetX=0;
