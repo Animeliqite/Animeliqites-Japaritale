@@ -12,7 +12,12 @@ if ((canRun && Input_IsHeld(INPUT.CANCEL) && canRunAlt && can_move && (move[DIR.
 		move_speed[i] = round(runningSpeed);
 		res_move_speed[i] = 1/2.25;
 	}
-		
+	
+	if (move[DIR.LEFT] <= 0) && (move[DIR.RIGHT] <= 0) && (move[DIR.UP] <= 0) && (move[DIR.DOWN] <= 0) {
+		image_index = 0;
+		image_speed = 0;
+	}
+	
 	if (runningTimer == 1) {
 		image_speed = 1/2.25;
 		Anim_Create(id, "runningSpeed", 0, 0, 1.5, 4, 10, 0, -1, -1, ANIM_MODE.ONESHOT, false);
@@ -56,7 +61,8 @@ else {
 		canRunAlt = false;
 		Anim_Destroy(id, "runningSpeed");
 		audio_stop_sound(snd_bump);
-		image_speed = 1/4.25;
+		if (move[DIR.LEFT] > 0) || (move[DIR.RIGHT] > 0) || (move[DIR.UP] > 0) || (move[DIR.DOWN] > 0)
+			image_speed = 1/4.25;
 		for (var i = 0; i <= DIR.DOWN; i += 90) {
 			move_speed[i] = 1.5;
 			res_move_speed[i] = 1/4.25;
