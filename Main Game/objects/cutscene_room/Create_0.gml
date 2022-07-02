@@ -56,7 +56,7 @@ switch(room){
 			instance_destroy(char_forcefield);
 			char_serval.x = -9999;
 			char_serval.y = -9999;
-			Cutscene_End(-1);	
+			Cutscene_End(-1);
 		}
 		break;
 	case room_savannah_3:

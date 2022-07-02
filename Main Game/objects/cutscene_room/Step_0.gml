@@ -468,6 +468,9 @@ switch(room){
 				Cutscene_End(8);
 			}
 		}
+		else {
+			camera.offset_amount_y=0.9;
+		}
 		break;
 	case room_savannah_3:
 		if (Flag_Get(FLAG_TYPE.STATIC,FLAG_STATIC.SCENE_004,false)==false){

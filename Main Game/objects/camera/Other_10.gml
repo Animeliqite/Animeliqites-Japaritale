@@ -10,6 +10,8 @@ target=noone;
 
 offset_amount_x=1;
 offset_amount_y=1;
+offset_pos_x=0;
+offset_pos_y=0;
 
 shake_x=0;
 shake_y=0;
