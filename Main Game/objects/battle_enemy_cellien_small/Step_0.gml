@@ -202,7 +202,7 @@ switch (_phase) {
 			C_Wait(3, 60);
 			C_PlaySfx(4, snd_exclamation);
 			C_Wait(4, 30);
-			C_Execute(5, Dialog_Add_Ext, ["* That voice!", "{voice 4}"]);
+			C_Execute(5, Dialog_Add_Ext, [Lang_GetString("cutscene.cellien.serval.save.0"), "{voice 4}"]);
 			C_Execute(5, Dialog_Start);
 			C_WaitUntilDestroy(5, ui_dialog);
 			C_PlaySfx(6, snd_flee);
@@ -210,7 +210,7 @@ switch (_phase) {
 			C_Execute(7, audio_stop_sound, [snd_flee]);
 			C_PlaySfx(7, snd_flee);
 			C_Wait(7, 30);
-			C_Execute(8, Dialog_Add_Ext, ["* Myamyamyamya~!", "{effect 0}{voice 4}"]);
+			C_Execute(8, Dialog_Add_Ext, [Lang_GetString("cutscene.cellien.serval.save.1"), "{effect 0}{voice 4}"]);
 			C_Execute(8, Dialog_Start);
 			C_WaitUntilDestroy(8, ui_dialog);
 			C_PlaySfx(9, snd_slice);
@@ -223,14 +223,14 @@ switch (_phase) {
 			C_Wait(12, 30);
 			C_PlaySfx(13, snd_noise);
 			C_Wait(13, 30);
-			C_Execute(14, Dialog_Add_Ext, ["* Uh... Don't worry!&* You're in safe hands now!", "{voice 4}"]);
+			C_Execute(14, Dialog_Add_Ext, [Lang_GetString("cutscene.cellien.serval.save.2"), "{voice 4}"]);
 			C_Execute(14, Dialog_Start);
 			C_WaitUntilDestroy(14, ui_dialog);
 			C_PlaySfx(15, snd_flee);
 			C_Wait(15, 30);
 			C_PlaySfx(16, snd_noise);
 			C_Wait(16, 30);
-			C_Execute(17, Dialog_Add_Ext, ["* There we go!", "{voice 4}"]);
+			C_Execute(17, Dialog_Add_Ext, [Lang_GetString("cutscene.cellien.serval.save.3"), "{voice 4}"]);
 			C_Execute(17, Dialog_Start);
 			C_WaitUntilDestroy(17, ui_dialog);
 			C_Execute(18, variable_instance_set, [object_index, "persistent", false]);

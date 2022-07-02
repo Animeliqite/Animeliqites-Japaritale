@@ -934,6 +934,7 @@
     {"CopyToMask":-1,"filePath":"datafiles/locale/english/string","resourceVersion":"1.0","name":"monster.txt","resourceType":"GMIncludedFile",},
     {"CopyToMask":-1,"filePath":"datafiles/locale/english/sprite","resourceVersion":"1.0","name":"battle_button_fight_empty.ini","resourceType":"GMIncludedFile",},
     {"CopyToMask":-1,"filePath":"datafiles/locale/english/sprite","resourceVersion":"1.0","name":"battle_button_fight_empty.png","resourceType":"GMIncludedFile",},
+    {"CopyToMask":-1,"filePath":"datafiles/locale/english/string","resourceVersion":"1.0","name":"cutscenes.txt","resourceType":"GMIncludedFile",},
   ],
   "MetaData": {
     "IDEVersion": "2022.2.1.618",

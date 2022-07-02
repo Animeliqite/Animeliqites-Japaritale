@@ -4,3 +4,4 @@
 ./string/menu.txt
 ./string/font.txt
 ./string/monster.txt
+./string/cutscenes.txt
