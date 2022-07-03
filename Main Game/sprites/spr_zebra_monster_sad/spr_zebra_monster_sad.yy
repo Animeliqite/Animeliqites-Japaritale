@@ -7,15 +7,15 @@
   "edgeFiltering": false,
   "collisionTolerance": 0,
   "swfPrecision": 2.525,
-  "bbox_left": 18,
-  "bbox_right": 127,
+  "bbox_left": 0,
+  "bbox_right": 103,
   "bbox_top": 0,
-  "bbox_bottom": 233,
+  "bbox_bottom": 201,
   "HTile": false,
   "VTile": false,
   "For3D": false,
-  "width": 146,
-  "height": 234,
+  "width": 104,
+  "height": 202,
   "textureGroupId": {
     "name": "Default",
     "path": "texturegroups/Default",
@@ -27,9 +27,9 @@
     {"compositeImage":{"FrameId":{"name":"a32c248a-03a6-4a5e-9f2d-bec6506b9a97","path":"sprites/spr_zebra_monster_sad/spr_zebra_monster_sad.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
         {"FrameId":{"name":"a32c248a-03a6-4a5e-9f2d-bec6506b9a97","path":"sprites/spr_zebra_monster_sad/spr_zebra_monster_sad.yy",},"LayerId":{"name":"68e3a5b5-8f42-4634-a84c-9ce24b81d2fe","path":"sprites/spr_zebra_monster_sad/spr_zebra_monster_sad.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
       ],"parent":{"name":"spr_zebra_monster_sad","path":"sprites/spr_zebra_monster_sad/spr_zebra_monster_sad.yy",},"resourceVersion":"1.0","name":"a32c248a-03a6-4a5e-9f2d-bec6506b9a97","tags":[],"resourceType":"GMSpriteFrame",},
-    {"compositeImage":{"FrameId":{"name":"e362147b-ca4e-4a93-9570-5f4770eead4e","path":"sprites/spr_zebra_monster_sad/spr_zebra_monster_sad.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"e362147b-ca4e-4a93-9570-5f4770eead4e","path":"sprites/spr_zebra_monster_sad/spr_zebra_monster_sad.yy",},"LayerId":{"name":"68e3a5b5-8f42-4634-a84c-9ce24b81d2fe","path":"sprites/spr_zebra_monster_sad/spr_zebra_monster_sad.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"spr_zebra_monster_sad","path":"sprites/spr_zebra_monster_sad/spr_zebra_monster_sad.yy",},"resourceVersion":"1.0","name":"e362147b-ca4e-4a93-9570-5f4770eead4e","tags":[],"resourceType":"GMSpriteFrame",},
+    {"compositeImage":{"FrameId":{"name":"e22428bb-bf70-4ede-af39-a6e7c45d7e90","path":"sprites/spr_zebra_monster_sad/spr_zebra_monster_sad.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
+        {"FrameId":{"name":"e22428bb-bf70-4ede-af39-a6e7c45d7e90","path":"sprites/spr_zebra_monster_sad/spr_zebra_monster_sad.yy",},"LayerId":{"name":"68e3a5b5-8f42-4634-a84c-9ce24b81d2fe","path":"sprites/spr_zebra_monster_sad/spr_zebra_monster_sad.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
+      ],"parent":{"name":"spr_zebra_monster_sad","path":"sprites/spr_zebra_monster_sad/spr_zebra_monster_sad.yy",},"resourceVersion":"1.0","name":"e22428bb-bf70-4ede-af39-a6e7c45d7e90","tags":[],"resourceType":"GMSpriteFrame",},
   ],
   "sequence": {
     "spriteId": {"name":"spr_zebra_monster_sad","path":"sprites/spr_zebra_monster_sad/spr_zebra_monster_sad.yy",},
@@ -45,7 +45,7 @@
     "tracks": [
       {"name":"frames","spriteId":null,"keyframes":{"Keyframes":[
             {"id":"967ce757-0f2a-419c-8114-857dd316bfeb","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"a32c248a-03a6-4a5e-9f2d-bec6506b9a97","path":"sprites/spr_zebra_monster_sad/spr_zebra_monster_sad.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
-            {"id":"3a10a87d-14d5-4f78-9597-2148c6768b48","Key":1.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"e362147b-ca4e-4a93-9570-5f4770eead4e","path":"sprites/spr_zebra_monster_sad/spr_zebra_monster_sad.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
+            {"id":"61d5a429-cf97-4bcf-b816-4c9a7843e67e","Key":1.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"e22428bb-bf70-4ede-af39-a6e7c45d7e90","path":"sprites/spr_zebra_monster_sad/spr_zebra_monster_sad.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
           ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"isCreationTrack":false,"resourceVersion":"1.0","tags":[],"resourceType":"GMSpriteFramesTrack","modifiers":[],},
     ],
     "visibleRange": null,
@@ -58,8 +58,8 @@
     "backdropHeight": 768,
     "backdropXOffset": 0.0,
     "backdropYOffset": 0.0,
-    "xorigin": 73,
-    "yorigin": 234,
+    "xorigin": 52,
+    "yorigin": 202,
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"spr_zebra_monster_sad","path":"sprites/spr_zebra_monster_sad/spr_zebra_monster_sad.yy",},

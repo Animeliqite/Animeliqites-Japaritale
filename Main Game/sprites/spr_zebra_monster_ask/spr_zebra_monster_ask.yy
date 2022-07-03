@@ -7,15 +7,15 @@
   "edgeFiltering": false,
   "collisionTolerance": 0,
   "swfPrecision": 2.525,
-  "bbox_left": 18,
-  "bbox_right": 127,
+  "bbox_left": 0,
+  "bbox_right": 103,
   "bbox_top": 0,
-  "bbox_bottom": 233,
+  "bbox_bottom": 201,
   "HTile": false,
   "VTile": false,
   "For3D": false,
-  "width": 146,
-  "height": 234,
+  "width": 104,
+  "height": 202,
   "textureGroupId": {
     "name": "Default",
     "path": "texturegroups/Default",
@@ -24,12 +24,12 @@
   "gridX": 0,
   "gridY": 0,
   "frames": [
-    {"compositeImage":{"FrameId":{"name":"a32c248a-03a6-4a5e-9f2d-bec6506b9a97","path":"sprites/spr_zebra_monster_ask/spr_zebra_monster_ask.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"a32c248a-03a6-4a5e-9f2d-bec6506b9a97","path":"sprites/spr_zebra_monster_ask/spr_zebra_monster_ask.yy",},"LayerId":{"name":"68e3a5b5-8f42-4634-a84c-9ce24b81d2fe","path":"sprites/spr_zebra_monster_ask/spr_zebra_monster_ask.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"spr_zebra_monster_ask","path":"sprites/spr_zebra_monster_ask/spr_zebra_monster_ask.yy",},"resourceVersion":"1.0","name":"a32c248a-03a6-4a5e-9f2d-bec6506b9a97","tags":[],"resourceType":"GMSpriteFrame",},
-    {"compositeImage":{"FrameId":{"name":"122362c7-0e87-47f4-bd42-784eb27a7c53","path":"sprites/spr_zebra_monster_ask/spr_zebra_monster_ask.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"122362c7-0e87-47f4-bd42-784eb27a7c53","path":"sprites/spr_zebra_monster_ask/spr_zebra_monster_ask.yy",},"LayerId":{"name":"68e3a5b5-8f42-4634-a84c-9ce24b81d2fe","path":"sprites/spr_zebra_monster_ask/spr_zebra_monster_ask.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"spr_zebra_monster_ask","path":"sprites/spr_zebra_monster_ask/spr_zebra_monster_ask.yy",},"resourceVersion":"1.0","name":"122362c7-0e87-47f4-bd42-784eb27a7c53","tags":[],"resourceType":"GMSpriteFrame",},
+    {"compositeImage":{"FrameId":{"name":"d420ff5a-3ae2-4349-8bef-d6f6bd432526","path":"sprites/spr_zebra_monster_ask/spr_zebra_monster_ask.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
+        {"FrameId":{"name":"d420ff5a-3ae2-4349-8bef-d6f6bd432526","path":"sprites/spr_zebra_monster_ask/spr_zebra_monster_ask.yy",},"LayerId":{"name":"68e3a5b5-8f42-4634-a84c-9ce24b81d2fe","path":"sprites/spr_zebra_monster_ask/spr_zebra_monster_ask.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
+      ],"parent":{"name":"spr_zebra_monster_ask","path":"sprites/spr_zebra_monster_ask/spr_zebra_monster_ask.yy",},"resourceVersion":"1.0","name":"d420ff5a-3ae2-4349-8bef-d6f6bd432526","tags":[],"resourceType":"GMSpriteFrame",},
+    {"compositeImage":{"FrameId":{"name":"0d02c577-e7f2-4a14-92fd-e1c5bc0afda4","path":"sprites/spr_zebra_monster_ask/spr_zebra_monster_ask.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
+        {"FrameId":{"name":"0d02c577-e7f2-4a14-92fd-e1c5bc0afda4","path":"sprites/spr_zebra_monster_ask/spr_zebra_monster_ask.yy",},"LayerId":{"name":"68e3a5b5-8f42-4634-a84c-9ce24b81d2fe","path":"sprites/spr_zebra_monster_ask/spr_zebra_monster_ask.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
+      ],"parent":{"name":"spr_zebra_monster_ask","path":"sprites/spr_zebra_monster_ask/spr_zebra_monster_ask.yy",},"resourceVersion":"1.0","name":"0d02c577-e7f2-4a14-92fd-e1c5bc0afda4","tags":[],"resourceType":"GMSpriteFrame",},
   ],
   "sequence": {
     "spriteId": {"name":"spr_zebra_monster_ask","path":"sprites/spr_zebra_monster_ask/spr_zebra_monster_ask.yy",},
@@ -44,8 +44,8 @@
     "moments": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MomentsEventKeyframe>",},
     "tracks": [
       {"name":"frames","spriteId":null,"keyframes":{"Keyframes":[
-            {"id":"0b56e07e-270f-4960-a546-a4d49a775349","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"a32c248a-03a6-4a5e-9f2d-bec6506b9a97","path":"sprites/spr_zebra_monster_ask/spr_zebra_monster_ask.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
-            {"id":"6278c67e-b32d-4249-af23-4ab92b4f4496","Key":1.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"122362c7-0e87-47f4-bd42-784eb27a7c53","path":"sprites/spr_zebra_monster_ask/spr_zebra_monster_ask.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
+            {"id":"9ff55551-c173-473f-9bcf-68b89c200e8f","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"d420ff5a-3ae2-4349-8bef-d6f6bd432526","path":"sprites/spr_zebra_monster_ask/spr_zebra_monster_ask.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
+            {"id":"d7a303db-7992-4902-95c4-7c844d235532","Key":1.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"0d02c577-e7f2-4a14-92fd-e1c5bc0afda4","path":"sprites/spr_zebra_monster_ask/spr_zebra_monster_ask.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
           ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"isCreationTrack":false,"resourceVersion":"1.0","tags":[],"resourceType":"GMSpriteFramesTrack","modifiers":[],},
     ],
     "visibleRange": null,
@@ -58,8 +58,8 @@
     "backdropHeight": 768,
     "backdropXOffset": 0.0,
     "backdropYOffset": 0.0,
-    "xorigin": 73,
-    "yorigin": 234,
+    "xorigin": 52,
+    "yorigin": 202,
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"spr_zebra_monster_ask","path":"sprites/spr_zebra_monster_ask/spr_zebra_monster_ask.yy",},
