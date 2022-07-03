@@ -1,28 +1,3 @@
-"cutscene.cellien.serval.save.0"		"* That voice!"
-"cutscene.cellien.serval.save.1"		"* Myamyamyamya~!"
-"cutscene.cellien.serval.save.2"		"* Uh... Don't worry!&* You're in safe hands now!"
-"cutscene.cellien.serval.save.3"		"* There we go!"
-
-"cutscene.serval.greet.0"			"* Oh dear, I'm glad&  you’re awake!"
-"cutscene.serval.greet.1"			"* It was very unnerving&  for me to see you like&  this!"
-"cutscene.serval.greet.2"			"* That numbness of yours&  has frightened me even&  more!"
-"cutscene.serval.greet.3"			"* I hope I was able to&  make you feel better&  after all this."
-"cutscene.serval.greet.4"			"* Yes?"
-"cutscene.serval.greet.5"			"* Ahhh... I can feel my&  capabilities already&  paying off!"
-"cutscene.serval.greet.6"			"* Now tell me, what kind&  of a FRIEND are you?"
-"cutscene.serval.greet.7"			"* You... don't even know?"
-"cutscene.serval.greet.8"			"* There isn't any need to&  worry since the Japari&  Library exists!"
-"cutscene.serval.greet.9"			"* It'll take you moments&  to traverse through&  areas and that's it."
-"cutscene.serval.greet.10"			"* Although I can only&  guide you throughout&  this very place, but..."
-"cutscene.serval.greet.11"			"* Come on, if you will,&  together let's march&  forward!"
-
-"cutscene.serval.new_friend.0"			"* Hey look!&* Over there!"
-"cutscene.serval.new_friend.1"			"* It appears I forgot&  to introduce you to&  the folk around here."
-"cutscene.serval.new_friend.2"			"* And Zebra-chan is an&  example you've just&  seen over that spot."
-"cutscene.serval.new_friend.3"			"* Though don't worry,&  as all the Friends&  here are harmless."
-"cutscene.serval.new_friend.4"			"* Why don't you have&  a little conversation&  with her?"
-"cutscene.serval.new_friend.5"			"* I'll be waiting here."
-
 "cutscene.zebra.greet.0"			"* Oh, hello there..."
 "cutscene.zebra.greet.1"			"* Ah, so you wished to&  talk with me a little?"
 "cutscene.zebra.greet.2"			"* Well, sure thing!"
@@ -58,7 +33,7 @@
 "cutscene.zebra.conversation.10.alt.alt"	"I was just saying."
 
 "cutscene.zebra.conversation.3.alt.alt.alt"	"Oh... these deadly&monsters..."
-"cutscene.zebra.conversation.4.alt.alt.alt"	"Their strong teeth,&and their monstrous&tentacles...
+"cutscene.zebra.conversation.4.alt.alt.alt"	"Their strong teeth,&and their monstrous&tentacles..."
 "cutscene.zebra.conversation.5.alt.alt.alt"	"Although most of them&are prone to death..."
 "cutscene.zebra.conversation.6.alt.alt.alt"	"They cause severe&damage once you're hit."
 "cutscene.zebra.conversation.7.alt.alt.alt"	"Okay, I've got to&calm myself down."

@@ -408,10 +408,10 @@ switch(room){
 				if (phase == 1) {
 					C_MoveChar(0, char_serval, char_player.x - 50, char_player.y, false, 30);
 					C_Wait(0, 60);
-					C_Execute(1, Dialog_Add_Ext, ["* You had quite a decent&  conversation there!", "{char_link 2}{voice 4}{face 2}{face_emotion 2}"]);
-					C_Execute(1, Dialog_Add_Ext, ["* Thinking about how I had&  to get you to the&  library...", "{char_link 2}{voice 4}{face 2}{face_emotion 3}"]);
-					C_Execute(1, Dialog_Add_Ext, ["* I think it'd better to&  move on to our mission.", "{char_link 2}{voice 4}{face 2}{face_emotion 0}"]);
-					C_Execute(1, Dialog_Add_Ext, ["* So, yeah!&* Let's go!", "{char_link 2}{voice 4}{face 2}{face_emotion 2}"]);
+					C_Execute(1, Dialog_Add_Ext, [Lang_GetString("cutscene.serval.post_convo.0"), "{char_link 2}{voice 4}{face 2}{face_emotion 2}"]);
+					C_Execute(1, Dialog_Add_Ext, [Lang_GetString("cutscene.serval.post_convo.1"), "{char_link 2}{voice 4}{face 2}{face_emotion 3}"]);
+					C_Execute(1, Dialog_Add_Ext, [Lang_GetString("cutscene.serval.post_convo.2"), "{char_link 2}{voice 4}{face 2}{face_emotion 0}"]);
+					C_Execute(1, Dialog_Add_Ext, [Lang_GetString("cutscene.serval.post_convo.3"), "{char_link 2}{voice 4}{face 2}{face_emotion 2}"]);
 					C_Execute(1, Dialog_Start, [true]);
 					C_WaitUntilDestroy(1, ui_dialog);
 					C_MoveChar(2, char_serval, 170, 230, false, 15);
@@ -433,6 +433,7 @@ switch(room){
 		}
 		break;
 	case room_savannah_2:
+		camera.offset_amount_y=0.9;
 		if (Flag_Get(FLAG_TYPE.STATIC,FLAG_STATIC.SCENE_003,false)==false){
 			if (phase == 0) {
 				if (char_player.x > 500) {
@@ -448,19 +449,19 @@ switch(room){
 				C_Wait(1, 30);
 				C_Execute(2, variable_instance_set, [char_serval, "dir", DIR.UP]);
 				C_Wait(2, 30);
-				C_Execute(3, Dialog_Add_Ext, ["* Look!", "{char_link 2}{voice 4}{face 2}{face_emotion 0}"]);
+				C_Execute(3, Dialog_Add_Ext, [Lang_GetString("cutscene.serval.mountain.0"), "{char_link 2}{voice 4}{face 2}{face_emotion 0}"]);
 				C_Execute(3, Dialog_Start, [false]);
 				C_WaitUntilDestroy(3, ui_dialog);
 				C_Execute(4, variable_instance_set, [char_player, "dir", DIR.UP]);
 				C_Wait(4, 30);
-				C_Execute(5, Dialog_Add_Ext, ["* That's one big mountain&  we can clearly gaze&  upon!", "{char_link 2}{voice 4}{face 2}{face_emotion 2}"]);
-				C_Execute(5, Dialog_Add_Ext, ["* Recently, a \"{color_text `yellow`}SANDSTAR{color_text `white`}\"&  came out from that&  mountain.", "{char_link 2}{voice 4}{face 2}{face_emotion 0}"]);
-				C_Execute(5, Dialog_Add_Ext, ["* Maybe... that's where&  you were born?", "{char_link 2}{voice 4}{face 2}{face_emotion 4}"]);
+				C_Execute(5, Dialog_Add_Ext, [Lang_GetString("cutscene.serval.mountain.1"), "{char_link 2}{voice 4}{face 2}{face_emotion 2}"]);
+				C_Execute(5, Dialog_Add_Ext, [Lang_GetString("cutscene.serval.mountain.2"), "{char_link 2}{voice 4}{face 2}{face_emotion 0}"]);
+				C_Execute(5, Dialog_Add_Ext, [Lang_GetString("cutscene.serval.mountain.3"), "{char_link 2}{voice 4}{face 2}{face_emotion 4}"]);
 				C_Execute(5, Dialog_Start, [false]);
 				C_WaitUntilDestroy(5, ui_dialog);
 				C_Execute(6, variable_instance_set, [char_player, "dir", DIR.RIGHT]);
 				C_Wait(6, 30);
-				C_Execute(7, Dialog_Add_Ext, ["* I'm starting to wonder&  about the CELLIENS&  actually.", "{char_link 2}{voice 4}{face 2}{face_emotion 3}"]);
+				C_Execute(7, Dialog_Add_Ext, [Lang_GetString("cutscene.serval.mountain.4"), "{char_link 2}{voice 4}{face 2}{face_emotion 3}"]);
 				C_Execute(7, Dialog_Start, [false]);
 				C_WaitUntilDestroy(7, ui_dialog);
 				C_Execute(8, variable_instance_set, [char_serval, "dir_locked", true]);
@@ -469,7 +470,6 @@ switch(room){
 			}
 		}
 		else {
-			camera.offset_amount_y=0.9;
 		}
 		break;
 	case room_savannah_3:
@@ -505,7 +505,7 @@ switch(room){
 				C_Wait(0, 30);
 				C_Execute(1, variable_instance_set, [char_player, "dir", DIR.UP]);
 				C_Wait(1, 30);
-				C_Execute(2, Dialog_Add_Ext, ["* The water looks so delightful I&  cannot tolerate taking a sip.", ""]);
+				C_Execute(2, Dialog_Add_Ext, [Lang_GetString("cutscene.savannah.lake.0"), ""]);
 				C_Execute(2, Dialog_Start, [false]);
 				C_WaitUntilDestroy(2, ui_dialog);
 				C_Wait(3, 60);
@@ -541,7 +541,7 @@ switch(room){
 				C_Execute(6, BGM_Play, [0, bgm_hippo]);
 				C_Execute(6, BGM_SetPitch, [0, 0.95]);
 				C_Execute(6, variable_instance_set, [char_hippo, "image_speed", 1]);
-				C_Execute(6, Dialog_Add_Ext, ["* Threathening the safety of&  my property, I see?", "{char_link 4}{voice 5}"]);
+				C_Execute(6, Dialog_Add_Ext, [Lang_GetString("cutscene.savannah.lake.1"), "{char_link 4}{voice 5}"]);
 				C_Execute(6, Dialog_Start, [false]);
 				C_WaitUntilDestroy(6, ui_dialog);
 				C_Execute(7, variable_instance_set, [char_hippo, "speed", 0.25]);
@@ -552,7 +552,7 @@ switch(room){
 				C_Execute(8, variable_instance_set, [char_player, "vspeed", 0]);
 				C_Execute(8, variable_instance_set, [char_player, "image_index", 0]);
 				C_Execute(8, variable_instance_set, [char_player, "image_speed", 0]);
-				C_Execute(8, Dialog_Add_Ext, ["* You know what happens to&  beings like you?", "{char_link 4}{voice 5}"]);
+				C_Execute(8, Dialog_Add_Ext, [Lang_GetString("cutscene.savannah.lake.2"), "{char_link 4}{voice 5}"]);
 				C_Execute(8, Dialog_Start, [false]);
 				C_WaitUntilDestroy(8, ui_dialog);
 				C_Execute(9, variable_instance_set, [char_hippo, "speed", 0.25]);
@@ -567,7 +567,7 @@ switch(room){
 				C_Execute(11, variable_instance_set, [char_player, "image_speed", 0]);
 				C_Execute(11, array_set, [char_hippo.res_idle_sprite, DIR.DOWN, spr_char_hippo_water_idle_blink]);
 				C_Execute(11, array_set, [char_hippo.res_talk_sprite, DIR.DOWN, spr_char_hippo_water_talk_blink]);
-				C_Execute(11, Dialog_Add_Ext, ["* They experience death.", "{char_link 4}{effect 0}{voice 5}"]);
+				C_Execute(11, Dialog_Add_Ext, [Lang_GetString("cutscene.savannah.lake.3"), "{char_link 4}{effect 0}{voice 5}"]);
 				C_Execute(11, Dialog_Start, [false]);
 				C_WaitUntilDestroy(11, ui_dialog);
 				C_Execute(12, array_set, [char_hippo.res_idle_sprite, DIR.DOWN, spr_char_hippo_water_idle_shocked]);
@@ -576,7 +576,7 @@ switch(room){
 				C_Execute(12, instance_create_depth, [char_player.x, char_player.y - char_player.sprite_height - 5, 0, exclamation]);
 				C_Execute(12, variable_instance_set, [char_hippo, "sprite_index", spr_char_hippo_water_idle_shocked]);
 				C_Execute(12, variable_instance_set, [char_player, "dir", DIR.LEFT]);
-				C_Execute(12, Dialog_Add_Ext, ["* Hippo! &* Stop.", "{voice 4}{face 2}{face_emotion 6}"]);
+				C_Execute(12, Dialog_Add_Ext, [Lang_GetString("cutscene.savannah.lake.4"), "{voice 4}{face 2}{face_emotion 6}"]);
 				C_Execute(12, Dialog_Start, [true]);
 				C_WaitUntilDestroy(12, ui_dialog);
 				C_Execute(13, instance_create_depth, [110, 240, -2000, char_serval]);
@@ -592,20 +592,20 @@ switch(room){
 				C_Execute(15, variable_instance_set, [char_player, "dir", DIR.UP]);
 				C_Wait(15, 30);
 				C_Execute(16, BGM_Play, [0, bgm_savannah]);
-				C_Execute(16, Dialog_Add_Ext, ["* I cannot allow such&  things like this&  to KABAN!", "{char_link 2}{voice 4}{face 2}{face_emotion 6}"]);
-				C_Execute(16, Dialog_Add_Ext, ["* Ooh~!{w}&* You've got yourself a&  companion, I see~", "{char_link 4}{voice 5}"]);
-				C_Execute(16, Dialog_Add_Ext, ["* ...", "{char_link 2}{voice 4}{face 2}{face_emotion 6}"]);
-				C_Execute(16, Dialog_Add_Ext, ["* Oh, I'm sorry~!{w}&* Does my \"lascivious\" voice&  bother you two~?", "{char_link 4}{voice 5}"]);
-				C_Execute(16, Dialog_Add_Ext, ["* Well, I'm used to your{w}&  \"weird\" voice, to be&  honest...", "{char_link 2}{voice 4}{face 2}{face_emotion 9}"]);
-				C_Execute(16, Dialog_Add_Ext, ["* Good, good~!", "{char_link 4}{voice 5}"]);
-				C_Execute(16, Dialog_Add_Ext, ["* Anyways, I was going&  to ask you why you&  put KABAN in such fear.", "{char_link 2}{voice 4}{face 2}{face_emotion 5}"]);
-				C_Execute(16, Dialog_Add_Ext, ["* Those little creatures&  were bothering me off, thus&  I wasn't morally fine.", "{char_link 4}{event 3}{voice 5}"]);
-				C_Execute(16, Dialog_Add_Ext, ["* Though look out for the&  huge CELLIEN halting&  the gate.", "{char_link 4}{event 2}{voice 5}"]);
-				C_Execute(16, Dialog_Add_Ext, ["* You two wouldn't be&  able to beat it&  anyway~!", "{char_link 4}{event 1}{voice 5}"]);
-				C_Execute(16, Dialog_Add_Ext, ["* Then why not do it&  yourself?", "{char_link 2}{voice 4}{face 2}{face_emotion 4}{event 2}"]);
-				C_Execute(16, Dialog_Add_Ext, ["* I have \"bathing\" stuff to do&  right now~...", "{char_link 4}{event 1}{voice 5}"]);
-				C_Execute(16, Dialog_Add_Ext, ["* ...", "{char_link 2}{voice 4}{face 2}{face_emotion 6}{event 2}"]);
-				C_Execute(16, Dialog_Add_Ext, ["* Anyways, we've got&  things to do!", "{char_link 2}{voice 4}{face 2}{face_emotion 2}"]);
+				C_Execute(16, Dialog_Add_Ext, [Lang_GetString("cutscene.savannah.lake.5"), "{char_link 2}{voice 4}{face 2}{face_emotion 6}"]);
+				C_Execute(16, Dialog_Add_Ext, [Lang_GetString("cutscene.savannah.lake.6"), "{char_link 4}{voice 5}"]);
+				C_Execute(16, Dialog_Add_Ext, [Lang_GetString("cutscene.savannah.lake.7"), "{char_link 2}{voice 4}{face 2}{face_emotion 6}"]);
+				C_Execute(16, Dialog_Add_Ext, [Lang_GetString("cutscene.savannah.lake.8"), "{char_link 4}{voice 5}"]);
+				C_Execute(16, Dialog_Add_Ext, [Lang_GetString("cutscene.savannah.lake.9"), "{char_link 2}{voice 4}{face 2}{face_emotion 9}"]);
+				C_Execute(16, Dialog_Add_Ext, [Lang_GetString("cutscene.savannah.lake.10"), "{char_link 4}{voice 5}"]);
+				C_Execute(16, Dialog_Add_Ext, [Lang_GetString("cutscene.savannah.lake.11"), "{char_link 2}{voice 4}{face 2}{face_emotion 5}"]);
+				C_Execute(16, Dialog_Add_Ext, [Lang_GetString("cutscene.savannah.lake.12"), "{char_link 4}{event 3}{voice 5}"]);
+				C_Execute(16, Dialog_Add_Ext, [Lang_GetString("cutscene.savannah.lake.13"), "{char_link 4}{event 2}{voice 5}"]);
+				C_Execute(16, Dialog_Add_Ext, [Lang_GetString("cutscene.savannah.lake.14"), "{char_link 4}{event 1}{voice 5}"]);
+				C_Execute(16, Dialog_Add_Ext, [Lang_GetString("cutscene.savannah.lake.15"), "{char_link 2}{voice 4}{face 2}{face_emotion 4}{event 2}"]);
+				C_Execute(16, Dialog_Add_Ext, [Lang_GetString("cutscene.savannah.lake.16"), "{char_link 4}{event 1}{voice 5}"]);
+				C_Execute(16, Dialog_Add_Ext, [Lang_GetString("cutscene.savannah.lake.17"), "{char_link 2}{voice 4}{face 2}{face_emotion 6}{event 2}"]);
+				C_Execute(16, Dialog_Add_Ext, [Lang_GetString("cutscene.savannah.lake.18"), "{char_link 2}{voice 4}{face 2}{face_emotion 2}"]);
 				C_Execute(16, Dialog_Start, [true]);
 				C_WaitUntilDestroy(16, ui_dialog);
 				C_MoveChar(17, char_player, 20, 0, true, 30);
@@ -615,29 +615,29 @@ switch(room){
 				C_Wait(18, 10);
 				C_Execute(19, variable_instance_set, [char_serval, "dir", DIR.UP]);
 				C_Execute(19, variable_instance_set, [char_player, "dir", DIR.UP]);
-				C_Execute(19, Dialog_Add_Ext, ["* Don't you think your&  little \"companion\" needs&  to take cover?", "{char_link 4}{voice 5}"]);
-				C_Execute(19, Dialog_Add_Ext, ["* Hippo, please.", "{char_link 2}{voice 4}{face 2}{face_emotion 3}"]);
-				C_Execute(19, Dialog_Add_Ext, ["* It seems you've forgotten&  the rules of Japari Park&  as well, huh~?", "{char_link 4}{voice 5}"]);
-				C_Execute(19, Dialog_Add, ["*{voice -1} ............", "{char_link 2}{voice 4}{face 2}{face_emotion 7}"]);
-				C_Execute(19, Dialog_Add_Ext, ["* S-she is more capable&  than you think!", "{char_link 2}{voice 4}{face 2}{face_emotion 6}"]);
-				C_Execute(19, Dialog_Add_Ext, ["* Well then.{w}&* We'll see what this&  fella has got~!", "{char_link 4}{voice 5}"]);
+				C_Execute(19, Dialog_Add_Ext, [Lang_GetString("cutscene.savannah.lake.19"), "{char_link 4}{voice 5}"]);
+				C_Execute(19, Dialog_Add_Ext, [Lang_GetString("cutscene.savannah.lake.20"), "{char_link 2}{voice 4}{face 2}{face_emotion 3}"]);
+				C_Execute(19, Dialog_Add_Ext, [Lang_GetString("cutscene.savannah.lake.21"), "{char_link 4}{voice 5}"]);
+				C_Execute(19, Dialog_Add, [Lang_GetString("cutscene.savannah.lake.22"), "{char_link 2}{voice 4}{face 2}{face_emotion 7}"]);
+				C_Execute(19, Dialog_Add_Ext, [Lang_GetString("cutscene.savannah.lake.23"), "{char_link 2}{voice 4}{face 2}{face_emotion 6}"]);
+				C_Execute(19, Dialog_Add_Ext, [Lang_GetString("cutscene.savannah.lake.24"), "{char_link 4}{voice 5}"]);
 				C_Execute(19, Dialog_Start, [true]);
 				C_WaitUntilDestroy(19, ui_dialog);
 				C_CreateAnim(20, char_hippo, "x", 0, 0, char_hippo.x, char_player.x, 15, false);
 				C_Wait(20, 30);
-				C_Execute(21, Dialog_Add_Ext, ["* So, are you able to swim?", "{char_link 4}{voice 5}"]);
+				C_Execute(21, Dialog_Add_Ext, [Lang_GetString("cutscene.savannah.lake.25"), "{char_link 4}{voice 5}"]);
 				C_Execute(21, Dialog_Start, [true]);
 				C_WaitUntilDestroy(21, ui_dialog);
 				C_Wait(22, 60);
-				C_Execute(23, Dialog_Add_Ext, ["* No?", "{char_link 4}{voice 5}"]);
-				C_Execute(23, Dialog_Add_Ext, ["* Well, how about running&  fast?", "{char_link 4}{voice 5}"]);
+				C_Execute(23, Dialog_Add_Ext, [Lang_GetString("cutscene.savannah.lake.26"), "{char_link 4}{voice 5}"]);
+				C_Execute(23, Dialog_Add_Ext, [Lang_GetString("cutscene.savannah.lake.27"), "{char_link 4}{voice 5}"]);
 				C_Execute(23, Dialog_Start, [true]);
 				C_WaitUntilDestroy(23, ui_dialog);
 				C_Execute(24, variable_instance_set, [char_player, "dir", DIR.DOWN]);
 				C_Wait(24, 60);
 				C_Execute(25, variable_instance_set, [char_player, "dir", DIR.UP]);
-				C_Execute(25, Dialog_Add_Ext, ["* Unfortunate...", "{char_link 4}{voice 5}"]);
-				C_Execute(25, Dialog_Add_Ext, ["* What about flying?", "{char_link 4}{voice 5}"]);
+				C_Execute(25, Dialog_Add_Ext, [Lang_GetString("cutscene.savannah.lake.28"), "{char_link 4}{voice 5}"]);
+				C_Execute(25, Dialog_Add_Ext, [Lang_GetString("cutscene.savannah.lake.29"), "{char_link 4}{voice 5}"]);
 				C_Execute(25, Dialog_Start, [true]);
 				C_WaitUntilDestroy(25, ui_dialog);
 				C_Wait(26, 30);
@@ -646,30 +646,30 @@ switch(room){
 				if (instance_exists(char_serval)) C_CreateAnim(28, char_hippo, "x", 0, 0, char_hippo.x, char_serval.x + 10, 15, false);
 				C_Execute(28, variable_instance_set, [char_serval, "dir", DIR.UP]);
 				C_Execute(28, variable_instance_set, [char_player, "dir", DIR.UP]);
-				C_Execute(28, Dialog_Add_Ext, ["* Well, you shouldn't let&  your hopes too high, Serval~.", "{char_link 4}{voice 5}"]);
-				C_Execute(28, Dialog_Add_Ext, ["* You wouldn't want to leave&  a child like this alone&  in a conflict, would you?", "{char_link 4}{voice 5}"]);
-				C_Execute(28, Dialog_Add_Ext, ["* And thus, why don't I teach&  you two how to sprint?", "{char_link 4}{voice 5}"]);
-				C_Execute(28, Dialog_Add_Ext, ["* Teaching!? &* I don't think--", "{char_link 2}{voice 4}{face 2}{face_emotion 4}"]);
-				C_Execute(28, Dialog_Add_Ext, ["* Laziness won't work in a&  situation like this, Serval.{w}&* It is important.", "{char_link 4}{voice 5}"]);
-				C_Execute(28, Dialog_Add_Ext, ["* (Here we go again...)", "{char_link 2}{voice 4}{face 2}{face_emotion 6}{scale 0.75}"]);
-				C_Execute(28, Dialog_Add_Ext, ["* Well then!&* Get ready for a minute-long&  lesson!", "{char_link 4}{voice 5}"]);
+				C_Execute(28, Dialog_Add_Ext, [Lang_GetString("cutscene.savannah.lake.30"), "{char_link 4}{voice 5}"]);
+				C_Execute(28, Dialog_Add_Ext, [Lang_GetString("cutscene.savannah.lake.31"), "{char_link 4}{voice 5}"]);
+				C_Execute(28, Dialog_Add_Ext, [Lang_GetString("cutscene.savannah.lake.32"), "{char_link 4}{voice 5}"]);
+				C_Execute(28, Dialog_Add_Ext, [Lang_GetString("cutscene.savannah.lake.33"), "{char_link 2}{voice 4}{face 2}{face_emotion 4}"]);
+				C_Execute(28, Dialog_Add_Ext, [Lang_GetString("cutscene.savannah.lake.34"), "{char_link 4}{voice 5}"]);
+				C_Execute(28, Dialog_Add_Ext, [Lang_GetString("cutscene.savannah.lake.35"), "{char_link 2}{voice 4}{face 2}{face_emotion 6}{scale 0.75}"]);
+				C_Execute(28, Dialog_Add_Ext, [Lang_GetString("cutscene.savannah.lake.36"), "{char_link 4}{voice 5}"]);
 				C_Execute(28, Dialog_Start, [true]);
 				C_WaitUntilDestroy(28, ui_dialog);
 				C_Execute(29, BGM_SetVolume, [0, 0, 60]);
 				C_FadeFader(29, 0, 1, 60, 0, c_black);
 				C_Wait(29, 120);
-				C_Execute(30, Dialog_Add_Ext, ["* I eagerly listened to Hippo's&  words and learned something&  new as a result.", ""]);
-				C_Execute(30, Dialog_Add_Ext, ["* This technique will surely&  boost my skills in a fight.", ""]);
-				C_Execute(30, Dialog_Add_Ext, ["* I've mastered the \"{color `yellow`}RUNNING{color `white`}\" &  technique!", ""]);
+				C_Execute(30, Dialog_Add_Ext, [Lang_GetString("cutscene.savannah.lake.37"), ""]);
+				C_Execute(30, Dialog_Add_Ext, [Lang_GetString("cutscene.savannah.lake.38"), ""]);
+				C_Execute(30, Dialog_Add_Ext, [Lang_GetString("cutscene.savannah.lake.39"), ""]);
 				C_Execute(30, Dialog_Start, [false]);
 				C_WaitUntilDestroy(30, ui_dialog);
 				C_FadeFader(31, 1, 0, 60);
 				C_Execute(31, BGM_SetVolume, [0, 1, 60]);
 				C_Wait(31, 120);
-				C_Execute(32, Dialog_Add_Ext, ["* This...{w} did NOT go well.", "{char_link 2}{voice 4}{face 2}{face_emotion 3}"]);
-				C_Execute(32, Dialog_Add_Ext, ["* I mean, at least Kaban&  knows something valuable&  now.", "{char_link 4}{voice 5}"]);
-				C_Execute(32, Dialog_Add_Ext, ["* You don't have to be biased&  for that little advice, &  you know.", "{char_link 4}{voice 5}"]);
-				C_Execute(32, Dialog_Add_Ext, ["* Uh,{w} let's just go.", "{char_link 2}{voice 4}{face 2}{face_emotion 0}"]);
+				C_Execute(32, Dialog_Add_Ext, [Lang_GetString("cutscene.savannah.lake.40"), "{char_link 2}{voice 4}{face 2}{face_emotion 3}"]);
+				C_Execute(32, Dialog_Add_Ext, [Lang_GetString("cutscene.savannah.lake.41"), "{char_link 4}{voice 5}"]);
+				C_Execute(32, Dialog_Add_Ext, [Lang_GetString("cutscene.savannah.lake.42"), "{char_link 4}{voice 5}"]);
+				C_Execute(32, Dialog_Add_Ext, [Lang_GetString("cutscene.savannah.lake.43"), "{char_link 2}{voice 4}{face 2}{face_emotion 0}"]);
 				C_Execute(32, Dialog_Start, [true]);
 				C_WaitUntilDestroy(32, ui_dialog);
 				C_MoveChar(33, char_serval, 500, 310, false, 120);

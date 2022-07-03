@@ -4,4 +4,6 @@
 ./string/menu.txt
 ./string/font.txt
 ./string/monster.txt
-./string/cutscenes.txt
+./string/cutscenes_serval.txt
+./string/cutscenes_zebra.txt
+./string/interaction.txt
