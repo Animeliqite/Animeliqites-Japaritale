@@ -64,7 +64,6 @@ if(_phase==0){
 		C_Execute(2, variable_instance_set, [fader, "color", c_black]);
 		C_Execute(2, variable_instance_set, [object_index, "sprite_index", spr_zebra_monster_happy]);
 		C_Execute(2, variable_instance_set, [fader, "color", c_black]);
-		C_CreateAnim(2, id, "y", ANIM_TWEEN.SINE, ANIM_EASE.OUT, y, -10, room_speed / 4, true, 0, ANIM_MODE.PINGPONG)
 		C_Execute(2, Battle_CreateBubble, [Lang_GetString("cutscene.zebra.conversation.2"), "{effect -1}", 80, -(sprite_height / 1.5), 2]);
 		C_WaitUntilDestroy(2, battle_dialog_enemy);
 		C_Execute(3, variable_instance_set, [object_index, "_subPhase", 1.2]);
@@ -74,20 +73,16 @@ if(_phase==0){
 	else if(_subPhase==1.2){
 		switch(Flag_Get(FLAG_TYPE.TEMP,FLAG_TEMP.TEXT_TYPER_CHOICE)){
 			case 0:
-				Anim_Destroy(id, "y", true);
 				_subPhase = 1.3;
 				Flag_Set(FLAG_TYPE.TEMP,FLAG_TEMP.TEXT_TYPER_CHOICE, -9999);
 				instance_destroy(text_typer);
 				Cutscene_Begin();
-				y = ystart + 80;
 				break;
 			case 1:
-				Anim_Destroy(id, "y", true);
 				_subPhase = 1.4;
 				Flag_Set(FLAG_TYPE.TEMP,FLAG_TEMP.TEXT_TYPER_CHOICE, -9999);
 				instance_destroy(text_typer);
 				Cutscene_Begin();
-				y = ystart + 80;
 				break;
 		}
 	}
@@ -169,7 +164,6 @@ if(_phase==0){
 		C_Execute(2, variable_instance_set, [fader, "color", c_black]);
 		C_Execute(2, variable_instance_set, [object_index, "sprite_index", spr_zebra_monster_happy]);
 		C_Execute(2, variable_instance_set, [fader, "color", c_black]);
-		C_CreateAnim(2, id, "y", ANIM_TWEEN.SINE, ANIM_EASE.OUT, y, -10, room_speed / 4, true, 0, ANIM_MODE.PINGPONG)
 		C_Execute(2, Battle_CreateBubble, [Lang_GetString("cutscene.zebra.conversation.2.alt"), "{effect -1}", 80, -(sprite_height / 1.5), 2]);
 		C_WaitUntilDestroy(2, battle_dialog_enemy);
 		C_Execute(3, variable_instance_set, [object_index, "_subPhase", 1.6]);
@@ -179,20 +173,16 @@ if(_phase==0){
 	else if(_subPhase==1.6){
 		switch(Flag_Get(FLAG_TYPE.TEMP,FLAG_TEMP.TEXT_TYPER_CHOICE)){
 			case 0:
-				Anim_Destroy(id, "y", true);
 				_subPhase = 1.7;
 				Flag_Set(FLAG_TYPE.TEMP,FLAG_TEMP.TEXT_TYPER_CHOICE, -9999);
 				instance_destroy(text_typer);
 				Cutscene_Begin();
-				y = ystart + 80;
 				break;
 			case 1:
-				Anim_Destroy(id, "y", true);
 				_subPhase = 1.8;
 				Flag_Set(FLAG_TYPE.TEMP,FLAG_TEMP.TEXT_TYPER_CHOICE, -9999);
 				instance_destroy(text_typer);
 				Cutscene_Begin();
-				y = ystart + 80;
 				break;
 		}
 	}

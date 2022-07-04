@@ -12,7 +12,7 @@ Battle_SetEnemyDEF(_enemy_slot,-15);
 // Other settings
 image_index=0;
 image_speed=0;
-y += 80;
+y += 60;
 
 Cutscene_End(-1);
 
@@ -25,7 +25,7 @@ _hp_max=100;
 _hp=100;
 
 showHealthbar = false;
-healthbarXOffset = -(sprite_width / 2);
+healthbarXOffset = -(sprite_width / 1.5);
 healthbarYOffset = -480;
 healthbarAmount = 100;
 startedJustNow = true;
@@ -42,7 +42,7 @@ shakeAmount = 7;
 shakeAmountFake = 0;
 
 
-Anim_Create(id, "x", ANIM_TWEEN.SINE, ANIM_EASE.IN_OUT, xstart - 1, 2, room_speed / 4, 0, -1, -1, ANIM_MODE.PINGPONG, true);
+Anim_Create(id, "x", 0, 0, xstart - 1, 2, room_speed / 8, 0, -1, -1, ANIM_MODE.PINGPONG, true);
 //Anim_Create(id, "image_xscale", ANIM_TWEEN.SINE, ANIM_EASE.IN_OUT, 1.05, 1, room_speed * 2, 0, -1, -1, ANIM_MODE.PINGPONG, false);
 //Anim_Create(id, "image_yscale", ANIM_TWEEN.SINE, ANIM_EASE.IN_OUT, 1, 1.05, room_speed * 2, 0, -1, -1, ANIM_MODE.PINGPONG, false);
 
