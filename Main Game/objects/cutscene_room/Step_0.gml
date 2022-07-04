@@ -374,19 +374,20 @@ switch(room){
 					C_Execute(1, variable_instance_set, [char_zebra, "interacted", true]);
 					C_Execute(1, array_set, [char_zebra.res_idle_sprite, DIR.DOWN, spr_char_zebra_shy]);
 					C_Execute(1, array_set, [char_zebra.res_talk_sprite, DIR.DOWN, spr_char_zebra_shy]);
-					C_Execute(1, Dialog_Add_Ext, [Lang_GetString("cutscene.zebra.greet.0"), "{char_link 3}"]);
-					C_Execute(1, Dialog_Add_Ext, [Lang_GetString("cutscene.zebra.greet.1"), "{char_link 3}"]);
+					C_Execute(1, Dialog_Add_Ext, [Lang_GetString("cutscene.zebra.greet.0"), "{voice 6}{char_link 3}"]);
+					C_Execute(1, Dialog_Add_Ext, [Lang_GetString("cutscene.zebra.greet.1"), "{voice 6}{char_link 3}"]);
 					C_Execute(1, Dialog_Start, [true]);
 					C_WaitUntilDestroy(1, ui_dialog);
 					C_Execute(2, variable_instance_set, [char_zebra, "sprite_index", spr_char_zebra_happy]);
 					C_Execute(2, array_set, [char_zebra.res_idle_sprite, DIR.DOWN, spr_char_zebra_happy]);
 					C_Execute(2, array_set, [char_zebra.res_talk_sprite, DIR.DOWN, spr_char_zebra_happy]);
 					C_Wait(2, 30);
-					C_Execute(3, Dialog_Add_Ext, [Lang_GetString("cutscene.zebra.greet.2"), "{char_link 3}"]);
+					C_Execute(3, Dialog_Add_Ext, [Lang_GetString("cutscene.zebra.greet.2"), "{voice 6}{char_link 3}"]);
 					C_Execute(3, Dialog_Start, [true]);
 					C_WaitUntilDestroy(3, ui_dialog);
 					C_Execute(4, variable_instance_set, [cutscene_room, "phase", 0]);
 					C_Execute(4, Encounter_Start, [4, true, false]);
+					C_Execute(4, part_system_destroy, [particle.partsystem]);
 					Cutscene_End(4);
 				}
 				else if (phase == 3) {
@@ -427,7 +428,9 @@ switch(room){
 			}
 		}
 		else {
-			instance_destroy(char_zebra);
+			if (teleportedChar == true) { 
+				instance_destroy(char_zebra);
+			}
 			instance_destroy(char_serval);
 			instance_destroy(char_forcefield);
 		}
@@ -787,7 +790,8 @@ switch(room){
 			C_Wait(6, 5);
 			C_PlaySfx(7, snd_noise);
 			C_Wait(7, 20);
-			C_Execute(8, Encounter_Start, [2, true, false]);
+			C_Execute(8, Encounter_Start, [1, true, false]);
+			C_Execute(8, part_system_destroy, [particle.partsystem]);
 			Cutscene_End(8);
 		}
 		break;
