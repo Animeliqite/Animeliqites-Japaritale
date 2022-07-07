@@ -17,8 +17,8 @@ alpha_frame=1;
 color=c_white;
 color_bg=c_black;
 color_frame=c_white;
-thickness_frame=5;
-thickness_frame_collision=5;
+thickness_frame=10;
+thickness_frame_collision=10;
 enable_frame=true;
 
 _inst_frame_up=instance_create_depth(0,0,0,block);
