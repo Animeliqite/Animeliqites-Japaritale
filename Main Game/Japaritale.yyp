@@ -51,6 +51,7 @@
     {"id":{"name":"spr_gamepad_ps4_small_dpad_right","path":"sprites/spr_gamepad_ps4_small_dpad_right/spr_gamepad_ps4_small_dpad_right.yy",},"order":3,},
     {"id":{"name":"battle_bullet_gb","path":"objects/battle_bullet_gb/battle_bullet_gb.yy",},"order":4,},
     {"id":{"name":"spr_char_cellien","path":"sprites/spr_char_cellien/spr_char_cellien.yy",},"order":1,},
+    {"id":{"name":"spr_dialogbox_slice_menu","path":"sprites/spr_dialogbox_slice_menu/spr_dialogbox_slice_menu.yy",},"order":5,},
     {"id":{"name":"spr_gamepad_ps4_small_l1","path":"sprites/spr_gamepad_ps4_small_l1/spr_gamepad_ps4_small_l1.yy",},"order":5,},
     {"id":{"name":"spr_gamepad_ps4_small_l2","path":"sprites/spr_gamepad_ps4_small_l2/spr_gamepad_ps4_small_l2.yy",},"order":7,},
     {"id":{"name":"colorize","path":"shaders/colorize/colorize.yy",},"order":0,},

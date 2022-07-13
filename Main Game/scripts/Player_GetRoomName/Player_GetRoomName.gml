@@ -6,7 +6,8 @@ function Player_GetRoomName() {
 
 	switch(ROOM){
 		case -1:
-			name="--";
+		default:
+			name="------------";
 			break;
 	}
 	return name;

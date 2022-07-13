@@ -1,3 +1,6 @@
+Flag_SetSaveSlot(_chosen_file);
+Flag_Init();
+				
 if(_menu==-1){
 	if(Input_IsPressed(INPUT.CONFIRM)){
 		_menu=0;
@@ -25,46 +28,96 @@ if(_menu==-1){
 			}
 		}
 	}else{
-		if(Input_IsPressed(INPUT.LEFT)){
-			if(_choice==1){
-				_choice=0;
-				event_user(2);
-			}
-		}else if(Input_IsPressed(INPUT.RIGHT)){
-			if(_choice==0){
-				_choice=1;
-				event_user(2);
-			}
-		}else if(Input_IsPressed(INPUT.DOWN)){
-			if(_choice!=2){
-				_choice=2;
-				event_user(2);
-			}
-		}else if(Input_IsPressed(INPUT.UP)){
-			if(_choice==2){
-				_choice=0;
-				event_user(2);
-			}
-		}else if(Input_IsPressed(INPUT.CONFIRM)){
-			if(_choice==0){
-				Player_Load(0);
-				var target=Flag_Get(FLAG_TYPE.STATIC,FLAG_STATIC.ROOM,-1);
-				if(room_exists(target)){
-					room_goto(target);
-					BGM_Stop(0);
-				}else{
-					show_message("ERROR:\nAttempt to goto an unexisting room "+string(target));
+		_heart_pos_curr_x=lerp(_heart_pos_curr_x,_heart_pos_x[_choice+(_choice_file_phase==1 ? 3 : (_choice_file_phase==2 ? 6 : 0))],0.5);
+		_heart_pos_curr_y=lerp(_heart_pos_curr_y,_heart_pos_y[_choice+(_choice_file_phase==1 ? 3 : (_choice_file_phase==2 ? 6 : 0))],0.5);
+		if(_choice_file_phase==0){
+			_chosen_file=_choice;
+			if(Input_IsPressed(INPUT.DOWN)){
+				if(_choice<2)
+					_choice++;
+				else {
+					_choice=0;
+					_choice_file_phase=1;
 				}
-			}else if(_choice==1){
-				_menu=2;
-				_naming_name=Flag_Get(FLAG_TYPE.INFO,FLAG_INFO.NAME,Lang_GetString("ui.save.name.empty"));
-				_confirm_title=Lang_GetString("menu.confirm.title.reset");
-				event_user(0);
+			}else if(Input_IsPressed(INPUT.UP)){
+				if(_choice>0)
+					_choice--;
+				else _choice=2;
+			}
+			else if(Input_IsPressed(INPUT.CONFIRM)){
+				_choice_file_phase=2;
+				_chosen_file=_choice;
+				_choice=0;
+			}
+		}
+		else if(_choice_file_phase==1){
+			if(Input_IsPressed(INPUT.LEFT)){
+				if(_choice>0)
+					_choice--;
+				else _choice=2;
+			}else if(Input_IsPressed(INPUT.RIGHT)){
+				if(_choice<2)
+					_choice++;
+				else _choice=0;
+			}else if(Input_IsPressed(INPUT.UP)){
+				_choice=2;
+				_choice_file_phase=0;
+			}
+			else if(Input_IsPressed(INPUT.CONFIRM)){
+				
+			}
+		}
+		else if(_choice_file_phase==2){
+			if(Input_IsPressed(INPUT.LEFT)){
+				_choice=0;
+			}else if(Input_IsPressed(INPUT.RIGHT)){
+				_choice=1;
+			}else if(Input_IsPressed(INPUT.CONFIRM)){
+				if(_choice==0) {
+					if (file_exists("./"+GAME_SAVE_NAME+"./flag/"+string(_chosen_file)+"/info")) {
+						Player_Load(_chosen_file);
+						var target=Flag_Get(FLAG_TYPE.STATIC,FLAG_STATIC.ROOM,-1);
+						if(room_exists(target)){
+							room_goto(target);
+							BGM_Stop(0);
+						}else{
+							show_message("ERROR:\nAttempt to goto an unexisting room "+string(target));
+						}
+					}
+					else {
+						_menu=1;
+						event_user(0);
+					}
+				}
+				else if (_choice==1) {
+					_choice=_chosen_file;
+					_choice_file_phase=0;
+				}
+			}
+		}
+		/*if(Input_IsPressed(INPUT.CONFIRM)){
+			if(_choice==0){
+				if (file_exists(Flag_GetSavePath(FLAG_TYPE.INFO))) {
+					Player_Load(0);
+					var target=Flag_Get(FLAG_TYPE.STATIC,FLAG_STATIC.ROOM,-1);
+					if(room_exists(target)){
+						room_goto(target);
+						BGM_Stop(0);
+					}else{
+						show_message("ERROR:\nAttempt to goto an unexisting room "+string(target));
+					}
+				}
+				else {
+					_menu=2;
+					_naming_name=Flag_Get(FLAG_TYPE.INFO,FLAG_INFO.NAME,Lang_GetString("ui.save.name.empty"));
+					_confirm_title=Lang_GetString("menu.confirm.title.reset");
+					event_user(0);
+				}
 			}else if(_choice==2){
 				room_goto(room_settings);
 				BGM_Stop(0);
 			}
-		}
+		}*/
 	}
 }else if(_menu==1){
 	if(_choice_naming==0){

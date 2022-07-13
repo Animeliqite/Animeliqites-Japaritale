@@ -8,7 +8,7 @@
 "ui.menu.stat.2"					"{space_y -1}&&{space_y 0}&{space_y 4}&{space_y 0}KILLS: {insert KILLS}"
 "ui.menu.phone"						"CELL"
 
-"ui.save.name.empty"				"EMPTY"
+"ui.save.name.empty"				"[EMPTY]"
 "ui.save.save"						"Save"
 "ui.save.return"					"Return"
 "ui.save.saved"						"File Saved."
