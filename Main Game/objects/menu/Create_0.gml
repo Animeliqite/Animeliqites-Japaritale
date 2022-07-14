@@ -55,6 +55,7 @@ _change_id=-1;
 _file_name=[];
 _file_time=[];
 _file_room=[];
+_file_text_start=array_create(2,"bepis");
 
 event_user(0);
 BGM_Play(0, bgm_menu0);

@@ -20,11 +20,13 @@ if(_menu==0){
 				_file_name[i]=Flag_Get(FLAG_TYPE.INFO,FLAG_INFO.NAME,Lang_GetString("ui.save.name.empty"));
 				_file_room[i]=Player_GetRoomName(Flag_Get(FLAG_TYPE.INFO,FLAG_INFO.ROOM));
 				_file_time[i]=Flag_Get(FLAG_TYPE.INFO,FLAG_INFO.TIME, "--:--");
+				_file_text_start[i]="Continue";
 			}
 			else {
 				_file_name[i]=Lang_GetString("ui.save.name.empty");
 				_file_room[i]=Player_GetRoomName(-9999);
 				_file_time[i]="--:--";
+				_file_text_start[i]="New Game";
 			}
 		}
 		_inst_header=instance_create_depth(80,60,0,text_typer);

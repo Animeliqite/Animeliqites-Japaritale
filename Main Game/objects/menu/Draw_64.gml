@@ -36,7 +36,7 @@ if(_menu==0){
 			draw_set_alpha((_chosen_file == i && _choice_file_phase == 0 ? 1 : 0.5));
 			if (_choice_file_phase==2&&_chosen_file==i){
 				draw_set_alpha(1);
-				draw_text_transformed(160,150+(93*i),"Begin",2,2,0);
+				draw_text_transformed(160,150+(93*i),_file_text_start[i],2,2,0);
 				draw_text_transformed(410,150+(93*i),"Back",2,2,0);
 			}
 			else {
