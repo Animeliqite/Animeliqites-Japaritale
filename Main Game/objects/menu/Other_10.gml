@@ -13,15 +13,22 @@ if(_menu==0){
 		}
 		event_user(2);
 	}else{
-		Flag_Load(FLAG_TYPE.INFO);
 		for (var i=0; i<3; i++) {
-			_file_name[i]=Flag_Get(FLAG_TYPE.INFO,FLAG_INFO.NAME,Lang_GetString("ui.save.name.empty"));
-			_file_room[i]=Player_GetRoomName(Flag_Get(FLAG_TYPE.INFO,FLAG_INFO.ROOM));
-			_file_time[i]=Flag_Get(FLAG_TYPE.INFO,FLAG_INFO.TIME, "--:--");
+			show_message(Flag_GetSaveSlot());
 			Flag_SetSaveSlot(i);
-			Flag_Init();
+			Flag_Custom();
+			if (Flag_Load(FLAG_TYPE.INFO)) {
+				_file_name[i]=Flag_Get(FLAG_TYPE.INFO,FLAG_INFO.NAME,Lang_GetString("ui.save.name.empty"));
+				_file_room[i]=Player_GetRoomName(Flag_Get(FLAG_TYPE.INFO,FLAG_INFO.ROOM));
+				_file_time[i]=Flag_Get(FLAG_TYPE.INFO,FLAG_INFO.TIME, "--:--");
+			}
+			else {
+				_file_name[i]=Lang_GetString("ui.save.name.empty");
+				_file_room[i]=Player_GetRoomName(-9999);
+				_file_time[i]="--:--";
+			}
 		}
-		
+		show_message(_file_name);
 		_inst_header=instance_create_depth(80,60,0,text_typer);
 		_inst_header.text=_prefix+"Please select a file.";
 		

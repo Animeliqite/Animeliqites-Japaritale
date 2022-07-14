@@ -33,6 +33,7 @@ if(_menu==-1){
 		if(_choice_file_phase==0){
 			_chosen_file=_choice;
 			if(Input_IsPressed(INPUT.DOWN)){
+				audio_play_sound(snd_menu_switch,0,false);
 				if(_choice<2)
 					_choice++;
 				else {
@@ -40,11 +41,13 @@ if(_menu==-1){
 					_choice_file_phase=1;
 				}
 			}else if(Input_IsPressed(INPUT.UP)){
+				audio_play_sound(snd_menu_switch,0,false);
 				if(_choice>0)
 					_choice--;
 				else _choice=2;
 			}
 			else if(Input_IsPressed(INPUT.CONFIRM)){
+				audio_play_sound(snd_menu_confirm,0,false);
 				_choice_file_phase=2;
 				_chosen_file=_choice;
 				_choice=0;
@@ -52,27 +55,34 @@ if(_menu==-1){
 		}
 		else if(_choice_file_phase==1){
 			if(Input_IsPressed(INPUT.LEFT)){
+				audio_play_sound(snd_menu_switch,0,false);
 				if(_choice>0)
 					_choice--;
 				else _choice=2;
 			}else if(Input_IsPressed(INPUT.RIGHT)){
+				audio_play_sound(snd_menu_switch,0,false);
 				if(_choice<2)
 					_choice++;
 				else _choice=0;
 			}else if(Input_IsPressed(INPUT.UP)){
+				audio_play_sound(snd_menu_switch,0,false);
 				_choice=2;
 				_choice_file_phase=0;
 			}
 			else if(Input_IsPressed(INPUT.CONFIRM)){
+				audio_play_sound(snd_menu_confirm,0,false);
 				
 			}
 		}
 		else if(_choice_file_phase==2){
 			if(Input_IsPressed(INPUT.LEFT)){
-				_choice=0;
+				audio_play_sound(snd_menu_switch,0,false);
+				_choice=!_choice;
 			}else if(Input_IsPressed(INPUT.RIGHT)){
-				_choice=1;
+				audio_play_sound(snd_menu_switch,0,false);
+				_choice=!_choice;
 			}else if(Input_IsPressed(INPUT.CONFIRM)){
+				audio_play_sound(snd_menu_confirm,0,false);
 				if(_choice==0) {
 					if (file_exists("./"+GAME_SAVE_NAME+"./flag/"+string(_chosen_file)+"/info")) {
 						Player_Load(_chosen_file);

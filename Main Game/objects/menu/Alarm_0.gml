@@ -1,3 +1,4 @@
+Flag_SetSaveSlot(_chosen_file);
 Flag_Clear(FLAG_TYPE.STATIC);
 Flag_Clear(FLAG_TYPE.DYNAMIC);
 Flag_Custom();
