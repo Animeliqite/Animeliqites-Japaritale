@@ -132,7 +132,7 @@ if(_menu==-1){
 }else if(_menu==1){
 	if(string_lower(_naming_name)=="cellien"&&alarm[1]<0) {
 		BGM_Stop(0);
-		audio_play_sound(snd_weirdjingle,0,false);
+		Create_Trophy(spr_trophy_cellien);
 		Fader_Fade(-1, 1, 15, 60);
 		alarm[1]=75;
 	}
