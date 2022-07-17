@@ -680,6 +680,7 @@ switch(room){
 				C_Execute(33, Flag_Set, [FLAG_TYPE.STATIC, FLAG_STATIC.CAN_RUN, true]);
 				C_Wait(33, 120);
 				C_Execute(34, variable_instance_set, [camera, "target", char_player]);
+				C_Execute(34, Create_Overlay_Text, ["Press [X] or [SHIFT] to sprint!",0]);
 				C_Execute(34, instance_destroy, [char_serval]);
 				C_Execute(34, Flag_Set, [FLAG_TYPE.STATIC, FLAG_STATIC.SCENE_004, true]);
 				Cutscene_End(34);

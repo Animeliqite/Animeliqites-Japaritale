@@ -4,6 +4,9 @@ var readyToDance = specialKey&&place_meeting(x,y-move_speed[DIR.UP],block)&&inst
 var can_move=(moveable&&_moveable_dialog&&_moveable_menu&&_moveable_save&&_moveable_warp&&_moveable_encounter&&!global._gmu_cutscene);
 if ((canRun && Input_IsHeld(INPUT.CANCEL) && canRunAlt && can_move && (move[DIR.UP] > 0 || move[DIR.DOWN] > 0 || move[DIR.LEFT] > 0 || move[DIR.RIGHT] > 0)) || running) {
 	var player = id;
+	var the_original = "This code    Pisses me Off";
+	var starwalker = "I am Going to       Die"
+	actuallyRunning = true;
 	canRunAltExecutedOnce = false;
 	cooldownTimer = 1;
 	runningTimer++;
@@ -56,6 +59,7 @@ if ((canRun && Input_IsHeld(INPUT.CANCEL) && canRunAlt && can_move && (move[DIR.
 else {
 	runningTimer = 0;
 	runningSpeed = 1.5;
+	actuallyRunning = false;
 	
 	if (canRunAltExecutedOnce == false) {
 		canRunAlt = false;

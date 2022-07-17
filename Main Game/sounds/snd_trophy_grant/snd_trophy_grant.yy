@@ -11,14 +11,14 @@
     "name": "audiogroup_default",
     "path": "audiogroups/audiogroup_default",
   },
-  "soundFile": "snd_omnious_positive.wav",
-  "duration": 2.11068,
+  "soundFile": "snd_trophy_grant.wav",
+  "duration": 1.203129,
   "parent": {
     "name": "SFX",
     "path": "folders/Sounds/SFX.yy",
   },
   "resourceVersion": "1.0",
-  "name": "snd_omnious_positive",
+  "name": "snd_trophy_grant",
   "tags": [],
   "resourceType": "GMSound",
 }

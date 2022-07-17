@@ -1,6 +1,7 @@
 event_inherited();
 
 running=false;
+actuallyRunning=false;
 canRunAltExecutedOnce = false;
 canRun=Flag_Get(FLAG_TYPE.STATIC,FLAG_STATIC.CAN_RUN);
 canRunAlt=true;

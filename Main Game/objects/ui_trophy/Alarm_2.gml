@@ -1,0 +1,1 @@
+audio_play_sound(snd_trophy_grant, 0, false);
