@@ -12,8 +12,11 @@ if ((canRun && Input_IsHeld(INPUT.CANCEL) && canRunAlt && can_move && (move[DIR.
 	runningTimer++;
 		
 	for (var i = 0; i <= DIR.DOWN; i += 90) {
+		var CHECK=(i == DIR.DOWN ? "down" : (i == DIR.UP ? "up" : (i == DIR.LEFT ? "left" : "right")));
 		move_speed[i] = round(runningSpeed);
-		res_move_speed[i] = 1/2.25;
+		res_idle_sprite[i] = asset_get_index("spr_char_kaban_" + CHECK + "_run");
+		res_move_sprite[i] = asset_get_index("spr_char_kaban_" + CHECK + "_run");
+		res_move_speed[i] = 1/1.5;
 	}
 	
 	if (move[DIR.LEFT] <= 0) && (move[DIR.RIGHT] <= 0) && (move[DIR.UP] <= 0) && (move[DIR.DOWN] <= 0) {
@@ -22,8 +25,10 @@ if ((canRun && Input_IsHeld(INPUT.CANCEL) && canRunAlt && can_move && (move[DIR.
 	}
 	
 	if (runningTimer == 1) {
-		image_speed = 1/2.25;
-		Anim_Create(id, "runningSpeed", 0, 0, 1.5, 4, 10, 0, -1, -1, ANIM_MODE.ONESHOT, false);
+		var CHECK_DIR=(dir == DIR.DOWN ? "down" : (dir == DIR.UP ? "up" : (dir == DIR.LEFT ? "left" : "right")));
+		image_speed = 1/1.5;
+		sprite_index = asset_get_index("spr_char_kaban_" + CHECK_DIR + "_run");
+		Anim_Create(id, "runningSpeed", 0, 0, 1.5, 5, 10, 0, -1, -1, ANIM_MODE.ONESHOT, false);
 		//Camera_Shake(5, 5, 0, 0, true, true);
 		//audio_play_sound(snd_impact, 0, false);
 		//audio_play_sound(snd_flee, 0, false);
@@ -60,15 +65,19 @@ else {
 	runningTimer = 0;
 	runningSpeed = 1.5;
 	actuallyRunning = false;
-	
 	if (canRunAltExecutedOnce == false) {
+		var CHECK_DIR=(dir == DIR.DOWN ? "down" : (dir == DIR.UP ? "up" : (dir == DIR.LEFT ? "left" : "right")));
 		canRunAlt = false;
 		Anim_Destroy(id, "runningSpeed");
 		audio_stop_sound(snd_bump);
+		sprite_index = asset_get_index("spr_char_kaban_" + CHECK_DIR);
 		if (move[DIR.LEFT] > 0) || (move[DIR.RIGHT] > 0) || (move[DIR.UP] > 0) || (move[DIR.DOWN] > 0)
 			image_speed = 1/4.25;
 		for (var i = 0; i <= DIR.DOWN; i += 90) {
+			var CHECK=(i == DIR.DOWN ? "down" : (i == DIR.UP ? "up" : (i == DIR.LEFT ? "left" : "right")));
 			move_speed[i] = 1.5;
+			res_idle_sprite[i] = asset_get_index("spr_char_kaban_" + CHECK);
+			res_move_sprite[i] = asset_get_index("spr_char_kaban_" + CHECK);
 			res_move_speed[i] = 1/4.25;
 		}
 		canRunAlt = true;
