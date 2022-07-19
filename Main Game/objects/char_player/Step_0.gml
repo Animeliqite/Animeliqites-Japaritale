@@ -19,7 +19,7 @@ if ((canRun && Input_IsHeld(INPUT.CANCEL) && canRunAlt && can_move && (move[DIR.
 		res_move_speed[i] = 1/1.5;
 	}
 	
-	if (move[DIR.LEFT] <= 0) && (move[DIR.RIGHT] <= 0) && (move[DIR.UP] <= 0) && (move[DIR.DOWN] <= 0) {
+	if (((move[DIR.LEFT] <= 0) && (move[DIR.RIGHT] <= 0) && (move[DIR.UP] <= 0) && (move[DIR.DOWN] <= 0))&&!running) {
 		image_index = 0;
 		image_speed = 0;
 	}
@@ -57,7 +57,7 @@ if ((canRun && Input_IsHeld(INPUT.CANCEL) && canRunAlt && can_move && (move[DIR.
 	}
 	*/
 	
-	if (runningTimer % 5 == 0) && (move[DIR.UP]>0 || move[DIR.DOWN]>0 || move[DIR.LEFT]>0 || move[DIR.RIGHT]>0) {
+	if (runningTimer % 5 == 0) && ((move[DIR.UP]>0 || move[DIR.DOWN]>0 || move[DIR.LEFT]>0 || move[DIR.RIGHT]>0)||running) {
 		repeat (3) instance_create_depth(x+irandom(5)-5,y+irandom(5)-10,0,part_whitepxldust);
 		//audio_play_sound(snd_pellet, 0, false);
 	}

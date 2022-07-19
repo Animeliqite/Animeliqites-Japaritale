@@ -756,6 +756,7 @@ switch(room){
 			Cutscene_End(11);
 		}
 		else if (phase == 1) {
+			char_player.moveable = false;
 			if (Player_GetTextTyperChoice() == 0) {
 				Cutscene_Begin();
 				phase = 1.5;
@@ -794,6 +795,52 @@ switch(room){
 			C_Execute(8, Encounter_Start, [1, true, false]);
 			C_Execute(8, part_system_destroy, [particle.partsystem]);
 			Cutscene_End(8);
+		}
+		else if (phase == 1.6) {
+			C_Execute(0, Dialog_Add_Ext, ["* Have you already&  forgotten the dangers&  awaiting you?", "{char_link 2}{voice 4}{face 2}{face_emotion 6}"]);
+			C_Execute(0, Dialog_Add_Ext, ["* I'm being pretty&  serious, KABAN, and I&  don't want you to die.", "{char_link 2}{voice 4}{face 2}{face_emotion 3}"]);
+			C_Execute(0, Dialog_Add_Ext, ["* Please...", "{char_link 2}{voice 4}{face 2}{face_emotion 2}"]);
+			C_Execute(0, Dialog_Add_Ext, ["&   {choice 0}Yes                     {choice 1}No {choice `TMP`}", "{instant true}"]);
+			C_Execute(0, Dialog_Start, [true]);
+			C_WaitUntilDestroy(0, ui_dialog);
+			C_Execute(1, variable_instance_set, [id, "phase", 2]);
+			Cutscene_End(1);
+		}
+		else if (phase == 2) {
+			char_player.moveable = false;
+			if (Player_GetTextTyperChoice() == 0) {
+				Cutscene_Begin();
+				phase = 1.5;
+			}
+			else {
+				Cutscene_Begin();
+				phase = 2.5;
+			}
+		}
+		else if (phase == 2.5) {
+			C_Execute(0, Dialog_Add_Ext, ["* .........{w}&* ............", "{char_link 2}{voice 4}{face 2}{face_emotion 9}"]);
+			C_Execute(0, Dialog_Add_Ext, ["* Okay, KABAN.{w}&* I'll let you in to&  the fight for once.", "{char_link 2}{voice 4}{face 2}{face_emotion 3}"]);
+			C_Execute(0, Dialog_Add_Ext, ["* Maybe... one can't&  do but two can&  do better!", "{char_link 2}{voice 4}{face 2}{face_emotion 2}"]);
+			C_Execute(0, Dialog_Start, [true]);
+			C_WaitUntilDestroy(0, ui_dialog);
+			C_Execute(1, BGM_SetVolume, [0, 0, 60]);
+			C_MoveChar(1, char_player, char_player.x, char_player.ystart - 50, false, 90);
+			C_MoveChar(1, camera, max(0, char_player.x - (camera.width / camera.scale_x / 2)), 0, false, 90);
+			C_MoveChar(1, char_serval, char_player.x, char_player.ystart - 50 + 20, false, 30);
+			C_Wait(1, 30);
+			C_Execute(2, variable_instance_set, [camera, "target", char_player]);
+			C_MoveChar(2, char_serval, 630, char_player.ystart - 50 - 10, false, 90);
+			C_MoveChar(2, char_player, 630, char_player.ystart - 50 + 10, false, 90, true);
+			C_Wait(2, 60);
+			C_PlaySfx(3, snd_noise);
+			C_Wait(3, 5);
+			C_PlaySfx(4, snd_noise);
+			C_Wait(4, 5);
+			C_PlaySfx(5, snd_noise);
+			C_Wait(5, 20);
+			C_Execute(6, Encounter_Start, [1, true, false]);
+			C_Execute(6, part_system_destroy, [particle.partsystem]);
+			Cutscene_End(6);
 		}
 		break;
 }

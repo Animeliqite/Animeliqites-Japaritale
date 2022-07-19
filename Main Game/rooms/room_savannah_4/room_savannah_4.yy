@@ -61,6 +61,7 @@
             {"propertyId":{"name":"_delay","path":"objects/particle/particle.yy",},"objectId":{"name":"particle","path":"objects/particle/particle.yy",},"value":"0","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
             {"propertyId":{"name":"_part_x","path":"objects/particle/particle.yy",},"objectId":{"name":"particle","path":"objects/particle/particle.yy",},"value":"0","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
           ],"isDnd":false,"objectId":{"name":"particle","path":"objects/particle/particle.yy",},"inheritCode":false,"hasCreationCode":false,"colour":4294967295,"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"imageIndex":0,"imageSpeed":1.0,"inheritedItemId":null,"frozen":false,"ignore":false,"inheritItemSettings":false,"x":40.0,"y":0.0,"resourceVersion":"1.0","name":"inst_55E73604","tags":[],"resourceType":"GMRInstance",},
+        {"properties":[],"isDnd":false,"objectId":{"name":"char_cellien_big","path":"objects/char_cellien_big/char_cellien_big.yy",},"inheritCode":false,"hasCreationCode":false,"colour":4294967295,"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"imageIndex":0,"imageSpeed":1.0,"inheritedItemId":null,"frozen":false,"ignore":false,"inheritItemSettings":false,"x":740.0,"y":180.0,"resourceVersion":"1.0","name":"inst_298E9552","tags":[],"resourceType":"GMRInstance",},
       ],"visible":true,"depth":0,"userdefinedDepth":true,"inheritLayerDepth":false,"inheritLayerSettings":false,"gridX":10,"gridY":10,"layers":[],"hierarchyFrozen":false,"effectEnabled":true,"effectType":"none","properties":[],"resourceVersion":"1.0","name":"Instances","tags":[],"resourceType":"GMRInstanceLayer",},
     {"tilesetId":{"name":"tile_savannah","path":"tilesets/tile_savannah/tile_savannah.yy",},"x":0,"y":0,"tiles":{"SerialiseWidth":38,"SerialiseHeight":12,"TileSerialiseData":[
 14,14,14,14,14,14,14,14,14,14,14,14,15,2147483648,2147483648,2147483648,2147483648,2147483648,91,2147483648,2147483648,2147483648,2147483648,2147483648,2147483648,2147483648,2147483648,2147483648,2147483648,2147483648,2147483648,2147483648,2147483648,2147483648,2147483648,2147483648,2147483648,2147483648,
@@ -140,6 +141,7 @@
     {"name":"inst_2CC5674B","path":"rooms/room_savannah_4/room_savannah_4.yy",},
     {"name":"inst_195023D7","path":"rooms/room_savannah_4/room_savannah_4.yy",},
     {"name":"inst_55E73604","path":"rooms/room_savannah_4/room_savannah_4.yy",},
+    {"name":"inst_298E9552","path":"rooms/room_savannah_4/room_savannah_4.yy",},
   ],
   "inheritCreationOrder": false,
   "sequenceId": null,
