@@ -7,9 +7,9 @@
   "edgeFiltering": false,
   "collisionTolerance": 0,
   "swfPrecision": 2.525,
-  "bbox_left": 0,
-  "bbox_right": 87,
-  "bbox_top": 0,
+  "bbox_left": 1,
+  "bbox_right": 86,
+  "bbox_top": 2,
   "bbox_bottom": 81,
   "HTile": false,
   "VTile": false,
@@ -27,15 +27,15 @@
     {"compositeImage":{"FrameId":{"name":"186d5756-e4f1-4850-aa69-0e8afaf3c80d","path":"sprites/spr_cellien_monster_blink_anim/spr_cellien_monster_blink_anim.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
         {"FrameId":{"name":"186d5756-e4f1-4850-aa69-0e8afaf3c80d","path":"sprites/spr_cellien_monster_blink_anim/spr_cellien_monster_blink_anim.yy",},"LayerId":{"name":"0b1ba332-53a6-4e8a-9abf-4ed9f59e657f","path":"sprites/spr_cellien_monster_blink_anim/spr_cellien_monster_blink_anim.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
       ],"parent":{"name":"spr_cellien_monster_blink_anim","path":"sprites/spr_cellien_monster_blink_anim/spr_cellien_monster_blink_anim.yy",},"resourceVersion":"1.0","name":"186d5756-e4f1-4850-aa69-0e8afaf3c80d","tags":[],"resourceType":"GMSpriteFrame",},
-    {"compositeImage":{"FrameId":{"name":"1db40854-1092-44c8-9c1b-3bc7956a7c2a","path":"sprites/spr_cellien_monster_blink_anim/spr_cellien_monster_blink_anim.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"1db40854-1092-44c8-9c1b-3bc7956a7c2a","path":"sprites/spr_cellien_monster_blink_anim/spr_cellien_monster_blink_anim.yy",},"LayerId":{"name":"0b1ba332-53a6-4e8a-9abf-4ed9f59e657f","path":"sprites/spr_cellien_monster_blink_anim/spr_cellien_monster_blink_anim.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"spr_cellien_monster_blink_anim","path":"sprites/spr_cellien_monster_blink_anim/spr_cellien_monster_blink_anim.yy",},"resourceVersion":"1.0","name":"1db40854-1092-44c8-9c1b-3bc7956a7c2a","tags":[],"resourceType":"GMSpriteFrame",},
-    {"compositeImage":{"FrameId":{"name":"6aac9060-f534-4229-a7d6-479e8509b3a4","path":"sprites/spr_cellien_monster_blink_anim/spr_cellien_monster_blink_anim.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"6aac9060-f534-4229-a7d6-479e8509b3a4","path":"sprites/spr_cellien_monster_blink_anim/spr_cellien_monster_blink_anim.yy",},"LayerId":{"name":"0b1ba332-53a6-4e8a-9abf-4ed9f59e657f","path":"sprites/spr_cellien_monster_blink_anim/spr_cellien_monster_blink_anim.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"spr_cellien_monster_blink_anim","path":"sprites/spr_cellien_monster_blink_anim/spr_cellien_monster_blink_anim.yy",},"resourceVersion":"1.0","name":"6aac9060-f534-4229-a7d6-479e8509b3a4","tags":[],"resourceType":"GMSpriteFrame",},
-    {"compositeImage":{"FrameId":{"name":"99c805d2-22e0-4326-af58-9b51f6beaf96","path":"sprites/spr_cellien_monster_blink_anim/spr_cellien_monster_blink_anim.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"99c805d2-22e0-4326-af58-9b51f6beaf96","path":"sprites/spr_cellien_monster_blink_anim/spr_cellien_monster_blink_anim.yy",},"LayerId":{"name":"0b1ba332-53a6-4e8a-9abf-4ed9f59e657f","path":"sprites/spr_cellien_monster_blink_anim/spr_cellien_monster_blink_anim.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"spr_cellien_monster_blink_anim","path":"sprites/spr_cellien_monster_blink_anim/spr_cellien_monster_blink_anim.yy",},"resourceVersion":"1.0","name":"99c805d2-22e0-4326-af58-9b51f6beaf96","tags":[],"resourceType":"GMSpriteFrame",},
+    {"compositeImage":{"FrameId":{"name":"0efbac9e-6a08-4f9e-9821-dcce971136e7","path":"sprites/spr_cellien_monster_blink_anim/spr_cellien_monster_blink_anim.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
+        {"FrameId":{"name":"0efbac9e-6a08-4f9e-9821-dcce971136e7","path":"sprites/spr_cellien_monster_blink_anim/spr_cellien_monster_blink_anim.yy",},"LayerId":{"name":"0b1ba332-53a6-4e8a-9abf-4ed9f59e657f","path":"sprites/spr_cellien_monster_blink_anim/spr_cellien_monster_blink_anim.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
+      ],"parent":{"name":"spr_cellien_monster_blink_anim","path":"sprites/spr_cellien_monster_blink_anim/spr_cellien_monster_blink_anim.yy",},"resourceVersion":"1.0","name":"0efbac9e-6a08-4f9e-9821-dcce971136e7","tags":[],"resourceType":"GMSpriteFrame",},
+    {"compositeImage":{"FrameId":{"name":"96fe7a23-c6e6-4fbc-b2a5-b4551a3ba099","path":"sprites/spr_cellien_monster_blink_anim/spr_cellien_monster_blink_anim.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
+        {"FrameId":{"name":"96fe7a23-c6e6-4fbc-b2a5-b4551a3ba099","path":"sprites/spr_cellien_monster_blink_anim/spr_cellien_monster_blink_anim.yy",},"LayerId":{"name":"0b1ba332-53a6-4e8a-9abf-4ed9f59e657f","path":"sprites/spr_cellien_monster_blink_anim/spr_cellien_monster_blink_anim.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
+      ],"parent":{"name":"spr_cellien_monster_blink_anim","path":"sprites/spr_cellien_monster_blink_anim/spr_cellien_monster_blink_anim.yy",},"resourceVersion":"1.0","name":"96fe7a23-c6e6-4fbc-b2a5-b4551a3ba099","tags":[],"resourceType":"GMSpriteFrame",},
+    {"compositeImage":{"FrameId":{"name":"c321fe21-170d-4b9f-87e2-383d34fcaa55","path":"sprites/spr_cellien_monster_blink_anim/spr_cellien_monster_blink_anim.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
+        {"FrameId":{"name":"c321fe21-170d-4b9f-87e2-383d34fcaa55","path":"sprites/spr_cellien_monster_blink_anim/spr_cellien_monster_blink_anim.yy",},"LayerId":{"name":"0b1ba332-53a6-4e8a-9abf-4ed9f59e657f","path":"sprites/spr_cellien_monster_blink_anim/spr_cellien_monster_blink_anim.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
+      ],"parent":{"name":"spr_cellien_monster_blink_anim","path":"sprites/spr_cellien_monster_blink_anim/spr_cellien_monster_blink_anim.yy",},"resourceVersion":"1.0","name":"c321fe21-170d-4b9f-87e2-383d34fcaa55","tags":[],"resourceType":"GMSpriteFrame",},
   ],
   "sequence": {
     "spriteId": {"name":"spr_cellien_monster_blink_anim","path":"sprites/spr_cellien_monster_blink_anim/spr_cellien_monster_blink_anim.yy",},
@@ -51,9 +51,9 @@
     "tracks": [
       {"name":"frames","spriteId":null,"keyframes":{"Keyframes":[
             {"id":"16d75c2d-4552-42f2-a0f7-00fd58805644","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"186d5756-e4f1-4850-aa69-0e8afaf3c80d","path":"sprites/spr_cellien_monster_blink_anim/spr_cellien_monster_blink_anim.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
-            {"id":"23ebbb7f-07a4-4713-b2b0-f95cbb4e3c36","Key":1.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"1db40854-1092-44c8-9c1b-3bc7956a7c2a","path":"sprites/spr_cellien_monster_blink_anim/spr_cellien_monster_blink_anim.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
-            {"id":"cd22b23b-2b9d-4f94-bd18-8bf03a297b1c","Key":2.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"6aac9060-f534-4229-a7d6-479e8509b3a4","path":"sprites/spr_cellien_monster_blink_anim/spr_cellien_monster_blink_anim.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
-            {"id":"9efad02f-deaf-4fd1-8714-15cdba808696","Key":3.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"99c805d2-22e0-4326-af58-9b51f6beaf96","path":"sprites/spr_cellien_monster_blink_anim/spr_cellien_monster_blink_anim.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
+            {"id":"a0efe983-19a3-4773-b60d-bdce7aef8e08","Key":1.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"0efbac9e-6a08-4f9e-9821-dcce971136e7","path":"sprites/spr_cellien_monster_blink_anim/spr_cellien_monster_blink_anim.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
+            {"id":"a028c7dc-15b1-409f-8cab-2db011c636e6","Key":2.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"96fe7a23-c6e6-4fbc-b2a5-b4551a3ba099","path":"sprites/spr_cellien_monster_blink_anim/spr_cellien_monster_blink_anim.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
+            {"id":"f052f938-5409-4bd2-9989-742f6e49ef38","Key":3.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"c321fe21-170d-4b9f-87e2-383d34fcaa55","path":"sprites/spr_cellien_monster_blink_anim/spr_cellien_monster_blink_anim.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
           ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"isCreationTrack":false,"resourceVersion":"1.0","tags":[],"resourceType":"GMSpriteFramesTrack","modifiers":[],},
     ],
     "visibleRange": null,

@@ -12,7 +12,7 @@
     "path": "audiogroups/audiogroup_default",
   },
   "soundFile": "bgm_hippo.ogg",
-  "duration": 25.28102,
+  "duration": 6.915193,
   "parent": {
     "name": "BGM",
     "path": "folders/Sounds/BGM.yy",
