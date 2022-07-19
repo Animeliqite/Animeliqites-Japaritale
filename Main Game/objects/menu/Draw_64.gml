@@ -36,15 +36,20 @@ if(_menu==0){
 			draw_set_alpha((_chosen_file == i && _choice_file_phase == 0 ? 1 : 0.5));
 			if (_choice_file_phase==2&&_chosen_file==i){
 				draw_set_alpha(1);
-				draw_text_transformed(160,150+(93*i),_file_text_start[i],2,2,0);
-				draw_text_transformed(410,150+(93*i),"Back",2,2,0);
+				draw_text_transformed(160,150+(93*i),((_mode_copy||_mode_erase) ? "Yes" : _file_text_start[i]),2,2,0);
+				draw_text_transformed(410,150+(93*i),((_mode_copy||_mode_erase) ? "No" : "Back"),2,2,0);
 			}
 			else {
 				draw_set_alpha((_chosen_file == i && _choice_file_phase == 0 ? 1 : 0.5));
 				draw_text_transformed(160,150+(93*i),_file_room[i],2,2,0);
 			}
-			draw_text_transformed(160,120+(93*i),_file_name[i],2,2,0);
-			draw_text_transformed(410,120+(93*i),(is_real(time) ? string(minute)+":"+(second<10 ? "0" : "")+string(second) : "--:--"),2,2,0);
+			if(_mode_copy||_mode_erase)&&(_choice_file_phase==2&&_chosen_file==i){
+				draw_text_transformed(160,120+(93*i),"Are you sure?",2,2,0);
+			}
+			else{
+				draw_text_transformed(160,120+(93*i),_file_name[i],2,2,0);
+				draw_text_transformed(410,120+(93*i),(is_real(time) ? string(minute)+":"+(second<10 ? "0" : "")+string(second) : "--:--"),2,2,0);
+			}
 			draw_set_alpha(1);
 		}
 		

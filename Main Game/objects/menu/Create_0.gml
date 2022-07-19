@@ -5,6 +5,8 @@ _prefix="{gui true}{instant true}{shadow false}{font 1}{scale 2}";
 _inst_instruction=noone;
 _inst_begin=noone;
 _inst_header=noone;
+_inst_header_copy=noone;
+_inst_header_erase=noone;
 _inst_settings=noone;
 _inst_name=noone;
 _inst_lv=noone;
@@ -51,6 +53,12 @@ _heart_pos_y=[];
 _change_inst=noone;
 _change_color=c_white;
 _change_id=-1;
+
+_mode_copy=false;
+_mode_erase=false;
+_file_to_copy=-1;
+_file_to_copy_to=-1;
+_file_to_erase=-1;
 
 _file_name=[];
 _file_time=[];

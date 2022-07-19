@@ -37,8 +37,13 @@ if(_menu==-1){
 				if(_choice<2)
 					_choice++;
 				else {
-					_choice=0;
-					_choice_file_phase=1;
+					if(!_mode_copy&&!_mode_erase){
+						_choice=0;
+						_choice_file_phase=1;
+					}
+					else{
+						_choice=0;
+					}
 				}
 			}else if(Input_IsPressed(INPUT.UP)){
 				audio_play_sound(snd_menu_switch,0,false);
@@ -48,9 +53,42 @@ if(_menu==-1){
 			}
 			else if(Input_IsPressed(INPUT.CONFIRM)){
 				audio_play_sound(snd_menu_confirm,0,false);
-				_choice_file_phase=2;
 				_chosen_file=_choice;
-				_choice=0;
+				if(!_mode_copy&&!_mode_erase){
+					_choice_file_phase=2;
+					_choice=0;
+				}
+				else{
+					if(_mode_copy){
+						if(_file_to_copy<0) {
+							_file_to_copy=_chosen_file;
+							_choice_file_phase=0;
+							_choice=0;
+						}
+						else {
+							_file_to_copy_to=_chosen_file;
+							_choice_file_phase=2;
+							_choice=0;
+						}
+					}
+					else if(_mode_erase){
+						_file_to_erase=_chosen_file;
+						_choice_file_phase=2;
+						_choice=0;
+					}
+				}
+			}
+			else if(Input_IsPressed(INPUT.CANCEL)){
+				if(_mode_copy||_mode_erase){
+					_mode_copy=false;
+					_mode_erase=false;
+					_file_to_copy=-1;
+					_file_to_copy_to=-1;
+					_file_to_erase=-1;
+					_choice_file_phase=0;
+					event_user(0);
+					_choice=0;
+				}
 			}
 		}
 		else if(_choice_file_phase==1){
@@ -71,7 +109,19 @@ if(_menu==-1){
 			}
 			else if(Input_IsPressed(INPUT.CONFIRM)){
 				audio_play_sound(snd_menu_confirm,0,false);
-				
+				if(_choice==0){
+					_mode_copy=true;
+					_choice_file_phase=0;
+					_choice=0;
+					event_user(0);
+				}else if(_choice==1){
+					_mode_erase=true;
+					_choice_file_phase=0;
+					_choice=0;
+					event_user(0);
+				}else if(_choice==2){
+					room_goto(room_settings);
+				}
 			}
 		}
 		else if(_choice_file_phase==2){
@@ -84,19 +134,40 @@ if(_menu==-1){
 			}else if(Input_IsPressed(INPUT.CONFIRM)){
 				audio_play_sound(snd_menu_confirm,0,false);
 				if(_choice==0) {
-					if (file_exists("./"+GAME_SAVE_NAME+"./flag/"+string(_chosen_file)+"/info")) {
-						Player_Load(_chosen_file);
-						var target=Flag_Get(FLAG_TYPE.STATIC,FLAG_STATIC.ROOM,-1);
-						if(room_exists(target)){
-							room_goto(target);
-							BGM_Stop(0);
-						}else{
-							show_message("ERROR:\nAttempt to goto an unexisting room "+string(target));
+					if(!_mode_copy&&!_mode_erase){
+						if (file_exists("./"+GAME_SAVE_NAME+"./flag/"+string(_chosen_file)+"/info")) {
+							Player_Load(_chosen_file);
+							var target=Flag_Get(FLAG_TYPE.STATIC,FLAG_STATIC.ROOM,-1);
+							if(room_exists(target)){
+								room_goto(target);
+								BGM_Stop(0);
+							}else{
+								show_message("ERROR:\nAttempt to goto an unexisting room "+string(target));
+							}
+						}
+						else {
+							_menu=1;
+							event_user(0);
 						}
 					}
 					else {
-						_menu=1;
-						event_user(0);
+						if(_mode_copy){
+							Player_Load(_file_to_copy);
+							Player_Save(_file_to_copy_to);
+							_file_to_copy=-1;
+							_file_to_copy_to=-1;
+							_choice_file_phase=0;
+							_mode_copy=false;
+							_choice=0;
+							event_user(0);
+						} else if(_mode_erase) {
+							directory_destroy("./"+GAME_SAVE_NAME+"./flag/"+string(_file_to_erase)+"/");
+							_mode_erase=false;
+							_file_to_erase=-1;
+							_choice_file_phase=0;
+							_choice=0;
+							event_user(0);
+						}
 					}
 				}
 				else if (_choice==1) {

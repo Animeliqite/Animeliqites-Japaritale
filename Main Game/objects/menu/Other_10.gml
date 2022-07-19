@@ -29,8 +29,29 @@ if(_menu==0){
 				_file_text_start[i]="New Game";
 			}
 		}
-		_inst_header=instance_create_depth(80,60,0,text_typer);
-		_inst_header.text=_prefix+"Please select a file.";
+		
+		if (_mode_copy){
+			instance_destroy(_inst_header_erase);
+			instance_destroy(_inst_header);
+			if (!instance_exists(_inst_header_copy)) {
+				_inst_header_copy=instance_create_depth(80,60,0,text_typer);
+				_inst_header_copy.text=_prefix+"Select a file to copy from.";
+			}
+		}else if(_mode_erase) {
+			instance_destroy(_inst_header_copy);
+			instance_destroy(_inst_header);
+			if (!instance_exists(_inst_header_erase)) {
+				_inst_header_erase=instance_create_depth(80,60,0,text_typer);
+				_inst_header_erase.text=_prefix+"Select a file to erase.";
+			}
+		}else{
+			instance_destroy(_inst_header_copy);
+			instance_destroy(_inst_header_erase);
+			if (!instance_exists(_inst_header)) {
+				_inst_header=instance_create_depth(80,60,0,text_typer);
+				_inst_header.text=_prefix+"Please select a file.";
+			}
+		}
 		
 		/*_inst_name=instance_create_depth(140,124,0,text_typer);
 		_inst_name.text=_prefix+Flag_Get(FLAG_TYPE.INFO,FLAG_INFO.NAME,Lang_GetString("ui.save.name.empty"));
@@ -61,6 +82,12 @@ if(_menu==0){
 	}
 	if(instance_exists(_inst_header)){
 		instance_destroy(_inst_header);
+	}
+	if(instance_exists(_inst_header_copy)){
+		instance_destroy(_inst_header_copy);
+	}
+	if(instance_exists(_inst_header_erase)){
+		instance_destroy(_inst_header_erase);
 	}
 	if(instance_exists(_inst_begin)){
 		instance_destroy(_inst_begin);
