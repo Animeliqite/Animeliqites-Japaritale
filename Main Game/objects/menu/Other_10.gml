@@ -115,17 +115,17 @@ if(_menu==0){
 	}
 }
 
-if(_menu==1){
-	_inst_naming_title=instance_create_depth(180,60,0,text_typer);
-	_inst_naming_title.text=_prefix+"Name the fallen human.";
+if(_menu==1||_menu==3){
+	_inst_naming_title=instance_create_depth(200,60,0,text_typer);
+	_inst_naming_title.text=_prefix+"YOUR OWN NICKNAME.";
 	_inst_naming_letters=instance_create_depth(120,152,0,text_typer);
-	_inst_naming_letters.text=_prefix+"{font 0}{effect 0}{space_x 24}{space_y -2}ABCDEFG&HIJKLMN&OPQRSTU&VWXYZ{space_y -7}&&{space_y -2}abcdefg&hijklmn&opqrstu&vwxyz";
+	_inst_naming_letters.text=_prefix+"{font 0}{effect -1}{space_x 13}{space_y 4}ABCDEFGHIJ&KLMNOPQRST&UVWXYZ";
 	_inst_naming_quit=instance_create_depth(120,400,0,text_typer);
 	_inst_naming_quit.text=_prefix+"Quit";
-	_inst_naming_backspace=instance_create_depth(240,400,0,text_typer);
-	_inst_naming_backspace.text=_prefix+"Backspace";
-	_inst_naming_done=instance_create_depth(440,400,0,text_typer);
-	_inst_naming_done.text=_prefix+"Done";
+	_inst_naming_backspace=instance_create_depth(374,232,0,text_typer);
+	_inst_naming_backspace.text=_prefix+"BACK";
+	_inst_naming_done=instance_create_depth(458,232,0,text_typer);
+	_inst_naming_done.text=_prefix+"END";
 	with(text_typer){
 		event_user(15);
 	}
@@ -183,8 +183,8 @@ if(_menu==2){
 
 if(_menu==3){
 	BGM_Stop(0);
-	BGM_Play(0, bgm_cymbal, false);
+	BGM_Play(0, bgm_cymbal_drone, false);
 	fader.color=c_white;
-	Fader_Fade(-1,1,160);
-	alarm[0]=160;
+	Fader_Fade(-1,1,120);
+	alarm[0]=120;
 }

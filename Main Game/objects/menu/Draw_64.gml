@@ -71,10 +71,12 @@ if(_menu==0){
 		draw_sprite(spr_battle_soul_red, 0, _heart_pos_curr_x, _heart_pos_curr_y);
 	}
 }
-if(_menu==1){
-	draw_set_color(c_white);
+if(_menu==1||_menu==3){
+	draw_set_color(string_length(_naming_name)<12 ? c_white : c_yellow);
 	draw_set_font(Lang_GetFont(Lang_GetString("font.menu.0")));
-	draw_text_transformed(280,110,_naming_name,2,2,0);
+	draw_set_halign(fa_center);
+	draw_text_transformed(320,110,_naming_name,2,2,0);
+	draw_set_halign(fa_left);
 }
 
 if(_menu==2||_menu==3){

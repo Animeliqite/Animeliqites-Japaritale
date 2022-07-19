@@ -20,12 +20,9 @@ if(_choice_naming==0){
 }else{
 	switch(_choice_naming_command){
 		case 0:
-			_change_inst=_inst_naming_quit;
-			break;
-		case 1:
 			_change_inst=_inst_naming_backspace;
 			break;
-		case 2:
+		case 1:
 			_change_inst=_inst_naming_done;
 			break;
 	}

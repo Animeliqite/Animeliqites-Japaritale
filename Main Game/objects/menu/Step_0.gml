@@ -210,8 +210,13 @@ if(_menu==-1){
 	if (alarm[1]<0) {
 		if(_choice_naming==0){
 			if(Input_IsPressed(INPUT.RIGHT)){
-				if(_choice_naming_letter<51){
+				if(_choice_naming_letter<25){
 					_choice_naming_letter+=1;
+					event_user(3);
+				}
+				else{
+					_choice_naming=1;
+					_choice_naming_command=0;
 					event_user(3);
 				}
 			}else if(Input_IsPressed(INPUT.LEFT)){
@@ -220,39 +225,29 @@ if(_menu==-1){
 					event_user(3);
 				}
 			}else if(Input_IsPressed(INPUT.UP)){
-				if(_choice_naming_letter>=0&&_choice_naming_letter<=1){
+				if(_choice_naming_letter>=0&&_choice_naming_letter<=5){
+					_choice_naming_letter+=20;
+				}else if(_choice_naming_letter>=6&&_choice_naming_letter<=7){
 					_choice_naming=1;
 					_choice_naming_command=0;
-				}else if(_choice_naming_letter>=2&&_choice_naming_letter<=4){
+				}else if(_choice_naming_letter>=8&&_choice_naming_letter<=9){
 					_choice_naming=1;
 					_choice_naming_command=1;
-				}else if(_choice_naming_letter>=5&&_choice_naming_letter<=6){
-					_choice_naming=1;
-					_choice_naming_command=2;
-				}else if(_choice_naming_letter>=26&&_choice_naming_letter<=30){
-					_choice_naming_letter-=5;
-				}else if(_choice_naming_letter>=31&&_choice_naming_letter<=32){
-					_choice_naming_letter-=12;
 				}else{
-					_choice_naming_letter-=7;
+					_choice_naming_letter-=10;
 				}
 				event_user(3);
 			}else if(Input_IsPressed(INPUT.DOWN)){
-				if(_choice_naming_letter>=21&&_choice_naming_letter<=25){
-					_choice_naming_letter+=5;
-				}else if(_choice_naming_letter>=19&&_choice_naming_letter<=20){
-					_choice_naming_letter+=12;
-				}else if(_choice_naming_letter>=45&&_choice_naming_letter<=46){
-					_choice_naming=1;
-					_choice_naming_command=2;
-				}else if(_choice_naming_letter>=47&&_choice_naming_letter<=48){
+				if(_choice_naming_letter>=16&&_choice_naming_letter<=17){
 					_choice_naming=1;
 					_choice_naming_command=0;
-				}else if(_choice_naming_letter>=49&&_choice_naming_letter<=51){
+				}else if(_choice_naming_letter>=18&&_choice_naming_letter<=19){
 					_choice_naming=1;
 					_choice_naming_command=1;
+				}else if(_choice_naming_letter>=20&&_choice_naming_letter<=25){
+					_choice_naming_letter-=20;
 				}else{
-					_choice_naming_letter+=7;
+					_choice_naming_letter+=10;
 				}
 				event_user(3);
 			}else if(Input_IsPressed(INPUT.CONFIRM)){
@@ -264,10 +259,14 @@ if(_menu==-1){
 				if(string_length(_naming_name)>0){
 					_naming_name=string_delete(_naming_name,string_length(_naming_name),1);
 				}
+				else{
+					_menu=0;
+					event_user(0);
+				}
 			}
 		}else{
 			if(Input_IsPressed(INPUT.RIGHT)){
-				if(_choice_naming_command<2){
+				if(_choice_naming_command<1){
 					_choice_naming_command+=1;
 					event_user(3);
 				}
@@ -276,53 +275,56 @@ if(_menu==-1){
 					_choice_naming_command-=1;
 					event_user(3);
 				}
+				else{
+					_choice_naming=0;
+					_choice_naming_letter=25;
+					event_user(3);
+				}
 			}else if(Input_IsPressed(INPUT.UP)){
 				if(_choice_naming_command==0){
 					_choice_naming=0;
-					_choice_naming_letter=47;
+					_choice_naming_letter=16;
 				}else if(_choice_naming_command==1){
 					_choice_naming=0;
-					_choice_naming_letter=49;
-				}else if(_choice_naming_command==2){
-					_choice_naming=0;
-					_choice_naming_letter=45;
+					_choice_naming_letter=18;
 				}
 				event_user(3);
 			}else if(Input_IsPressed(INPUT.DOWN)){
 				if(_choice_naming_command==0){
 					_choice_naming=0;
-					_choice_naming_letter=0;
+					_choice_naming_letter=6;
 				}else if(_choice_naming_command==1){
 					_choice_naming=0;
-					_choice_naming_letter=2;
-				}else if(_choice_naming_command==2){
-					_choice_naming=0;
-					_choice_naming_letter=5;
+					_choice_naming_letter=8;
 				}
 				event_user(3);
 			}else if(Input_IsPressed(INPUT.CONFIRM)){
+				//if(_choice_naming_command==0){
+				//	_menu=0;
+				//	event_user(0);
+				//}
 				if(_choice_naming_command==0){
-						_menu=0;
-						event_user(0);
-					}
-					if(_choice_naming_command==1){
-						if(string_length(_naming_name)>0){
-							_naming_name=string_delete(_naming_name,string_length(_naming_name),1);
-						}
-					}
-					if(_choice_naming_command==2){
-						if(_naming_name!=""){
-							event_user(4);
-							_menu=2;
-							event_user(0);
-						}
-					}
-				}else if(Input_IsPressed(INPUT.CANCEL)){
 					if(string_length(_naming_name)>0){
 						_naming_name=string_delete(_naming_name,string_length(_naming_name),1);
 					}
 				}
+				if(_choice_naming_command==1){
+					if(_naming_name!=""){
+						event_user(4);
+						_menu=3;
+						event_user(0);
+					}
+				}
+			}else if(Input_IsPressed(INPUT.CANCEL)){
+				if(string_length(_naming_name)>0){
+					_naming_name=string_delete(_naming_name,string_length(_naming_name),1);
+				}
+				else{
+					_menu=0;
+					event_user(0);
+				}
 			}
+		}
 	}
 }else if(_menu==2){
 	if(Input_IsPressed(INPUT.LEFT)){
