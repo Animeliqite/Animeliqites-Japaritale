@@ -14,5 +14,6 @@ res_talk_sprite[DIR.DOWN]=spr_char_serval_down_talk;
 res_talk_sprite[DIR.LEFT]=spr_char_serval_left_talk;
 res_talk_sprite[DIR.RIGHT]=spr_char_serval_right_talk;
 
-jumpTimer = 0;
-jumpTriggerOnce = false;
+jumpTimer=0;
+jumpTriggerOnce=false;
+runningTimer=0;
