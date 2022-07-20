@@ -729,7 +729,7 @@ switch(room){
 			C_Execute(6, BGM_Play, [0, bgm_concern]);
 			C_Execute(6, Dialog_Add_Ext, ["* Look, just listen to&  Hippo-chan.", "{char_link 2}{voice 4}{face 2}{face_emotion 3}"]);
 			C_Execute(6, Dialog_Add_Ext, ["* I'm aware her voice is&  frustrating to listen&  to, but this is critical.", "{char_link 2}{voice 4}{face 2}{face_emotion 9}"]);
-			C_Execute(6, Dialog_Add_Ext, ["* She isn't actually a&  perv or anything, she's&  just...", "{char_link 2}{voice 4}{face 2}{face_emotion 8}"]);
+			C_Execute(6, Dialog_Add_Ext, ["* She isn't actually weird&  or anything, she's&  just...", "{char_link 2}{voice 4}{face 2}{face_emotion 8}"]);
 			C_Execute(6, Dialog_Add_Ext, ["* She's just knowledgable&  about self-defense!", "{char_link 2}{voice 4}{face 2}{face_emotion 5}"]);
 			C_Execute(6, Dialog_Start, [true]);
 			C_WaitUntilDestroy(6, ui_dialog);
@@ -843,18 +843,24 @@ switch(room){
 			C_Execute(4, variable_instance_set, [camera, "target", char_player]);
 			C_Execute(4, array_set, [char_serval.res_idle_sprite, DIR.RIGHT, spr_char_serval_right_run]);
 			C_Execute(4, array_set, [char_serval.res_move_sprite, DIR.RIGHT, spr_char_serval_right_run]);
-			C_MoveChar(4, char_serval, 630, char_player.ystart - 30 - 10, false, 90);
+			C_MoveChar(4, char_serval, 730, char_player.ystart - 30 - 10, false, 90);
 			C_MoveChar(4, char_player, 630, char_player.ystart - 30 + 10, false, 90, true);
-			C_Wait(5, 60);
+			C_CreateAnim(4, char_serval, "y", ANIM_TWEEN.SINE, ANIM_EASE.OUT, char_player.ystart - 30 - 10, -50, 15, true, 65);
+			C_CreateAnim(4, char_serval, "y", ANIM_TWEEN.SINE, ANIM_EASE.IN, char_player.ystart - 30 - 10 - 50, 50, 30, true, 80);
+			C_CreateAnim(4, char_serval, "sprite_index", 0, 0, char_serval.sprite_index, spr_char_serval_jump, 1, false, 65);
+			C_Wait(4, 65);
+			C_Execute(5, array_set, [char_serval.res_idle_sprite, DIR.DOWN, spr_char_serval_jump]);
+			C_Execute(5, array_set, [char_serval.res_move_sprite, DIR.DOWN, spr_char_serval_jump]);
+			C_PlaySfx(5, snd_jump);
+			C_PlaySfx(5, snd_noise);
+			C_Wait(5, 5);
 			C_PlaySfx(6, snd_noise);
 			C_Wait(6, 5);
 			C_PlaySfx(7, snd_noise);
-			C_Wait(7, 5);
-			C_PlaySfx(8, snd_noise);
-			C_Wait(8, 20);
-			C_Execute(9, Encounter_Start, [1, true, false]);
-			C_Execute(9, part_system_destroy, [particle.partsystem]);
-			Cutscene_End(9);
+			C_Wait(7, 20);
+			C_Execute(8, Encounter_Start, [1, true, false]);
+			C_Execute(8, part_system_destroy, [particle.partsystem]);
+			Cutscene_End(8);
 		}
 		break;
 }

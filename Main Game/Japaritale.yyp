@@ -309,6 +309,7 @@
     {"id":{"name":"Item_Update","path":"scripts/Item_Update/Item_Update.yy",},"order":2,},
     {"id":{"name":"Item_Get","path":"scripts/Item_Get/Item_Get.yy",},"order":3,},
     {"id":{"name":"Item_Set","path":"scripts/Item_Set/Item_Set.yy",},"order":4,},
+    {"id":{"name":"spr_char_serval_jump","path":"sprites/spr_char_serval_jump/spr_char_serval_jump.yy",},"order":15,},
     {"id":{"name":"snd_appear","path":"sounds/snd_appear/snd_appear.yy",},"order":41,},
     {"id":{"name":"Item_GetNumber","path":"scripts/Item_GetNumber/Item_GetNumber.yy",},"order":5,},
     {"id":{"name":"snd_jump","path":"sounds/snd_jump/snd_jump.yy",},"order":36,},
