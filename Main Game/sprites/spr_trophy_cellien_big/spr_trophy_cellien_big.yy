@@ -24,12 +24,12 @@
   "gridX": 0,
   "gridY": 0,
   "frames": [
-    {"compositeImage":{"FrameId":{"name":"9f57518f-0735-4348-b4d4-5f13a32763d7","path":"sprites/spr_trophy_cellien/spr_trophy_cellien.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"9f57518f-0735-4348-b4d4-5f13a32763d7","path":"sprites/spr_trophy_cellien/spr_trophy_cellien.yy",},"LayerId":{"name":"93f92b15-bad9-468c-b236-684db7e625da","path":"sprites/spr_trophy_cellien/spr_trophy_cellien.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"spr_trophy_cellien","path":"sprites/spr_trophy_cellien/spr_trophy_cellien.yy",},"resourceVersion":"1.0","name":"9f57518f-0735-4348-b4d4-5f13a32763d7","tags":[],"resourceType":"GMSpriteFrame",},
+    {"compositeImage":{"FrameId":{"name":"27de72a5-3997-449f-ab16-61818edf64d5","path":"sprites/spr_trophy_cellien_big/spr_trophy_cellien_big.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
+        {"FrameId":{"name":"27de72a5-3997-449f-ab16-61818edf64d5","path":"sprites/spr_trophy_cellien_big/spr_trophy_cellien_big.yy",},"LayerId":{"name":"5e890fbe-8d22-4ebd-8a82-03958f57bb55","path":"sprites/spr_trophy_cellien_big/spr_trophy_cellien_big.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
+      ],"parent":{"name":"spr_trophy_cellien_big","path":"sprites/spr_trophy_cellien_big/spr_trophy_cellien_big.yy",},"resourceVersion":"1.0","name":"27de72a5-3997-449f-ab16-61818edf64d5","tags":[],"resourceType":"GMSpriteFrame",},
   ],
   "sequence": {
-    "spriteId": {"name":"spr_trophy_cellien","path":"sprites/spr_trophy_cellien/spr_trophy_cellien.yy",},
+    "spriteId": {"name":"spr_trophy_cellien_big","path":"sprites/spr_trophy_cellien_big/spr_trophy_cellien_big.yy",},
     "timeUnits": 1,
     "playback": 1,
     "playbackSpeed": 30.0,
@@ -41,7 +41,7 @@
     "moments": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MomentsEventKeyframe>",},
     "tracks": [
       {"name":"frames","spriteId":null,"keyframes":{"Keyframes":[
-            {"id":"fa49f2ee-a042-480d-921c-05352eec3874","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"9f57518f-0735-4348-b4d4-5f13a32763d7","path":"sprites/spr_trophy_cellien/spr_trophy_cellien.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
+            {"id":"4937927a-c48a-460e-8bae-526a3fcb0aa4","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"27de72a5-3997-449f-ab16-61818edf64d5","path":"sprites/spr_trophy_cellien_big/spr_trophy_cellien_big.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
           ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"isCreationTrack":false,"resourceVersion":"1.0","tags":[],"resourceType":"GMSpriteFramesTrack","modifiers":[],},
     ],
     "visibleRange": null,
@@ -58,14 +58,14 @@
     "yorigin": 0,
     "eventToFunction": {},
     "eventStubScript": null,
-    "parent": {"name":"spr_trophy_cellien","path":"sprites/spr_trophy_cellien/spr_trophy_cellien.yy",},
+    "parent": {"name":"spr_trophy_cellien_big","path":"sprites/spr_trophy_cellien_big/spr_trophy_cellien_big.yy",},
     "resourceVersion": "1.4",
-    "name": "spr_trophy_cellien",
+    "name": "spr_trophy_cellien_big",
     "tags": [],
     "resourceType": "GMSequence",
   },
   "layers": [
-    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"93f92b15-bad9-468c-b236-684db7e625da","tags":[],"resourceType":"GMImageLayer",},
+    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"5e890fbe-8d22-4ebd-8a82-03958f57bb55","tags":[],"resourceType":"GMImageLayer",},
   ],
   "nineSlice": null,
   "parent": {
@@ -73,7 +73,7 @@
     "path": "folders/Sprites/Icon/Trophies.yy",
   },
   "resourceVersion": "1.0",
-  "name": "spr_trophy_cellien",
+  "name": "spr_trophy_cellien_big",
   "tags": [],
   "resourceType": "GMSprite",
 }

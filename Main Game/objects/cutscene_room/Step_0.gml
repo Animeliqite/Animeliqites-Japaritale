@@ -309,6 +309,7 @@ switch(room){
 			C_MoveChar(20, camera, char_player.x - (camera.width / camera.scale_x / 2), char_player.y - (camera.width / camera.scale_y / 2), false, 30);
 			C_Wait(20, 30);
 			C_Execute(21, variable_instance_set, [camera, "target", char_player]);
+			C_Execute(21, Create_Trophy, [spr_trophy_tree]);
 			C_Execute(21, Flag_Set, [FLAG_TYPE.STATIC, FLAG_STATIC.SCENE_001, true]);
 			Cutscene_End(21);
 		}
