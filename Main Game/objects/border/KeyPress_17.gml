@@ -1,0 +1,1 @@
+show_message(sprite_get_name(_sprite));

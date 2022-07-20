@@ -8,8 +8,11 @@ function Encounter_Custom() {
 	Encounter_Set(2,-1,battle_enemy_gb,-1,"* Gaster Blaster example.",-1);
 	
 	//Cellien (Small)
-	Encounter_Set(3,-1,battle_enemy_cellien_small,-1,"* Programming Torture Text",-1, true, false, false, 320, 320);
+	Encounter_Set(3,-1,battle_enemy_cellien_small,-1,"* aaaugghhh maaaan get me out from turkey",-1, true, false, false, 320, 320);
 	
 	//Zebra-chan
 	Encounter_Set(4,-1,battle_enemy_zebra,-1,"* Here comes Zebra-chan!", bgm_zebra, false, true, false, 48, 454, false);
+	
+	//Cellien (Big)
+	Encounter_Set(5,-1,battle_enemy_cellien_big,-1,"* The fate of future is upon us.",bgm_cellien_big);
 }
