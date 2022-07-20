@@ -1,4 +1,4 @@
-///@desc Menu Start
+///@desc Battle Start
 
 Anim_Create(id, "_eye_black_x", ANIM_TWEEN.SINE, ANIM_EASE.IN_OUT, _eye_black_x, 5, 30, random(15), -1, -1, ANIM_MODE.PINGPONG, false);
 Anim_Create(id, "_eye_black_y", ANIM_TWEEN.SINE, ANIM_EASE.IN_OUT, _eye_black_y, 5, 30, random(15) + 15, -1, -1, ANIM_MODE.PINGPONG, false);

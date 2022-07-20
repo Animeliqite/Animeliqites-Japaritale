@@ -10,6 +10,7 @@ Battle_SetEnemyDEF(_enemy_slot,-15);
 
 _anim_speed=0.5;
 _has_planned=false;
+_planning_phase=0;
 
 _eye_black_x=0;
 _eye_black_y=0;
