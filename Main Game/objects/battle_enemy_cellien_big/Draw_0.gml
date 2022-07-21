@@ -4,8 +4,19 @@ for (var rot = 0; rot <= 180; rot += 45) {
 }
 
 draw_sprite_ext(spr_cellien_big_monster_body, 0, x + _body_x, y + _body_y, 1, 1, 0, c_white, 1);
-draw_sprite_ext(spr_cellien_big_monster_eye_black, 0, x + _eye_black_x + _eye_black_x_add, y - (sprite_height / 2) + _eye_black_y + _eye_black_y_add, _eye_black_scale_x, 1, 0, c_white, 1);
-draw_sprite_ext(spr_cellien_big_monster_eye, 0, x + _eye_x + _eye_x_add, y - (sprite_height / 2) + _eye_y + _eye_y_add, _eye_scale_x, 1, 0, c_white, 1);
+
+if (!surface_exists(_surf_eye))
+	_surf_eye = surface_create(2048, 2048);
+else {
+	surface_set_target(_surf_eye);
+	draw_clear_alpha(c_black, 0);
+	draw_sprite_ext(spr_cellien_big_monster_eye_black, 0, (x + _eye_black_x + _eye_black_x_add) * 2.5, (y - (sprite_height / 2) + _eye_black_y + _eye_black_y_add) * 2.5, _eye_black_scale_x * 2.5, 2.5, 0, c_white, 1);
+	gpu_set_colorwriteenable(1, 1, 1, 0);
+	draw_sprite_ext(spr_cellien_big_monster_eye, 0, (x + _eye_x + _eye_x_add) * 2.5, (y - (sprite_height / 2) + _eye_y + _eye_y_add) * 2.5, _eye_scale_x * 2.5, 2.5, 0, c_white, 1);
+	gpu_set_colorwriteenable(1, 1, 1, 1);
+	surface_reset_target();
+	draw_surface_ext(_surf_eye, 0, 0, 0.4, 0.4, 0, c_white, 1);
+}
 draw_sprite_ext(spr_cellien_big_monster_core, 0, x + _body_x + _core_x - _core_x_add, y - (sprite_height / 2) + _body_y, _core_scale_x, 1, 0, c_white, 1);
 
 if (_draw_paperplane) {

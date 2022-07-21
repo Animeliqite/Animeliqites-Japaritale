@@ -39,6 +39,8 @@ _core_x=0;
 _core_x_add=0;
 _core_scale_x=0;
 
+_surf_eye=-1;
+
 _hp_max=100;
 _hp=100;
 

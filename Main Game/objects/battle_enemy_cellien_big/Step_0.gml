@@ -11,8 +11,8 @@ Anim_SetSpeed(id, "_eye_y", random(_anim_speed));
 
 if(_draw_paperplane&&!_anim_paperplane_executed_once){
 	Anim_Create(id,"_paperplane_x", 0, 0,-250,720,160,0,-1,-1,ANIM_MODE.ONESHOT,false);
-	Anim_Create(id,"_eye_black_scale_x", 0, 0,1,0,40,120,-1,-1,ANIM_MODE.ONESHOT,false);
-	Anim_Create(id,"_eye_scale_x", 0, 0,1,0,40,120,-1,-1,ANIM_MODE.ONESHOT,false);
+	Anim_Create(id,"_eye_black_scale_x", 0, 0,1,0,40,100,-1,-1,ANIM_MODE.ONESHOT,false);
+	Anim_Create(id,"_eye_scale_x", 0, 0,1,0,40,100,-1,-1,ANIM_MODE.ONESHOT,false);
 	Anim_Create(id,"_core_scale_x", 0, 0,0,1,40,120,-1,-1,ANIM_MODE.ONESHOT,false);
 	Anim_Create(id,"_eye_black_x_add_speed", 0, 0,4,86,150,0,-1,-1,ANIM_MODE.ONESHOT,false);
 	Anim_Create(id,"_eye_x_add_speed", 0, 0,32,86,150,0,-1,-1,ANIM_MODE.ONESHOT,false);
