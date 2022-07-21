@@ -1,6 +1,6 @@
 for (var rot = 0; rot <= 180; rot += 45) {
+	draw_line_width(x + (_body_x / 2) - lengthdir_x(sprite_width / 2, -rot), y + (_body_y / 2) - (sprite_height / 2) - lengthdir_y(sprite_height / 2, -rot), xstart - lengthdir_x(1024, -rot), ystart - 25 - (sprite_height / 2) - lengthdir_y(1024, -rot), 4);
 	draw_sprite_ext(spr_cellien_big_monster_tentacle_start, 0, x + (_body_x / 2) - lengthdir_x(sprite_width / 2, -rot), y + (_body_y / 2) - (sprite_height / 2) - lengthdir_y(sprite_height / 2, -rot), 1, 1, -rot, c_white, 1);
-	draw_line_width(x + (_body_x / 2) - lengthdir_x(sprite_width / 2, -rot), y + (_body_y / 2) - (sprite_height / 2) - lengthdir_y(sprite_height / 2, -rot), xstart - lengthdir_x(1024, -rot), ystart - 25 - (sprite_height / 2) - lengthdir_y(1024, -rot), 10);
 }
 
 draw_sprite_ext(spr_cellien_big_monster_body, 0, x + _body_x, y + _body_y, 1, 1, 0, c_white, 1);
