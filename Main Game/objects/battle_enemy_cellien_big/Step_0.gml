@@ -21,6 +21,8 @@ if(_draw_paperplane&&!_anim_paperplane_executed_once){
 	Anim_Create(id,"_paperplane_yscale",0,0,1,0.5,1,180,-1,-1,ANIM_MODE.ONESHOT,false);
 	Anim_Create(id,"_paperplane_x", 0, 0,720,-250,160,180,-1,-1,ANIM_MODE.ONESHOT,false);
 	Anim_Create(id,"_core_x", 0, 0,0-sprite_width/2,0,40,120,-1,-1,ANIM_MODE.ONESHOT,false);
+	Anim_Create(id,"_paperplane_depth", 0, 0,_paperplane_depth,1,1,180,-1,-1,ANIM_MODE.ONESHOT,false);
 	Anim_Create(id,"_paperplane_y", ANIM_TWEEN.SINE, ANIM_EASE.IN_OUT,battle_board.y-(battle_board.up*1.5),-40,120,0,-1,-1,ANIM_MODE.ONESHOT,true);
+	_paperplane=instance_create_depth(_paperplane_x,_paperplane_y,depth-1,battle_bullet_paperplane);
 	_anim_paperplane_executed_once = true;
 }

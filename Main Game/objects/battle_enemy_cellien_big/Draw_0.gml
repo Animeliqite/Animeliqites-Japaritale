@@ -20,8 +20,14 @@ else {
 draw_sprite_ext(spr_cellien_big_monster_core, 0, x + _body_x + _core_x - _core_x_add, y - (sprite_height / 2) + _body_y, _core_scale_x, 1, 0, c_white, 1);
 
 if (_draw_paperplane) {
-	if(_actually_draw_paperplane)
-		draw_sprite_ext(spr_cellien_big_paperplane, 0, _paperplane_x, _paperplane_y, _paperplane_dir * _paperplane_xscale, _paperplane_yscale, 0, c_white, 1);
+	var INST=id;
+	with(_paperplane){
+		x=INST._paperplane_x;
+		y=INST._paperplane_y;
+		image_xscale=INST._paperplane_dir * INST._paperplane_xscale;
+		image_yscale=INST._paperplane_yscale;
+		depth=INST.depth + INST._paperplane_depth;
+	}
 	if (Battle_GetState()==BATTLE_STATE.DIALOG) {
 		//Anim_SetPause(id, "_eye_x", true);
 		//Anim_SetPause(id, "_eye_y", true);

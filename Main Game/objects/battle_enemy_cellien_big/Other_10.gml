@@ -16,9 +16,11 @@ _draw_paperplane=false;
 _anim_paperplane_executed_once=false;
 _planning_phase=0;
 
+_paperplane=-1;
 _paperplane_x=-250;
 _paperplane_y=0;
 _paperplane_dir=1;
+_paperplane_depth=-1;
 _paperplane_xscale=1;
 _paperplane_yscale=1;
 _eye_black_x=0;

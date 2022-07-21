@@ -22,11 +22,11 @@ switch(Battle_GetMenuChoiceButton()){
 				if(!_has_planned){
 					switch(_planning_phase){
 						case 0:
-							Dialog_Add_Ext("* I can't think of one right&  now, and I need some&  time for that.");
+							Dialog_Add_Ext("* I need more time to think&  of one.");
 							_planning_phase = 1;
 							break;
 						case 1:
-							Dialog_Add_Ext("* Instantly realizing that&  CELLIENS have weaknesses&  on their backs...");
+							Dialog_Add_Ext("* I recall someone using CELLIENS' weaknesses&  for advantage.");
 							Dialog_Add_Ext("* I think I'm getting somewhere.");
 							_planning_phase = 2;
 							break;
@@ -40,10 +40,6 @@ switch(Battle_GetMenuChoiceButton()){
 							Battle_SetEnemyActionName(_enemy_slot,0,"* Check");
 							Battle_SetEnemyActionName(_enemy_slot,1,"* Search");
 							Battle_SetEnemyActionName(_enemy_slot,2,"* Instruct");
-							
-							Item_Add(item_stick);
-							Item_Add(item_stone);
-							Item_Add(item_map);
 							break;
 					}
 				}
@@ -62,6 +58,12 @@ switch(Battle_GetMenuChoiceButton()){
 					else{
 						Dialog_Add_Ext("* But there was nothing else&  useful laying around.");
 					}
+				}
+				break;
+			case 2:
+				if(!_anim_paperplane_executed_once) Dialog_Add_Ext("* But there was no one&  available to instruct.");
+				else {
+					Dialog_Add_Ext("* It is Serval's time to shine!");
 				}
 				break;
 		}

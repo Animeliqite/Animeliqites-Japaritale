@@ -1,8 +1,12 @@
 ///@desc Turn Preparation Start
 
 //Prepare the attack
-instance_create_depth(0,0,0,battle_turn_simple);
-
+if(!_anim_paperplane_executed_once) {
+	instance_create_depth(0,0,0,battle_turn_simple);
+}
+else {
+	instance_create_depth(0,0,0,battle_turn_noattack);
+}
 randomize();
 if (_has_planned) battle._menu_dialog="* My actions are expanding!";
 else {
