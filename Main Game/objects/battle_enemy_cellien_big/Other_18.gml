@@ -3,7 +3,19 @@
 //Prepare the attack
 instance_create_depth(0,0,0,battle_turn_simple);
 
-//Say something
-var inst=instance_create_depth(x+100,y-150,0,battle_dialog_enemy);
-inst.text="Test Dialogue";
-inst.template=0;
+randomize();
+if (_has_planned) battle._menu_dialog="* My actions are expanding!";
+else {
+	var RANDOM=[
+		"* The cold breeze of wind&  surrounds the area.",
+		"* The CELLIEN is looking&  directly at us.",
+		"* The atmosphere vows with&  fear and unhope."
+	];
+	battle._menu_dialog=RANDOM[random(array_length(RANDOM))];
+}
+
+Anim_SetPause(id, "_eye_x", false);
+Anim_SetPause(id, "_eye_y", false);
+	
+Anim_SetPause(id, "_eye_black_x", false);
+Anim_SetPause(id, "_eye_black_y", false);

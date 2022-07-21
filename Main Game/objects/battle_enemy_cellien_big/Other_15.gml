@@ -22,8 +22,7 @@ switch(Battle_GetMenuChoiceButton()){
 				if(!_has_planned){
 					switch(_planning_phase){
 						case 0:
-							Dialog_Add_Ext("* I have a very limited time&  to think about a plan.");
-							Dialog_Add_Ext("* I'm going to think of one&  while dodging bullets.");
+							Dialog_Add_Ext("* I can't think of one right&  now, and I need some&  time for that.");
 							_planning_phase = 1;
 							break;
 						case 1:
@@ -32,8 +31,8 @@ switch(Battle_GetMenuChoiceButton()){
 							_planning_phase = 2;
 							break;
 						case 2:
-							Dialog_Add_Ext("* I quickly picked up some&  stones, a stick, and a&  map.");
-							Dialog_Add_Ext("* Though I don't have much time.");
+							Dialog_Add_Ext("* I've connected all the&  missing information, and&  voila!");
+							Dialog_Add_Ext("* A plan has been made.");
 							_planning_phase = 3;
 							_has_planned = true;
 							
@@ -49,7 +48,20 @@ switch(Battle_GetMenuChoiceButton()){
 					}
 				}
 				else {
-					
+					if(!_has_searched){
+						Dialog_Add_Ext("* Acknowledging that I have&  a very limited time,&  I quickly got to work.");
+						Dialog_Add_Ext("* I picked up some stones,&  a stick, and a map.");
+						Dialog_Add_Ext("* Surely one will come in&  handy.");
+						
+						Item_Add(item_stick);
+						Item_Add(item_stone);
+						Item_Add(item_map);
+						
+						_has_searched = true;
+					}
+					else{
+						Dialog_Add_Ext("* But there was nothing else&  useful laying around.");
+					}
 				}
 				break;
 		}
