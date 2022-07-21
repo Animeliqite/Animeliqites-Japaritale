@@ -35,6 +35,9 @@ _eye_y_add=0;
 _eye_black_x_add_speed=33;
 _eye_x_add_speed=55;
 _eye_scale_x=1;
+_core_x=0;
+_core_x_add=0;
+_core_scale_x=0;
 
 _hp_max=100;
 _hp=100;

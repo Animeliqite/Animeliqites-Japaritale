@@ -6,7 +6,7 @@ for (var rot = 0; rot <= 180; rot += 45) {
 draw_sprite_ext(spr_cellien_big_monster_body, 0, x + _body_x, y + _body_y, 1, 1, 0, c_white, 1);
 draw_sprite_ext(spr_cellien_big_monster_eye_black, 0, x + _eye_black_x + _eye_black_x_add, y - (sprite_height / 2) + _eye_black_y + _eye_black_y_add, _eye_black_scale_x, 1, 0, c_white, 1);
 draw_sprite_ext(spr_cellien_big_monster_eye, 0, x + _eye_x + _eye_x_add, y - (sprite_height / 2) + _eye_y + _eye_y_add, _eye_scale_x, 1, 0, c_white, 1);
-draw_sprite_ext(spr_cellien_big_monster_core, 0, x - _eye_black_x - _eye_black_x_add, y - (sprite_height / 2), max(0,-_eye_black_scale_x + 1), 1, 0, c_white, 1);
+draw_sprite_ext(spr_cellien_big_monster_core, 0, x + _body_x + _core_x - _core_x_add, y - (sprite_height / 2) + _body_y, _core_scale_x, 1, 0, c_white, 1);
 
 if (_draw_paperplane) {
 	if(_actually_draw_paperplane)
