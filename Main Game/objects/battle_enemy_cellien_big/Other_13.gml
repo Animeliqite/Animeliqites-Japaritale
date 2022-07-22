@@ -10,7 +10,7 @@ switch(Battle_GetMenu()){
 		break;
 		
 	case BATTLE_MENU.FIGHT_DAMAGE:
-		var dmg=Battle_GetMenuFightDamage();
+		var dmg=(_instructed==2 ? -1 : 0);
 		var hp_orig=_hp;
 		
 		_hp=(_hp-dmg >= 0 ? _hp-dmg : 0);
@@ -18,20 +18,23 @@ switch(Battle_GetMenu()){
 		//Create damage number
 		var inst=instance_create_depth(x,y-150,0,battle_damage);
 		inst.damage=dmg;
+		inst.display_time=60;
 		inst.bar_hp_max=_hp_max;
 		inst.bar_hp_original=hp_orig;
 		inst.bar_hp_target=_hp;
 		inst.bar_width=sprite_width+25;
 		
 		//Play damage sound and shake
-		if(dmg>0){
-			audio_play_sound(snd_damage,0,false);
+		if(dmg==-1){
+			y += 25;
+			BGM_Stop(5);
+			audio_play_sound(snd_destroy,0,false);
 			var shake=instance_create_depth(0,0,0,shaker);
 			shake.target=self;
 			shake.var_name="x";
-			shake.shake_distance=18;
-			shake.shake_decrease=3;
-			shake.shake_speed=1;
+			shake.shake_distance=48;
+			shake.shake_decrease=12;
+			shake.shake_speed=4;
 		}
 		break;
 }

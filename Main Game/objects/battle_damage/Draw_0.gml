@@ -3,8 +3,10 @@ if(bar_visible&&damage>0){
 	draw_sprite_ext(spr_pixel,0,xstart-bar_width/2,ystart+18,bar_width/bar_hp_max*_bar_hp,13,0,c_lime,1);
 }
 
-if(damage<=0){
+if(damage==0){
 	draw_sprite_ext(spr_battle_damage_miss,0,xstart,y,1,1,0,c_gray,1);
+}else if(damage==-1){
+	draw_sprite_ext(spr_battle_damage_break,0,xstart,y,1,1,0,c_white,1);
 }else{
 	var STR=string(damage);
 	var LEN=string_length(STR);
