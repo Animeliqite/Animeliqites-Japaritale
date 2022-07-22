@@ -4,6 +4,7 @@ for (var rot = 0; rot <= 180; rot += 45) {
 }
 
 draw_sprite_ext(spr_cellien_big_monster_body, 0, x + _body_x, y + _body_y, 1, 1, 0, c_white, 1);
+if (_draw_lines) draw_sprite_ext(spr_cellien_big_monster_lines, _lines_image_index, x + _body_x, y + _body_y, 1, 1, 0, c_white, 1);
 
 if (!surface_exists(_surf_eye))
 	_surf_eye = surface_create(2048, 2048);

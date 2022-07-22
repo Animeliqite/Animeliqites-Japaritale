@@ -3,12 +3,14 @@
 switch(Battle_GetMenuChoiceButton()){
 	case BATTLE_MENU_CHOICE_BUTTON.FIGHT:
 		//Check: is enemy supposed to be dead?
-		if(_hp<=0){
-			//Create particle effect
-			var inst=instance_create_depth(x,y,0,battle_death_particle);
-			inst.sprite=sprite_index;
-			audio_play_sound(snd_vaporize,0,false);
-			instance_destroy();
+		if(_broken){
+			_draw_lines=true;
+			Anim_Create(id,"_lines_image_index",0,0,0,1,1,30);
+			Anim_Create(id,"_lines_image_index",0,0,1,1,1,90);
+			Anim_Create(id,"_lines_image_index",0,0,2,1,1,95);
+			Anim_Create(id,"_lines_image_index",0,0,3,1,1,100);
+			Battle_SetNextState(BATTLE_STATE.TURN_PREPARATION);
+			Battle_SetState(BATTLE_STATE.TURN_PREPARATION);
 		}
 		break;
 		

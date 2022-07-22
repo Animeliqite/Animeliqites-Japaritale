@@ -9,6 +9,7 @@ Battle_SetEnemyActionName(_enemy_slot,1,"* Plan");
 Battle_SetEnemyDEF(_enemy_slot,-15);
 
 _anim_speed=0.5;
+_draw_lines=false;
 _has_planned=false;
 _has_searched=false;
 _actually_draw_paperplane=true;
@@ -44,7 +45,10 @@ _core_part_scale_x=0;
 _core_part_scale_y=0;
 _core_part_alpha=0;
 _core_part_show=false;
+_lines_image_index=0;
+_lines_image_index_old=-1;
 
+_broken=false;
 _instructed=false;
 _instructed_executed_once=false;
 _surf_eye=-1;

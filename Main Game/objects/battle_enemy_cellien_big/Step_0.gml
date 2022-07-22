@@ -39,3 +39,9 @@ if(_instructed==2&&!_instructed_executed_once){
 	Battle_SetEnemyActionNumber(_enemy_slot,1);
 	_instructed_executed_once=true;
 }
+
+if(_draw_lines&&_lines_image_index_old!=_lines_image_index){
+	audio_play_sound(snd_glass_break,0,false);
+	Camera_Shake(2,2);
+	_lines_image_index_old=_lines_image_index;
+}

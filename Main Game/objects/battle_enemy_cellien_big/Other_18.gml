@@ -5,13 +5,13 @@ if(!_anim_paperplane_executed_once) {
 	instance_create_depth(0,0,0,battle_turn_simple);
 }
 else{
-	if(!Anim_IsExists(battle_ui)){
+	if(!Anim_IsExists(battle_ui)&&!_broken){
 		instance_create_depth(0,0,0,battle_turn_noattack);
 	}
-	else{
-		Battle_SetTurnInfo(BATTLE_TURN.TIME,60);
-		Battle_SetTurnInfo(BATTLE_TURN.BOARD_LEFT,283);
-		Battle_SetTurnInfo(BATTLE_TURN.BOARD_RIGHT,283);	
+	else if(Anim_IsExists(battle_ui)||_broken){
+		Battle_SetTurnInfo(BATTLE_TURN.TIME,(!_broken ? 60 : -1));
+		Battle_SetTurnInfo(BATTLE_TURN.BOARD_LEFT,(!_broken ? 283 : 80));
+		Battle_SetTurnInfo(BATTLE_TURN.BOARD_RIGHT,(!_broken ? 283 : 80));	
 	}
 }
 randomize();

@@ -28,6 +28,7 @@ switch(Battle_GetMenu()){
 		if(dmg==-1){
 			y += 25;
 			BGM_Stop(5);
+			_broken=true;
 			audio_play_sound(snd_destroy,0,false);
 			var shake=instance_create_depth(0,0,0,shaker);
 			shake.target=self;
