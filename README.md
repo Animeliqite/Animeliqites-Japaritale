@@ -14,7 +14,7 @@ The entire game including the demo shares the same story from the [animation ser
     * [x] Music
   * [ ] Big Cellien Battle
     * [ ] Programming
-    * [ ] Sprites
+    * [x] Sprites
     * [ ] Music
 * [x] Areas
   * [x] The Beginning
@@ -62,3 +62,4 @@ All contributors will be credited via an automatic getter system (reads .TXT fil
 * TheCreatorFox
 * Akogiri
 * 3ch3h33hsdf (Music contribution)
+* Neo Champion (Music contribution)
