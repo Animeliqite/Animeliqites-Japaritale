@@ -6,9 +6,10 @@ switch(Battle_GetMenuChoiceButton()){
 		if(_broken){
 			_draw_lines=true;
 			Anim_Create(id,"_lines_image_index",0,0,0,1,1,30);
-			Anim_Create(id,"_lines_image_index",0,0,1,1,1,90);
-			Anim_Create(id,"_lines_image_index",0,0,2,1,1,95);
-			Anim_Create(id,"_lines_image_index",0,0,3,1,1,100);
+			Anim_Create(id,"_lines_image_index",0,0,1,1,1,60);
+			Anim_Create(id,"_lines_image_index",0,0,2,1,1,120);
+			Anim_Create(id,"_lines_image_index",0,0,3,1,1,125);
+			Anim_Create(id,"_lines_image_index",0,0,4,1,1,130);
 			Battle_SetNextState(BATTLE_STATE.TURN_PREPARATION);
 			Battle_SetState(BATTLE_STATE.TURN_PREPARATION);
 		}

@@ -46,7 +46,7 @@ _core_part_scale_y=0;
 _core_part_alpha=0;
 _core_part_show=false;
 _lines_image_index=0;
-_lines_image_index_old=-1;
+_lines_image_index_old=0;
 
 _broken=false;
 _instructed=false;

@@ -26,7 +26,7 @@ if(_input_acceptable){
 		
 		Battle_SetMenuFightDamage(damage);
 		Battle_SetMenuFightAnimTime(25);
-		Battle_SetMenuFightDamageTime(120);
+		Battle_SetMenuFightDamageTime(60);
 		Battle_EndMenuFightAim();
 		_input_acceptable=false;
 	}
