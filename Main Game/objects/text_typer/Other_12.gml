@@ -52,6 +52,16 @@ switch(cmd[|0]){
 					_color_shadow[2]=make_color_rgb(76,0,0);
 					_color_shadow[3]=make_color_rgb(76,0,0);
 					break;
+				case c_fuchsia:
+					_color_text[0]=make_color_rgb(255,164,255);
+					_color_text[1]=make_color_rgb(255,165,255);
+					_color_text[2]=make_color_rgb(229,114,229);
+					_color_text[3]=make_color_rgb(229,114,229);
+					_color_shadow[0]=make_color_rgb(255,215,255);
+					_color_shadow[1]=make_color_rgb(255,215,255);
+					_color_shadow[2]=make_color_rgb(225,215,255);
+					_color_shadow[3]=make_color_rgb(225,215,255);
+					break;
 			}
 		}
 		break;

@@ -18,6 +18,7 @@ else {
 	draw_surface_ext(_surf_eye, 0, 0, 0.4, 0.4, 0, c_white, 1);
 }
 draw_sprite_ext(spr_cellien_big_monster_core, 0, x + _body_x + _core_x - _core_x_add, y - (sprite_height / 2) + _body_y, _core_scale_x, 1, 0, c_white, 1);
+if (_core_part_show) draw_sprite_ext(spr_cellien_big_monster_core, 0, x + _body_x + _core_x - _core_x_add, y - (sprite_height / 2) + _body_y, _core_scale_x + _core_part_scale_x, 1 + _core_part_scale_y, 0, c_white, _core_part_alpha);
 
 if (_draw_paperplane) {
 	var INST=id;

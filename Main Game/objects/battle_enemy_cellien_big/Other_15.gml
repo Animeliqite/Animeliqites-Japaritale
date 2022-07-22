@@ -26,13 +26,14 @@ switch(Battle_GetMenuChoiceButton()){
 							_planning_phase = 1;
 							break;
 						case 1:
-							Dialog_Add_Ext("* I recall someone using CELLIENS' weaknesses&  for advantage.");
-							Dialog_Add_Ext("* I think I'm getting somewhere.");
+							Dialog_Add_Ext("* I asked myself if CELLIENS&  had weakpoints, and the&  answer came right away.");
+							Dialog_Add_Ext("* That's clue number one!");
 							_planning_phase = 2;
 							break;
 						case 2:
-							Dialog_Add_Ext("* I've connected all the&  missing information, and&  voila!");
-							Dialog_Add_Ext("* A plan has been made.");
+							Dialog_Add_Ext("* Non-stop, I kept thinking&  about Hippo's advices&  before this fight.");
+							Dialog_Add_Ext("* Throw rocks, distract...");
+							Dialog_Add_Ext("* Recalling this made me feel&  like my questions were&  answered.");
 							_planning_phase = 3;
 							_has_planned = true;
 							
@@ -45,8 +46,8 @@ switch(Battle_GetMenuChoiceButton()){
 				}
 				else {
 					if(!_has_searched){
-						Dialog_Add_Ext("* Acknowledging that I have&  a very limited time,&  I quickly got to work.");
-						Dialog_Add_Ext("* I picked up some stones,&  a stick, and a map.");
+						Dialog_Add_Ext("* Without wasting any time,&  I quickly got to work.");
+						Dialog_Add_Ext("* I picked up some stones,&  a stick, and a strange paper.");
 						Dialog_Add_Ext("* Surely one will come in&  handy.");
 						
 						Item_Add(item_stick);
@@ -63,7 +64,18 @@ switch(Battle_GetMenuChoiceButton()){
 			case 2:
 				if(!_anim_paperplane_executed_once) Dialog_Add_Ext("* But there was no one&  available to instruct.");
 				else {
-					Dialog_Add_Ext("* It is Serval's time to shine!");
+					Anim_Create(battle_button,"y",ANIM_TWEEN.SINE,ANIM_EASE.IN,battle_button.y,128,30);
+					Anim_Create(battle_button,"y",ANIM_TWEEN.SINE,ANIM_EASE.OUT,battle_button.y+128,-128,30,30);
+					Anim_Create(battle_ui,"x",ANIM_TWEEN.SINE,ANIM_EASE.IN,battle_ui.x,-640,30);
+					Anim_Create(battle_ui,"x",ANIM_TWEEN.SINE,ANIM_EASE.OUT,battle_ui.x-640,640,30,30);
+					Anim_Create(id,"_instructed",0,0,0,1,1,30,-1,-1,ANIM_MODE.ONESHOT,false);
+					Anim_Create(id,"_instructed",0,0,1,2,1,60,-1,-1,ANIM_MODE.ONESHOT,false);
+					
+					battle_soul_red.visible=false;
+					instance_destroy(battle._dialog[0]);
+					
+					Battle_SetNextState(BATTLE_STATE.TURN_PREPARATION);
+					Battle_SetState(BATTLE_STATE.TURN_PREPARATION);
 				}
 				break;
 		}

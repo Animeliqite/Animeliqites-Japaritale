@@ -21,8 +21,8 @@ _paperplane_x=-250;
 _paperplane_y=0;
 _paperplane_dir=1;
 _paperplane_depth=-1;
-_paperplane_xscale=1;
-_paperplane_yscale=1;
+_paperplane_xscale=2;
+_paperplane_yscale=2;
 _eye_black_x=0;
 _eye_black_y=0;
 _eye_black_x_add=0;
@@ -40,9 +40,17 @@ _eye_scale_x=1;
 _core_x=0;
 _core_x_add=0;
 _core_scale_x=0;
+_core_part_scale_x=0;
+_core_part_scale_y=0;
+_core_part_alpha=0;
+_core_part_show=false;
 
+_instructed=false;
+_instructed_executed_once=false;
 _surf_eye=-1;
 
+_old_name=Player_GetName();
+_old_fight_obj=Flag_Get(FLAG_TYPE.STATIC,FLAG_STATIC.BATTLE_MENU_FIGHT_OBJ);
 _hp_max=100;
 _hp=100;
 

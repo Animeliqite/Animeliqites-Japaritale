@@ -1,5 +1,5 @@
 event_inherited();
 
-_name="Map";
-_name_short="Map";
-_name_short_serious="Map";
+_name="Strange Paper";
+_name_short="Strnge. Paper";
+_name_short_serious="Strnge. Ppr.";

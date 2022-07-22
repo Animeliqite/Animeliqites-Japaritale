@@ -28,6 +28,8 @@ function GetColorFromString() {
 		case "gray_light":
 			color=c_ltgray;
 			break;
+		case "pink":
+			color=c_fuchsia;
 	}
 	return color;
 

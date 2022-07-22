@@ -34,7 +34,4 @@ function Flag_Custom() {
 
 	Item_SetWeapon(item_stick);
 	Item_SetArmor(item_bandage);
-	Item_Add(item_tml);
-
-
 }

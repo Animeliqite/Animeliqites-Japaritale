@@ -14,5 +14,5 @@ function Encounter_Custom() {
 	Encounter_Set(4,-1,battle_enemy_zebra,-1,"* Here comes Zebra-chan!", bgm_zebra, false, true, false, 48, 454, false);
 	
 	//Cellien (Big)
-	Encounter_Set(5,-1,battle_enemy_cellien_big,-1,"* The fate of future is upon us.",bgm_cellien_big);
+	Encounter_Set(5,-1,battle_enemy_cellien_big,-1,"* Here comes the troublemaker.",bgm_cellien_big);
 }
