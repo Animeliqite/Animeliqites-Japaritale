@@ -64,7 +64,7 @@
     "eventStubScript": null,
     "parent": {"name":"spr_battle_soul_red","path":"sprites/spr_battle_soul_red/spr_battle_soul_red.yy",},
     "resourceVersion": "1.4",
-    "name": "",
+    "name": "spr_battle_soul_red",
     "tags": [],
     "resourceType": "GMSequence",
   },

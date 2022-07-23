@@ -10,6 +10,7 @@ switch(Battle_GetMenuChoiceButton()){
 			Anim_Create(id,"_lines_image_index",0,0,2,1,1,120);
 			Anim_Create(id,"_lines_image_index",0,0,3,1,1,125);
 			Anim_Create(id,"_lines_image_index",0,0,4,1,1,130);
+			Anim_Create(id,"_vaporize",0,0,false,true,1,190);
 			Battle_SetNextState(BATTLE_STATE.TURN_PREPARATION);
 			Battle_SetState(BATTLE_STATE.TURN_PREPARATION);
 		}
@@ -75,7 +76,9 @@ switch(Battle_GetMenuChoiceButton()){
 					Anim_Create(id,"_instructed",0,0,1,2,1,60,-1,-1,ANIM_MODE.ONESHOT,false);
 					
 					battle_soul_red.visible=false;
+					Battle_SetSoul(battle_soul_pink);
 					instance_destroy(battle._dialog[0]);
+					battle_soul_pink.visible=false;
 					
 					Battle_SetNextState(BATTLE_STATE.TURN_PREPARATION);
 					Battle_SetState(BATTLE_STATE.TURN_PREPARATION);

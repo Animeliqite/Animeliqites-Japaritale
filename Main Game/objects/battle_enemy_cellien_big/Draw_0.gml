@@ -1,10 +1,21 @@
-for (var rot = 0; rot <= 180; rot += 45) {
-	draw_line_width(x + (_body_x / 2) - lengthdir_x(sprite_width / 2, -rot), y + (_body_y / 2) - (sprite_height / 2) - lengthdir_y(sprite_height / 2, -rot), xstart - lengthdir_x(1024, -rot), ystart - 25 - (sprite_height / 2) - lengthdir_y(1024, -rot), 4);
-	draw_sprite_ext(spr_cellien_big_monster_tentacle_start, 0, x + (_body_x / 2) - lengthdir_x(sprite_width / 2, -rot), y + (_body_y / 2) - (sprite_height / 2) - lengthdir_y(sprite_height / 2, -rot), 1, 1, -rot, c_white, 1);
+if (!surface_exists(_surf_tentacle)) {
+	_surf_tentacle = surface_create(2048, 2048);
+}
+else {
+	surface_set_target(_surf_tentacle);
+	draw_clear_alpha(c_black, 0);
+	for (var rot = 0; rot <= 180; rot += 45) {
+		draw_line_width((x + (_body_x / 2) - lengthdir_x(sprite_width / 2, -rot)) * 2.5, (y + (_body_y / 2) - (sprite_height / 2) - lengthdir_y(sprite_height / 2, -rot)) * 2.5, (xstart - lengthdir_x(1024, -rot)) * 2.5, (ystart - 25 - (sprite_height / 2) - lengthdir_y(1024, -rot)) * 2.5, 4 * 2.5);
+		draw_sprite_ext(spr_cellien_big_monster_tentacle_start, 0, (x + (_body_x / 2) - lengthdir_x(sprite_width / 2, -rot)) * 2.5, (y + (_body_y / 2) - (sprite_height / 2) - lengthdir_y(sprite_height / 2, -rot)) * 2.5, 1 * 2.5, 1 * 2.5, -rot, c_white, image_alpha);
+	}
+	surface_reset_target();
+	draw_surface_ext(_surf_tentacle, 0, 0, 0.4, 0.4, 0, c_white, image_alpha);
 }
 
-draw_sprite_ext(spr_cellien_big_monster_body, 0, x + _body_x, y + _body_y, 1, 1, 0, c_white, 1);
+draw_sprite_ext(spr_cellien_big_monster_body, 0, x + _body_x, y + _body_y, 1, 1, 0, c_white, image_alpha);
+gpu_set_colorwriteenable(1, 1, 1, 0);
 if (_draw_lines) draw_sprite_ext(spr_cellien_big_monster_lines, _lines_image_index, x + _body_x, y + _body_y, 1, 1, 0, c_white, 1);
+gpu_set_colorwriteenable(1, 1, 1, 1);
 
 if (!surface_exists(_surf_eye))
 	_surf_eye = surface_create(2048, 2048);
@@ -16,10 +27,10 @@ else {
 	draw_sprite_ext(spr_cellien_big_monster_eye, 0, (x + _eye_x + _eye_x_add) * 2.5, (y - (sprite_height / 2) + _eye_y + _eye_y_add) * 2.5, _eye_scale_x * 2.5, 2.5, 0, c_white, 1);
 	gpu_set_colorwriteenable(1, 1, 1, 1);
 	surface_reset_target();
-	draw_surface_ext(_surf_eye, 0, 0, 0.4, 0.4, 0, c_white, 1);
+	draw_surface_ext(_surf_eye, 0, 0, 0.4, 0.4, 0, c_white, image_alpha);
 }
-draw_sprite_ext(spr_cellien_big_monster_core, 0, x + _body_x + _core_x - _core_x_add, y - (sprite_height / 2) + _body_y, _core_scale_x, 1, 0, c_white, 1);
-if (_core_part_show) draw_sprite_ext(spr_cellien_big_monster_core, 0, x + _body_x + _core_x - _core_x_add, y - (sprite_height / 2) + _body_y, _core_scale_x + _core_part_scale_x, 1 + _core_part_scale_y, 0, c_white, _core_part_alpha);
+draw_sprite_ext(spr_cellien_big_monster_core, _lines_image_index, x + _body_x + _core_x - _core_x_add, y - (sprite_height / 2) + _body_y, _core_scale_x, 1, 0, c_white, image_alpha);
+if (_core_part_show) draw_sprite_ext(spr_cellien_big_monster_core, 0, x + _body_x + _core_x - _core_x_add, y - (sprite_height / 2) + _body_y, _core_scale_x + _core_part_scale_x, 1 + _core_part_scale_y, 0, c_white, _core_part_alpha * image_alpha);
 
 if (_draw_paperplane) {
 	var INST=id;

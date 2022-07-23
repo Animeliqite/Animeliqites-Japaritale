@@ -53,6 +53,7 @@ _state=-1;
 _state_next=-1;
 //菜单
 _menu=-1;
+_menu_can_move=true;
 _menu_choice_button=0;
 _menu_choice_enemy=0;
 _menu_choice_action=0;
@@ -90,3 +91,5 @@ _player_temp_atk=0;
 _player_temp_def=0;
 _player_temp_spd=0;
 _player_temp_inv=0;
+
+_cutscene_began=false;

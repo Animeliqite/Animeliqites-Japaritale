@@ -793,7 +793,7 @@ switch(room){
 			C_Wait(6, 5);
 			C_PlaySfx(7, snd_noise);
 			C_Wait(7, 20);
-			C_Execute(8, Encounter_Start, [1, true, false]);
+			C_Execute(8, Encounter_Start, [5, true, false]);
 			C_Execute(8, part_system_destroy, [particle.partsystem]);
 			Cutscene_End(8);
 		}
@@ -859,7 +859,7 @@ switch(room){
 			C_Wait(6, 5);
 			C_PlaySfx(7, snd_noise);
 			C_Wait(7, 20);
-			C_Execute(8, Encounter_Start, [1, true, false]);
+			C_Execute(8, Encounter_Start, [5, true, false]);
 			C_Execute(8, part_system_destroy, [particle.partsystem]);
 			Cutscene_End(8);
 		}

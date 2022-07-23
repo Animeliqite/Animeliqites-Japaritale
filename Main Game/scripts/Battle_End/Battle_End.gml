@@ -9,4 +9,5 @@ function Battle_End() {
 		BGM_SetVolume(0,1,25);
 		Cutscene_End(-1);
 	}
+	else show_debug_message("Room doesn't exist!");
 }

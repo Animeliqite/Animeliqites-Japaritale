@@ -6,46 +6,48 @@ if(_state==BATTLE_STATE.MENU){
 		if(!instance_exists(_dialog[0])){
 			Battle_SetDialog(Battle_GetMenuDialog());
 		}
-		if(Input_IsPressed(INPUT.LEFT)){
-			var button=_menu_choice_button;
-			button-=1;
-			if(button<0){
-				button=3;
+		if(_menu_can_move){
+			if(Input_IsPressed(INPUT.LEFT)){
+				var button=_menu_choice_button;
+				button-=1;
+				if(button<0){
+					button=3;
+				}
+				audio_play_sound(snd_menu_switch,0,false);
+				Battle_SetMenuChoiceButton(button);
+			}else if(Input_IsPressed(INPUT.RIGHT)){
+				var button=_menu_choice_button;
+				button+=1;
+				if(button>3){
+					button=0;
+				}
+				audio_play_sound(snd_menu_switch,0,false);
+				Battle_SetMenuChoiceButton(button);
 			}
-			audio_play_sound(snd_menu_switch,0,false);
-			Battle_SetMenuChoiceButton(button);
-		}else if(Input_IsPressed(INPUT.RIGHT)){
-			var button=_menu_choice_button;
-			button+=1;
-			if(button>3){
-				button=0;
-			}
-			audio_play_sound(snd_menu_switch,0,false);
-			Battle_SetMenuChoiceButton(button);
-		}
 		
-		//确定
-		if(Input_IsPressed(INPUT.CONFIRM)){
-			audio_play_sound(snd_menu_confirm,0,false);
-			switch(_menu_choice_button){
-				case 0:
-					if(_menu_fight_enabled)
-						Battle_SetMenu(BATTLE_MENU.FIGHT_TARGET);
-					else audio_stop_sound(snd_menu_confirm);
-					break;
-				case 1:
-					Battle_SetMenu(BATTLE_MENU.ACT_TARGET);
-					break;
-				case 2:
-					if(Item_GetNumber()>0){
-						Battle_SetMenu(BATTLE_MENU.ITEM);
-					}else{
-						audio_stop_sound(snd_menu_confirm);
-					}
-					break;
-				case 3:
-					Battle_SetMenu(BATTLE_MENU.MERCY);
-					break;
+			//确定
+			if(Input_IsPressed(INPUT.CONFIRM)){
+				audio_play_sound(snd_menu_confirm,0,false);
+				switch(_menu_choice_button){
+					case 0:
+						if(_menu_fight_enabled)
+							Battle_SetMenu(BATTLE_MENU.FIGHT_TARGET);
+						else audio_stop_sound(snd_menu_confirm);
+						break;
+					case 1:
+						Battle_SetMenu(BATTLE_MENU.ACT_TARGET);
+						break;
+					case 2:
+						if(Item_GetNumber()>0){
+							Battle_SetMenu(BATTLE_MENU.ITEM);
+						}else{
+							audio_stop_sound(snd_menu_confirm);
+						}
+						break;
+					case 3:
+						Battle_SetMenu(BATTLE_MENU.MERCY);
+						break;
+				}
 			}
 		}
 	}else
@@ -278,10 +280,14 @@ if(_state==BATTLE_STATE.BOARD_RESETTING){
 
 if(_state==BATTLE_STATE.RESULT){
 	if(!instance_exists(_dialog[0])){
-		Cutscene_Begin();
+		if(!_cutscene_began){
+			Cutscene_Begin();
+			_cutscene_began=true;
+		}
 		C_FadeFader(0, 0, 1, 10);
 		C_Wait(0, 10);
 		C_Execute(1, Battle_End);
+		Cutscene_End(1);
 	}
 }
 

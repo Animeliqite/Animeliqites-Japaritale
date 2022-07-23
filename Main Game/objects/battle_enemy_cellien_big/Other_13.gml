@@ -29,12 +29,14 @@ switch(Battle_GetMenu()){
 			y += 30;
 			BGM_Stop(5);
 			_broken=true;
+			_core_part_show=false;
+			Anim_Destroy(id);
 			audio_play_sound(snd_destroy,0,false);
 			var shake=instance_create_depth(0,0,0,shaker);
 			shake.target=self;
 			shake.var_name="x";
 			shake.shake_distance=52;
-			shake.shake_decrease=6;
+			shake.shake_decrease=13;
 			shake.shake_speed=4;
 		}
 		break;

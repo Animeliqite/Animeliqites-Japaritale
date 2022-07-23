@@ -49,8 +49,11 @@ _lines_image_index=0;
 _lines_image_index_old=0;
 
 _broken=false;
+_vaporize=false;
+_vaporize_executed_once=false;
 _instructed=false;
 _instructed_executed_once=false;
+_surf_tentacle=-1;
 _surf_eye=-1;
 
 _old_name=Player_GetName();
